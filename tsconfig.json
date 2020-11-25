@@ -21,7 +21,23 @@
     "types": []
   },
   "files": [
-    "src/browser.json"
+    "src/docs/archive.json",
+    "src/docs/browser.json",
+    "src/docs/database.json",
+    "src/docs/filesystem.json",
+    "src/docs/ftp.json",
+    "src/docs/http.json",
+    "src/docs/images.json",
+    "src/docs/Netsuite.json",
+    "src/docs/Notifier.json",
+    "src/docs/PDF.json",
+    "src/docs/RobotLogListener.json",
+    "src/docs/SalesForce.json",
+    "src/docs/sap.json",
+    "src/docs/slack.json",
+    "src/docs/Tables.json",
+    "src/docs/Tasks.json",
+    "src/docs/Twitter.json"
   ],
   "include": ["src/*"]
 }

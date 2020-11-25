@@ -1,0 +1,57 @@
+[
+  {
+    "keyword": "Display",
+    "arguments": "*objs,include=None,exclude=None,metadata=None,transient=None,display_id=None,**kwargs",
+    "description": "Display a Python object in all frontends. By default all representations will be computed and sent to the frontends. Frontends can decide which representation is used and how. In terminal IPython this will be similar to using :func:print, for use in richer frontends see Jupyter notebook examples with rich display logic. Parameters objs : tuple of objects The Python objects to display. raw : bool, optional Are the objects to be displayed already mimetype-keyed dicts of raw display data, or Python objects that need to be formatted before display? [default: False] include : list, tuple or set, optional A list of format type strings (MIME types) to include in the format data dict. If this is set only the format types included in this list will be computed. exclude : list, tuple or set, optional A list of format type strings (MIME types) to exclude in the format data dict. If this is set all format types will be computed, except for those included in this argument. metadata : dict, optional A dictionary of metadata to associate with the output. mime-type keys in this dictionary will be associated with the individual representation formats, if they exist. transient : dict, optional A dictionary of transient data to associate with the output. Data in this dict should not be persisted to files (e.g. notebooks). display_id : str, bool optional Set an id for the display. This id can be used for updating this display area later via update_display. If given as True, generate a new display_id kwargs: additional keyword-args, optional Additional keyword-arguments are passed through to the display publisher. Returns handle: DisplayHandle Returns a handle on updatable displays for use with :func:update_display, if display_id is given. Returns :any:None if no display_id is given (default). Examples >>> class Json(object): ... def __init__(self, json): ... self.json = json ... def _repr_pretty_(self, pp, cycle): ... import json ... pp.text(json.dumps(self.json, indent=2)) ... def __repr__(self): ... return str(self.json) ... >>> d = Json({1:2, 3: {4:5}}) >>> print(d) {1: 2, 3: {4: 5}} >>> display(d) { \"1\": 2, \"3\": { \"4\": 5 } } >>> def int_formatter(integer, pp, cycle): ... pp.text('I'*integer) >>> plain = get_ipython().display_formatter.formatters['text/plain'] >>> plain.for_type(int, int_formatter) <function _repr_pprint at 0x...> >>> display(7-5) II >>> del plain.type_printers[int] >>> display(7-5) 2 See Also :func:update_display Notes In Python, objects can declare their textual representation using the __repr__ method. IPython expands on this idea and allows objects to declare other, rich representations including: HTML JSON PNG JPEG SVG LaTeX A single object can declare some or all of these representations; all are handled by IPython's display system. The main idea of the first approach is that you have to implement special display methods when you define your class, one for each representation you want to use. Here is a list of the names of the special methods and the values they must return: _repr_html_: return raw HTML as a string, or a tuple (see below). _repr_json_: return a JSONable dict, or a tuple (see below). _repr_jpeg_: return raw JPEG data, or a tuple (see below). _repr_png_: return raw PNG data, or a tuple (see below). _repr_svg_: return raw SVG data as a string, or a tuple (see below). _repr_latex_: return LaTeX commands in a string surrounded by \"$\", or a tuple (see below). _repr_mimebundle_: return a full mimebundle containing the mapping from all mimetypes to data. Use this for any mime-type not listed above. The above functions may also return the object's metadata alonside the data. If the metadata is available, the functions will return a tuple containing the data and metadata, in that order. If there is no metadata available, then the functions will return the data only. When you are directly writing your own classes, you can adapt them for display in IPython by following the above approach. But in practice, you often need to work with existing classes that you can't easily modify. You can refer to the documentation on integrating with the display system in order to register custom formatters for already existing types (:ref:integrating_rich_display). .. versionadded:: 5.4 display available without import .. versionadded:: 6.1 display available without import Since IPython 5.4 and 6.1 :func:display is automatically made available to the user without import. If you are using display in a document that might be used in a pure python context or with older version of IPython, use the following import at the top of your file:: from IPython.display import display"
+  },
+  {
+    "keyword": "Notebook Audio",
+    "arguments": "audio",
+    "description": "Display IPython Audio object in the notebook :param audio: path to the audio file"
+  },
+  {
+    "keyword": "Notebook Dir",
+    "arguments": "directory,recursive=False",
+    "description": "Display IPython FileLinks object in the notebook :param directory: location of the directory :param recursive: if all subdirectories should be shown also, defaults to False"
+  },
+  {
+    "keyword": "Notebook File",
+    "arguments": "filepath",
+    "description": "Display IPython FileLink object in the notebook :param filepath: location of the file"
+  },
+  {
+    "keyword": "Notebook Image",
+    "arguments": "image",
+    "description": "Display IPython Image object in the notebook :param image: path to the image file"
+  },
+  {
+    "keyword": "Notebook Json",
+    "arguments": "json_object",
+    "description": "Display IPython JSON object in the notebook :param json_object: item to show"
+  },
+  {
+    "keyword": "Notebook Print",
+    "arguments": "arg=None,**kwargs",
+    "description": "Display IPython Markdown object in the notebook Valid parameters are text, image, link or table. :param text: string to output (can contain markdown) :param image: path to the image file :param link: path to the link :param table: RPA.Table object to print"
+  },
+  {
+    "keyword": "Notebook Table",
+    "arguments": "table,count: int = 20",
+    "description": "Display RPA.Table as IPython Markdown object in the notebook :param table: RPA.Table object to print"
+  },
+  {
+    "keyword": "Notebook Video",
+    "arguments": "video",
+    "description": "Display IPython Video object in the notebook :param video: path to the video file"
+  },
+  {
+    "keyword": "Print Precheck",
+    "arguments": "f",
+    "description": ""
+  },
+  {
+    "keyword": "Wraps",
+    "arguments": "wrapped,assigned=('__module__', '__name__', '__qualname__', '__doc__', '__annotations__'),updated=('__dict__',)",
+    "description": "Decorator factory to apply update_wrapper() to a wrapper function Returns a decorator that invokes update_wrapper() with the decorated function as the wrapper argument and the arguments to wraps() as the remaining arguments. Default arguments are as for update_wrapper(). This is a convenience function to simplify applying partial() to update_wrapper()."
+  }
+]

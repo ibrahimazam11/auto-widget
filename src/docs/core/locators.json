@@ -1,0 +1,17 @@
+[
+  {
+    "keyword": "Contextmanager",
+    "arguments": "func",
+    "description": "@contextmanager decorator. Typical usage: @contextmanager def some_generator(<arguments>): <setup> try: yield <value> finally: <cleanup> This makes this: with some_generator(<arguments>) as <variable>: <body> equivalent to this: <setup> try: <variable> = <value> <body> finally: <cleanup>"
+  },
+  {
+    "keyword": "Default Locators Path",
+    "arguments": "",
+    "description": "Return default path for locators database file"
+  },
+  {
+    "keyword": "Open Stream",
+    "arguments": "obj,*args,**kwargs",
+    "description": "Wrapper for built-in open(), which allows using existing IO streams."
+  }
+]

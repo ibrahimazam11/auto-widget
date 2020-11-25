@@ -1,0 +1,27 @@
+[
+  {
+    "keyword": "Clean Filename",
+    "arguments": "filename: str,replace: str =",
+    "description": "Clean filename to valid format which can be used file operations. :param filename: name to be cleaned :param replace: characters to replace with underscore, defaults to \" \" :return: valid filename"
+  },
+  {
+    "keyword": "Delay",
+    "arguments": "sleeptime: float = 0.0",
+    "description": "Delay execution for given amount of seconds. :param sleeptime: seconds as integer, defaults to 0"
+  },
+  {
+    "keyword": "Import By Name",
+    "arguments": "name: str,caller: str = None",
+    "description": "Import module (or attribute) by name. :param name: Import path, e.g. RPA.WorkItems.RobocloudAdapter"
+  },
+  {
+    "keyword": "Required Env",
+    "arguments": "name: str,default: typing.Any = <object object at 0x00BD6E78>",
+    "description": "Load required environment variable. :param name: Name of environment variable :param default: Value to use if variable is undefined. If not given and variable is undefined, raises KeyError."
+  },
+  {
+    "keyword": "Required Param",
+    "arguments": "param_name: typing.Any = None,method_name: str = None",
+    "description": "Check that required parameter is not None"
+  }
+]

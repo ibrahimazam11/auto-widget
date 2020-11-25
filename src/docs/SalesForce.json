@@ -1,0 +1,112 @@
+[
+  {
+    "keyword": "Add Product Into Opportunity",
+    "arguments": "product_name: str,quantity: int,opportunity_id: str = None,pricebook_name: str = None,custom_total_price: float = None",
+    "description": "Add Salesforce Product into Opportunity. :param product_name: type of the product in the Pricelist :param quantity: number of products to add :param opportunity_id: identifier of Opportunity, default None :param pricebook_name: name of the pricelist, default None :param custom_total_price: price that overrides quantity and product price, default None :return: True is operation is successful or False"
+  },
+  {
+    "keyword": "Auth With Token",
+    "arguments": "username: str,password: str,api_token: str",
+    "description": "Authorize to Salesforce with security token, username and password creating instance. :param username: Salesforce API username :param password: Salesforce API password :param api_token: Salesforce API security token"
+  },
+  {
+    "keyword": "Create New Opportunity",
+    "arguments": "close_date: str,opportunity_name: str,stage_name: str = Closed Won,account_name: str = None",
+    "description": "Create Salesforce Opportunity object. :param close_date: closing date for the Opportunity, format 'YYYY-MM-DD' :param opportunity_name: as string :param stage_name: needs to be one of the defined stages, defaults to \"Closed Won\" :param account_name: by default uses previously set account, defaults to None :return: created opportunity or False"
+  },
+  {
+    "keyword": "Create Salesforce Object",
+    "arguments": "object_type: str,object_data: typing.Any",
+    "description": "Create Salesforce object by type and data. :param object_type: Salesforce object type :param object_data: Salesforce object data :raises SalesforceDataNotAnDictionary: when object_data is not dictionary :return: resulting object as dictionary"
+  },
+  {
+    "keyword": "Delete Salesforce Object",
+    "arguments": "object_type: str,object_id: str",
+    "description": "Delete Salesfoce object by type and id. :param object_type: Salesforce object type :param object_id: Salesforce object id :return: True if successful"
+  },
+  {
+    "keyword": "Describe Salesforce Object",
+    "arguments": "object_type: str",
+    "description": "Get Salesfoce object description by type. :param object_type: Salesforce object type :return: object description as dictionary"
+  },
+  {
+    "keyword": "Execute Dataloader Insert",
+    "arguments": "input_object: typing.Any,mapping_object: typing.Any,object_type: str",
+    "description": "Keyword mimics Salesforce Dataloader 'insert' behaviour by taking in a input_objectrepresenting dictionary of data to input into Salesforce, a mapping_object representing dictionary mapping the input keys into Salesforce keys, an object_type representing Salesforce object which Datahandler will handle with operation type. Stores operation successes into Salesforce.dataloader_success array. Stores operation errors into Salesforce.dataloader_errors. These can be retrieved with keywords get_dataloader_success_table and get_dataloader_error_table which return corresponding data as RPA.Table. :param input_object: filepath or list of dictionaries :param mapping_object: filepath or dictionary :param object_type: Salesforce object type :return: True if operation is successful"
+  },
+  {
+    "keyword": "Get Dataloader Error Table",
+    "arguments": "",
+    "description": "Return Dataloader error entries as RPA.Table"
+  },
+  {
+    "keyword": "Get Dataloader Success Table",
+    "arguments": "",
+    "description": "Return Dataloader success entries as RPA.Table"
+  },
+  {
+    "keyword": "Get Opportunity Id",
+    "arguments": "opportunity_name: str",
+    "description": "Get ID of an Opportunity linked to set account. :param opportunity_name: opportunity to query :return: Id of the opportunity or False"
+  },
+  {
+    "keyword": "Get Pricebook Entries",
+    "arguments": "",
+    "description": "Get all pricebook entries. :return: query result"
+  },
+  {
+    "keyword": "Get Pricebook Id",
+    "arguments": "pricebook_name: str",
+    "description": "Get ID of a pricelist. Returns False if unique Id is not found. :param pricebook_name: pricelist to query :return: Id of the pricelist or False"
+  },
+  {
+    "keyword": "Get Products In Pricelist",
+    "arguments": "pricebook_name: str",
+    "description": "Get all products in a pricelist. :param pricebook_name: pricelist to query :return: products in dictionary"
+  },
+  {
+    "keyword": "Get Salesforce Object By Id",
+    "arguments": "object_type: str,object_id: str",
+    "description": "Get Salesforce object by id and type. :param object_type: Salesforce object type :param object_id: Salesforce object id :return: dictionary of object attributes"
+  },
+  {
+    "keyword": "Get Salesforce Object Metadata",
+    "arguments": "object_type: str",
+    "description": "Get Salesfoce object metadata by type. :param object_type: Salesforce object type :return: object metadata as dictionary"
+  },
+  {
+    "keyword": "Read Dictionary From File",
+    "arguments": "mapping_file: str",
+    "description": "Read dictionary from file. :param mapping_file: path to the file :return: file content as dictionary"
+  },
+  {
+    "keyword": "Salesforce Query",
+    "arguments": "sql_string: str",
+    "description": "Perform SQL query. :param sql_string: SQL clause to perform :return: result of the SQL query"
+  },
+  {
+    "keyword": "Salesforce Query Result As Table",
+    "arguments": "sql_string: str",
+    "description": "Perform SQL query and return result as RPA.Table. :param sql_string: SQL clause to perform :return: result of the SQL query as Table"
+  },
+  {
+    "keyword": "Set Account",
+    "arguments": "account_name: str = ,account_id: str =",
+    "description": "Set account name and id by giving either parameter. Can be used together with keywords: get_opportunity_id create_new_opportunity :param account_name: string, defaults to \"\" :param account_id: string, defaults to \"\" :return: True if account was found from Salesforce, else False"
+  },
+  {
+    "keyword": "Set Pricebook",
+    "arguments": "pricebook_name: str",
+    "description": "Sets Pricebook to be used in Salesforce operations. :param pricebook_name: pricelist to use"
+  },
+  {
+    "keyword": "Update Salesforce Object",
+    "arguments": "object_type: str,object_id: str,object_data: typing.Any",
+    "description": "Update Salesfoce object by type, id and data. :param object_type: Salesforce object type :param object_id: Salesforce object id :param object_data: Salesforce object data :raises SalesforceDataNotAnDictionary: when object_data is not dictionary :return: True if successful"
+  },
+  {
+    "keyword": "Upsert Salesforce Object",
+    "arguments": "object_type: str,object_id: str,object_data: typing.Any",
+    "description": "Upsert Salesfoce object by type, id and data. :param object_type: Salesforce object type :param object_id: Salesforce object id :param object_data: Salesforce object data :raises SalesforceDataNotAnDictionary: when object_data is not dictionary :return: True if successful"
+  }
+]

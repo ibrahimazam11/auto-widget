@@ -1,0 +1,67 @@
+[
+  {
+    "keyword": "Close Document",
+    "arguments": "save_changes: bool = False",
+    "description": "Close the active document (if open)."
+  },
+  {
+    "keyword": "Create New Document",
+    "arguments": "",
+    "description": "Create new document for Word application"
+  },
+  {
+    "keyword": "Export To Pdf",
+    "arguments": "filename: str",
+    "description": "Export active document into PDF file. :param filename: PDF to export WORD into"
+  },
+  {
+    "keyword": "Get All Texts",
+    "arguments": "",
+    "description": "Get all texts from active document :return: texts"
+  },
+  {
+    "keyword": "Open Application",
+    "arguments": "visible: bool = False,display_alerts: bool = False",
+    "description": "Open the Word application. :param visible: show window after opening :param display_alerts: show alert popups"
+  },
+  {
+    "keyword": "Open File",
+    "arguments": "filename: str = None",
+    "description": "Open Word document with filename. :param filename: Word document filepath, defaults to None"
+  },
+  {
+    "keyword": "Quit Application",
+    "arguments": "save_changes: bool = False",
+    "description": "Quit the application."
+  },
+  {
+    "keyword": "Replace Text",
+    "arguments": "find: str,replace: str",
+    "description": "Replace text in active document :param find: text to replace :param replace: new text"
+  },
+  {
+    "keyword": "Save Document",
+    "arguments": "",
+    "description": "Save active document"
+  },
+  {
+    "keyword": "Save Document As",
+    "arguments": "filename: str,fileformat: str = None",
+    "description": "Save document with filename and optionally with given fileformat :param filename: where to save document :param fileformat: see @FILEFORMATS dictionary for possible format, defaults to None"
+  },
+  {
+    "keyword": "Set Footer",
+    "arguments": "text: str",
+    "description": "Set footer for the active document :param text: footer text to set"
+  },
+  {
+    "keyword": "Set Header",
+    "arguments": "text: str",
+    "description": "Set header for the active document :param text: header text to set"
+  },
+  {
+    "keyword": "Write Text",
+    "arguments": "text: str,newline: bool = True",
+    "description": "Writes given text at the end of the document :param text: string to write :param newline: write text to newline if True, default to True"
+  }
+]

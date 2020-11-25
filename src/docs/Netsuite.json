@@ -1,0 +1,72 @@
+[
+  {
+    "keyword": "Connect",
+    "arguments": "account: str = None,consumer_key: str = None,consumer_secret: str = None,token_key: str = None,token_secret: str = None",
+    "description": "Connect to Netsuite with credentials from environment variables. Parameters are not logged into Robot Framework log. :param account: parameter or environment variable NS_ACCOUNT :param consumer_key: parameter or environment variable NS_CONSUMER_KEY :param consumer_secret: parameter or environment variable NS_CONSUMER_SECRET :param token_key: parameter or environment variable NS_TOKEN_KEY :param token_secret: parameter or environment variable NS_TOKEN_SECRET"
+  },
+  {
+    "keyword": "Get Accounts",
+    "arguments": "count: int = 100,account_type: str = None",
+    "description": "Get Accounts of any type or specified type. :param count: number of Accounts to return, defaults to 100 :param account_type: if None returns all account types, example. \"_expense\", defaults to None :return: accounts"
+  },
+  {
+    "keyword": "Get Classifications",
+    "arguments": "",
+    "description": "Get all Netsuite Classifications :return: classifications"
+  },
+  {
+    "keyword": "Get Currencies",
+    "arguments": "",
+    "description": "Get all Netsuite Currencies :return: currencies"
+  },
+  {
+    "keyword": "Get Currency",
+    "arguments": "currency_id: str",
+    "description": "Get all a Netsuite Currency by its ID :param currency_id: ID of the currency to get :return: currency"
+  },
+  {
+    "keyword": "Get Departments",
+    "arguments": "",
+    "description": "Get all Netsuite Departments :return: departments"
+  },
+  {
+    "keyword": "Get Locations",
+    "arguments": "",
+    "description": "Get all Netsuite Locations :return: locations"
+  },
+  {
+    "keyword": "Get Vendor Bills",
+    "arguments": "count: int = 10",
+    "description": "Get list of vendor bills :param count: number of vendor bills to return, defaults to 10 :return: list of vendor bills"
+  },
+  {
+    "keyword": "Get Vendors",
+    "arguments": "count: int = 10",
+    "description": "Get list of vendors :param count: number of vendors to return, defaults to 10 :return: list of vendors"
+  },
+  {
+    "keyword": "Login",
+    "arguments": "account: str = None,email: str = None,password: str = None,role: str = None,appid: str = None",
+    "description": "Login to Netsuite with credentials from environment variables Parameters are not logged into Robot Framework log. :param account: parameter or environment variable NS_ACCOUNT :param email: parameter or environment variable NS_EMAIL :param password: parameter or environment variable NS_PASSWORD :param role: parameter or environment variable NS_ROLE :param appid: parameter or environment variable NS_APPID"
+  },
+  {
+    "keyword": "Netsuite Get",
+    "arguments": "record_type: str = None,internal_id: str = None,external_id: str = None",
+    "description": "Get all records of given type and internalId and/or externalId. :param record_type: type of Netsuite record to get :param internal_id: internalId of the type, default None :param external_id: external_id of the type, default None :raises ValueError: if record_type is not given :return: records as a list or None"
+  },
+  {
+    "keyword": "Netsuite Get All",
+    "arguments": "record_type: str",
+    "description": "Get all records of given type. :param record_type: type of Netsuite record to get :raises ValueError: if record_type is not given :return: records as a list or None"
+  },
+  {
+    "keyword": "Netsuite Search",
+    "arguments": "type_name: str,search_value: str,operator: str = contains,page_size: int = 5",
+    "description": "Search Netsuite for value from a type. Default operator is contains. :param type_name: search target type name :param search_value: what to search for within type :param operator: name of the operation, defaults to \"contains\" :param page_size: result items within one page, defaults to 5 :return: paginated search object"
+  },
+  {
+    "keyword": "Netsuite Search All",
+    "arguments": "type_name: str,page_size: int = 20",
+    "description": "Search Netsuite for a type results. :param type_name: search target type name :param page_size: result items within one page, defaults to 5 :return: paginated search object"
+  }
+]

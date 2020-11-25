@@ -1,0 +1,47 @@
+[
+  {
+    "keyword": "Call Stored Procedure",
+    "arguments": "name,params=None,sanstran=False",
+    "description": "Call stored procedure with name and params. :param name: procedure name :param params: parameters for the procedure as a list, defaults to None :param sanstran: run command without an explicit transaction commit or rollback, defaults to False Example: .. code-block:: robotframework @{params} Create List FirstParam SecondParam ThirdParam @{results} Call Stored Procedure mystpr ${params}"
+  },
+  {
+    "keyword": "Connect To Database",
+    "arguments": "module_name=None,database=None,username=None,password=None,host=None,port=None,charset=None,config_file=db.cfg",
+    "description": "Connect to database using DB API 2.0 module. :param module_name: database module to use :param database: name of the database :param username: of the user accessing the database :param password: of the user accessing the database :param host: SQL server address :param port: SQL server port :param charset: for example, \"utf-8\", defaults to None :param config_file: location of configuration file, defaults to \"db.cfg\" Example: .. code-block:: robotframework Connect To Database pymysql database username password host port Connect To Database ${CURDIR}${/}resources${/}dbconfig.cfg"
+  },
+  {
+    "keyword": "Description",
+    "arguments": "table",
+    "description": "Get description of the SQL table :param table: name of the SQL table Example: .. code-block:: robotframework Connect To Database pymysql mydb user pass 127.0.0.1 ${db_description} Description mytable"
+  },
+  {
+    "keyword": "Disconnect From Database",
+    "arguments": "",
+    "description": "Close connection to SQL database Example: .. code-block:: robotframework Connect To Database pymysql mydb user pass 127.0.0.1 ${result} Query Select firstname, lastname FROM table Disconnect From Database"
+  },
+  {
+    "keyword": "Execute Sql Script",
+    "arguments": "filename,sanstran=False",
+    "description": "Execute content of SQL script as SQL commands. :param filename: filepath to SQL script to execute :param sanstran: run command without an explicit transaction commit or rollback, defaults to False Example: .. code-block:: robotframework Execute SQL Script script.sql"
+  },
+  {
+    "keyword": "Get Number Of Rows",
+    "arguments": "table,conditions=None",
+    "description": "Get number of rows in a table. Conditions can be given as arguments for WHERE clause. :param table: name of the SQL table :param conditions: restrictions for selections, defaults to None Example: .. code-block:: robotframework ${count} Get Number Of Rows tablename ${count} Get Number Of Rows tablename column1=5 and column2='x'"
+  },
+  {
+    "keyword": "Get Rows",
+    "arguments": "table,columns=None,conditions=None,as_table=True",
+    "description": "Get rows from table. Columns and conditions can be set to filter result. :param table: name of the SQL table :param columns: name of columns to return, defaults to None means that all columns are returned :param conditions: limiting result by WHERE clause, defaults to None :param as_table: if result should be instance of Table, defaults to True False means that return type would be list Example: .. code-block:: robotframework @{res} Get Rows tablename arvo @{res} Get Rows tablename arvo columns=id,name @{res} Get Rows tablename columns=id conditions=column1='newvalue' @{res} Get Rows tablename conditions=column2='updatedvalue'"
+  },
+  {
+    "keyword": "Query",
+    "arguments": "statement,assertion=None,sanstran=False,as_table=True",
+    "description": "Make a SQL query. :param statement: SQL statement to execute :param assertion: assert on query result, row_count or columns. Works only for SELECT statements Defaults to None. :param sanstran: run command without an explicit transaction commit or rollback, defaults to False :param as_table: if result should be instance of Table, defaults to True False means that return type would be list Example: .. code-block:: robotframework @{res} Query Select firstname, lastname FROM table FOR ${row} IN @{RES} Log ${row} END @{res} Query Select * FROM table row_count > ${EXPECTED} @{res} Query Select * FROM table 'arvo' in columns @{res} Query Select * FROM table columns == ['id', 'arvo']"
+  },
+  {
+    "keyword": "Set Auto Commit",
+    "arguments": "autocommit=True",
+    "description": "Set database auto commit mode. :param autocommit: boolean value for auto commit, defaults to True Example: .. code-block:: robotframework Set Auto Commit # auto commit is set on Set Auto Commit False # auto commit is turned off"
+  }
+]

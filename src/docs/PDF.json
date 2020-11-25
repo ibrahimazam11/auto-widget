@@ -1,0 +1,417 @@
+[
+  {
+    "keyword": "Accept Page Break",
+    "arguments": "",
+    "description": "Accept automatic page break or not"
+  },
+  {
+    "keyword": "Add Font",
+    "arguments": "family,style=,fname=,uni=False",
+    "description": "Add a TrueType or Type1 font"
+  },
+  {
+    "keyword": "Add Image To Pdf",
+    "arguments": "imagefile,source=None,target=None,coverage=0.2",
+    "description": "Add image to PDF which can be new or existing PDF. Result will be always written to target_pdf so that needs to be given for the keyword. :param imagefile: filepath to image file to add into PDF :param source: filepath to source, if not given add image to currently active PDF :param target: filepath of target PDF :param coverage: [description], defaults to 0.2 :raises ValueError: [description]"
+  },
+  {
+    "keyword": "Add Link",
+    "arguments": "",
+    "description": "Create a new internal link"
+  },
+  {
+    "keyword": "Add Page",
+    "arguments": "orientation=",
+    "description": "Start a new page"
+  },
+  {
+    "keyword": "Add Pages",
+    "arguments": "pages: int = 1",
+    "description": "Adds pages into PDF documents. :param pages: number of pages to add, defaults to 1"
+  },
+  {
+    "keyword": "Add Pages To Document",
+    "arguments": "pages: int = 1,source_pdf: str = None,target_pdf: str = None",
+    "description": "Add empty pages into current source document :param pages: number of pages to add, defaults to 1 :param source_pdf: filepath to the source pdf :param target_pdf: filename to the target pdf, stored by default to output_directory"
+  },
+  {
+    "keyword": "Alias Nb Pages",
+    "arguments": "alias={nb}",
+    "description": "Define an alias for total number of pages"
+  },
+  {
+    "keyword": "Cell",
+    "arguments": "w,h=0,txt=,border=0,ln=0,align=,fill=0,link=",
+    "description": "Output a cell"
+  },
+  {
+    "keyword": "Check Page",
+    "arguments": "",
+    "description": "Decorator to protect drawing methods"
+  },
+  {
+    "keyword": "Close",
+    "arguments": "",
+    "description": "Terminate document"
+  },
+  {
+    "keyword": "Close All Pdf Documents",
+    "arguments": "",
+    "description": "Close all opened PDF file descriptors."
+  },
+  {
+    "keyword": "Close Pdf Document",
+    "arguments": "source_pdf: str = None",
+    "description": "Close PDF file descriptor for certain file. :param source_pdf: filepath :raises ValueError: if file descriptor for the file is not found"
+  },
+  {
+    "keyword": "Code 39",
+    "arguments": "txt,x,y,w=1.5,h=5.0",
+    "description": "Barcode 3of9"
+  },
+  {
+    "keyword": "Dashed Line",
+    "arguments": "x1,y1,x2,y2,dash_length=1,space_length=1",
+    "description": "Draw a dashed line. Same interface as line() except: dash_length: Length of the dash space_length: Length of the space between dashes"
+  },
+  {
+    "keyword": "Dump Pdf As Xml",
+    "arguments": "source_pdf: str = None",
+    "description": "Get PDFMiner format XML dump of the PDF :param source_pdf: filepath :return: XML content"
+  },
+  {
+    "keyword": "Ellipse",
+    "arguments": "x,y,w,h,style=",
+    "description": "Draw a ellipse"
+  },
+  {
+    "keyword": "Error",
+    "arguments": "msg",
+    "description": "Fatal error"
+  },
+  {
+    "keyword": "Extract Pages From Pdf",
+    "arguments": "source_pdf: str = None,target_pdf: str = None,pages: typing.Any = None",
+    "description": "Extract pages from source PDF and save to target PDF document. Page numbers starting from 1. :param source_pdf: filepath to the source pdf :param target_pdf: filename to the target pdf, stored by default to output_directory :param pages: page numbers to extract from PDF (numbers start from 0) if None then extracts all pages"
+  },
+  {
+    "keyword": "Footer",
+    "arguments": "",
+    "description": "Footer to be implemented in your own inherited class"
+  },
+  {
+    "keyword": "Get All Figures",
+    "arguments": "",
+    "description": "Return all figures in the PDF document. PDF needs to be parsed before elements can be found. :return: dictionary of figures divided into pages"
+  },
+  {
+    "keyword": "Get Info",
+    "arguments": "source_pdf: str = None",
+    "description": "Get information from PDF document. :param source_pdf: filepath to the source pdf :return: dictionary of PDF information"
+  },
+  {
+    "keyword": "Get Input Fields",
+    "arguments": "source_pdf: str = None,replace_none_value: bool = False",
+    "description": "Get input fields in the PDF. Stores input fields internally so that they can be used without parsing PDF again. Parameter replace_none_value is for convience to visualize fields. :param source_pdf: source filepath, defaults to None :param replace_none_value: if value is None replace it with key name, defaults to False :return: dictionary of input key values or None"
+  },
+  {
+    "keyword": "Get Number Of Pages",
+    "arguments": "source_pdf: str = None",
+    "description": "Get number of pages in the document. :param source_pdf: filepath to the source pdf :raises PdfReadError: if file is encrypted or other restrictions are in place"
+  },
+  {
+    "keyword": "Get Output Directory",
+    "arguments": "",
+    "description": "Get output directory where target files are saved to. :return: absolute filepath as string"
+  },
+  {
+    "keyword": "Get String Width",
+    "arguments": "s",
+    "description": "Get width of a string in the current font"
+  },
+  {
+    "keyword": "Get Text From Pdf",
+    "arguments": "source_pdf: str = None,pages: typing.Any = None",
+    "description": "Get text from set of pages in source PDF document. PDF needs to be parsed before text can be read. :param source_pdf: filepath to the source pdf :param pages: page numbers to get text (numbers start from 0) :return: dictionary of pages and their texts"
+  },
+  {
+    "keyword": "Get Value From Anchor",
+    "arguments": "locator: str,pagenum: int = 1,direction: str = right,strict: bool = False,regexp: str = None",
+    "description": "Get closest text (value) to anchor element. PDF needs to be parsed before elements can be found. :param locator: element to set anchor to :param pagenum: page number where search if performed on, default 1 (first) :param direction: in which direction to search for text, directions 'top', 'bottom', 'left' or 'right', defaults to 'right' :param strict: if element margins should be used for matching points, used when direction is 'top' or 'bottom', default False :param regexp: expected format of value to match, defaults to None :return: closest matching text or None"
+  },
+  {
+    "keyword": "Get X",
+    "arguments": "",
+    "description": "Get x position"
+  },
+  {
+    "keyword": "Get Y",
+    "arguments": "",
+    "description": "Get y position"
+  },
+  {
+    "keyword": "Header",
+    "arguments": "",
+    "description": "Header to be implemented in your own inherited class"
+  },
+  {
+    "keyword": "Html To Pdf",
+    "arguments": "content: str = None,filename: str = None,variables: dict = None,create_dirs: bool = True,exists_ok: bool = True",
+    "description": "Use HTML content to generate PDF file. :param content: HTML content :param filename: filepath where to save PDF document :param variables: dictionary of variables to fill into template, defaults to {} :param create_dirs: directory structure is created if it is missing, default True :param exists_ok: file is overwritten if it exists, default True"
+  },
+  {
+    "keyword": "Image",
+    "arguments": "name,x=None,y=None,w=0,h=0,type=,link=",
+    "description": "Put an image on the page"
+  },
+  {
+    "keyword": "Interleaved 2 Of 5",
+    "arguments": "txt,x,y,w=1.0,h=10.0",
+    "description": "Barcode I2of5 (numeric), adds a 0 if odd lenght"
+  },
+  {
+    "keyword": "Is Pdf Encrypted",
+    "arguments": "source_pdf: str = None",
+    "description": "Check if PDF is encrypted. Returns True even if PDF was decrypted. :param source_pdf: filepath to the source pdf :return: True if file is encrypted"
+  },
+  {
+    "keyword": "Line",
+    "arguments": "x1,y1,x2,y2",
+    "description": "Draw a line"
+  },
+  {
+    "keyword": "Link",
+    "arguments": "x,y,w,h,link",
+    "description": "Put a link on the page"
+  },
+  {
+    "keyword": "Ln",
+    "arguments": "h=",
+    "description": "Line Feed; default value is last cell height"
+  },
+  {
+    "keyword": "Multi Cell",
+    "arguments": "w,h,txt=,border=0,align=J,fill=0,split_only=False",
+    "description": "Output text with automatic or explicit line breaks"
+  },
+  {
+    "keyword": "Normalize Text",
+    "arguments": "txt",
+    "description": "Check that text input is in the correct format/encoding"
+  },
+  {
+    "keyword": "Open",
+    "arguments": "",
+    "description": "Begin document"
+  },
+  {
+    "keyword": "Open Pdf Document",
+    "arguments": "source_pdf: str = None",
+    "description": "Open PDF document. Also opens file for reading. :param source_pdf: filepath to the source pdf :raises ValueError: if PDF is already open"
+  },
+  {
+    "keyword": "Output",
+    "arguments": "name=,dest=",
+    "description": "Output PDF to some destination"
+  },
+  {
+    "keyword": "Page No",
+    "arguments": "",
+    "description": "Get current page number"
+  },
+  {
+    "keyword": "Page Rotate",
+    "arguments": "pages: int,source_pdf: str = None,target_pdf: str = None,clockwise: bool = True,angle: int = 90",
+    "description": "Rotate pages in source PDF document and save to target PDF document. :param source_pdf: filepath to the source pdf :param target_pdf: filename to the target pdf, stored by default to output_directory :param pages: page numbers to extract from PDF (numbers start from 0) :param clockwise: directorion that page will be rotated to, default True :param angle: number of degrees to rotate, default 90"
+  },
+  {
+    "keyword": "Parse Pdf",
+    "arguments": "source_pdf: str = None",
+    "description": "Parse source PDF into entities which can be used for text searches for example. :param source_pdf: source"
+  },
+  {
+    "keyword": "Pdf Decrypt",
+    "arguments": "source_pdf: str = None,target_pdf: str = None,password: str = None",
+    "description": "Decrypt PDF with password. :param source_pdf: filepath to the source pdf :param target_pdf: filepath to the decrypted pdf :param password: password as a string :return: True if decrypt was successful, else False or Exception :raises ValueError: on decryption errors"
+  },
+  {
+    "keyword": "Pdf Encrypt",
+    "arguments": "source_pdf: str = None,target_pdf: str = None,user_pwd: str = ,owner_pwd: str = None,use_128bit: bool = True",
+    "description": "Encrypt PDF document. :param source_pdf: filepath to the source pdf :param target_pdf: filename to the target pdf, stored by default to output_directory :param user_pwd: allows opening and reading PDF with restrictions :param owner_pwd: allows opening PDF without any restrictions, by default same user_pwd :param use_128bit: whether to 128bit encryption, when false 40bit encryption is used, default True"
+  },
+  {
+    "keyword": "Rect",
+    "arguments": "x,y,w,h,style=",
+    "description": "Draw a rectangle"
+  },
+  {
+    "keyword": "Replace Text",
+    "arguments": "text: str,replace: str",
+    "description": "Replace text content with something else in the PDF. :param text: this text will be replaced :param replace: used to replace text"
+  },
+  {
+    "keyword": "Rotate",
+    "arguments": "angle,x=None,y=None",
+    "description": ""
+  },
+  {
+    "keyword": "Save Pdf",
+    "arguments": "source: str = None,target: str = None,use_modified_reader: bool = False",
+    "description": "Save current over itself or to target_pdf :param source: filepath to source PDF :param target: filepath to target PDF :param use_modified_reader: needs to be set to True if using modified PDF reader"
+  },
+  {
+    "keyword": "Set Anchor To Element",
+    "arguments": "locator: str",
+    "description": "Sets anchor point in the document for further searches. PDF needs to be parsed before elements can be found. :param locator: element to search for :return: True if element was found"
+  },
+  {
+    "keyword": "Set Author",
+    "arguments": "author",
+    "description": "Author of document"
+  },
+  {
+    "keyword": "Set Auto Page Break",
+    "arguments": "auto,margin=0",
+    "description": "Set auto page break mode and triggering margin"
+  },
+  {
+    "keyword": "Set Compression",
+    "arguments": "compress",
+    "description": "Set page compression"
+  },
+  {
+    "keyword": "Set Creator",
+    "arguments": "creator",
+    "description": "Creator of document"
+  },
+  {
+    "keyword": "Set Display Mode",
+    "arguments": "zoom,layout=continuous",
+    "description": "Set display mode in viewer The \"zoom\" argument may be 'fullpage', 'fullwidth', 'real', 'default', or a number, interpreted as a percentage."
+  },
+  {
+    "keyword": "Set Draw Color",
+    "arguments": "r,g=-1,b=-1",
+    "description": "Set color for all stroking operations"
+  },
+  {
+    "keyword": "Set Field Value",
+    "arguments": "field_name: str,value: typing.Any,save: bool = False",
+    "description": "Set value for field with given name. Tries to match on field identifier and its label. Exception is thrown if field can't be found or more than 1 field matches the given field_name. :param field_name: field to update :param value: new value for the field"
+  },
+  {
+    "keyword": "Set Fill Color",
+    "arguments": "r,g=-1,b=-1",
+    "description": "Set color for all filling operations"
+  },
+  {
+    "keyword": "Set Font",
+    "arguments": "family,style=,size=0",
+    "description": "Select a font; size given in points"
+  },
+  {
+    "keyword": "Set Font Size",
+    "arguments": "size",
+    "description": "Set font size in points"
+  },
+  {
+    "keyword": "Set Keywords",
+    "arguments": "keywords",
+    "description": "Keywords of document"
+  },
+  {
+    "keyword": "Set Left Margin",
+    "arguments": "margin",
+    "description": "Set left margin"
+  },
+  {
+    "keyword": "Set Line Width",
+    "arguments": "width",
+    "description": "Set line width"
+  },
+  {
+    "keyword": "Set Link",
+    "arguments": "link,y=0,page=-1",
+    "description": "Set destination of internal link"
+  },
+  {
+    "keyword": "Set Margins",
+    "arguments": "left,top,right=-1",
+    "description": "Set left, top and right margins"
+  },
+  {
+    "keyword": "Set Output Directory",
+    "arguments": "outdir: str = .",
+    "description": "Set output directory where target files are saved to. :param outdir: output directory path, default to current directory"
+  },
+  {
+    "keyword": "Set Right Margin",
+    "arguments": "margin",
+    "description": "Set right margin"
+  },
+  {
+    "keyword": "Set Subject",
+    "arguments": "subject",
+    "description": "Subject of document"
+  },
+  {
+    "keyword": "Set Text Color",
+    "arguments": "r,g=-1,b=-1",
+    "description": "Set color for text"
+  },
+  {
+    "keyword": "Set Title",
+    "arguments": "title",
+    "description": "Title of document"
+  },
+  {
+    "keyword": "Set Top Margin",
+    "arguments": "margin",
+    "description": "Set top margin"
+  },
+  {
+    "keyword": "Set X",
+    "arguments": "x",
+    "description": "Set x position"
+  },
+  {
+    "keyword": "Set Xy",
+    "arguments": "x,y",
+    "description": "Set x and y positions"
+  },
+  {
+    "keyword": "Set Y",
+    "arguments": "y",
+    "description": "Set y position and reset x"
+  },
+  {
+    "keyword": "Switch To Pdf Document",
+    "arguments": "source_pdf: str = None",
+    "description": "Switch library's current fileobject to already open file or open file if not opened. :param source_pdf: filepath :raises ValueError: if PDF filepath is not given and there are no active file to activate"
+  },
+  {
+    "keyword": "Template Html To Pdf",
+    "arguments": "template: str = None,filename: str = None,variables: dict = None,create_dirs: bool = True,exists_ok: bool = True",
+    "description": "Use HTML template file to generate PDF file. :param template: filepath to HTML template :param filename: filepath where to save PDF document :param variables: dictionary of variables to fill into template, defaults to {} :param create_dirs: directory structure is created if it is missing, default True :param exists_ok: file is overwritten if it exists, default True"
+  },
+  {
+    "keyword": "Text",
+    "arguments": "x,y,txt=",
+    "description": "Output a string"
+  },
+  {
+    "keyword": "Update Field Values",
+    "arguments": "source_pdf: str = None,target_pdf: str = None,newvals: dict = None",
+    "description": "Update field values in PDF if it has fields. :param source_pdf: source PDF with fields to update :param target_pdf: updated target PDF :param newvals: dictionary with key values to update"
+  },
+  {
+    "keyword": "Write",
+    "arguments": "h,txt=,link=",
+    "description": "Output text in flowing mode"
+  },
+  {
+    "keyword": "Write Html",
+    "arguments": "text,image_map=None",
+    "description": "Parse HTML and convert it to PDF"
+  }
+]

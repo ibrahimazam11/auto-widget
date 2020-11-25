@@ -1,0 +1,17 @@
+[
+  {
+    "keyword": "Clear Clipboard",
+    "arguments": "",
+    "description": "Clear clipboard contents"
+  },
+  {
+    "keyword": "Copy To Clipboard",
+    "arguments": "text",
+    "description": "Copy text to clipboard :param text: to copy"
+  },
+  {
+    "keyword": "Paste From Clipboard",
+    "arguments": "",
+    "description": "Paste text from clipboard :return: text"
+  }
+]

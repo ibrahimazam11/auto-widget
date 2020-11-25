@@ -1,0 +1,12 @@
+[
+  {
+    "keyword": "Executable",
+    "arguments": "browser: str,download: bool = False",
+    "description": "Get path to webdriver executable, and download it if requested. :param browser: name of browser to get webdriver for :param download: download driver binaries if they don't exist"
+  },
+  {
+    "keyword": "Start",
+    "arguments": "name: str,**options",
+    "description": "Start a Selenium webdriver."
+  }
+]

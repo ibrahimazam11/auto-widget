@@ -1,0 +1,97 @@
+[
+  {
+    "keyword": "Abort",
+    "arguments": "",
+    "description": "Abort a file transfer in progress"
+  },
+  {
+    "keyword": "Close",
+    "arguments": "",
+    "description": "Close connection to the server unilaterally"
+  },
+  {
+    "keyword": "Connect",
+    "arguments": "host: str,port: int = 21,user: str = None,password: str = None,tls: bool = False,transfer: str = passive",
+    "description": "Connect to FTP server :param host: address of the server :param port: port of the server, defaults to 21 :param user: login name, defaults to None :param password: login password, defaults to None :param tls: connect using TLS support, defaults to False :param transfer: mode of the transfer, defaults to \"passive\" :raises AuthenticationException: on authentication error with the server"
+  },
+  {
+    "keyword": "Cwd",
+    "arguments": "dirname: str",
+    "description": "Change working directory on the server :param dirname: name of the directory"
+  },
+  {
+    "keyword": "Delete",
+    "arguments": "filepath: str",
+    "description": "Delete file on the server :param filepath: path to server file"
+  },
+  {
+    "keyword": "Download",
+    "arguments": "remotefile: str,localfile: str = None",
+    "description": "Download file from FTP server :param remotefile: path to remote file on the server :param localfile: name of the downloaded file on the local filesystem, if None will have same name as remote file"
+  },
+  {
+    "keyword": "File Size",
+    "arguments": "filepath: str",
+    "description": "Return byte size of the file on the server :param filepath: path to server file"
+  },
+  {
+    "keyword": "Get Welcome Message",
+    "arguments": "",
+    "description": "Get server welcome message :return: welcome message"
+  },
+  {
+    "keyword": "List Files",
+    "arguments": "dirname: str = None",
+    "description": "List files on the server directory :param dirname: name of the directory"
+  },
+  {
+    "keyword": "Mkd",
+    "arguments": "dirname: str",
+    "description": "Create a new directory on the server :param dirname: name of the directory"
+  },
+  {
+    "keyword": "Pwd",
+    "arguments": "",
+    "description": "Get current working directory on the server"
+  },
+  {
+    "keyword": "Quit",
+    "arguments": "",
+    "description": "Send QUIT command to the server and close connection"
+  },
+  {
+    "keyword": "Rename",
+    "arguments": "fromname: str,toname: str",
+    "description": "Rename file on the server :param fromname: current name of the file :param toname: new name for the file"
+  },
+  {
+    "keyword": "Rmd",
+    "arguments": "dirname: str",
+    "description": "Remove directory on the server :param dirname: name of the directory"
+  },
+  {
+    "keyword": "Send Command",
+    "arguments": "command: str",
+    "description": "Execute command on the server List of FTP commands https://en.wikipedia.org/wiki/List_of_FTP_commands :param command: name of the command to send"
+  },
+  {
+    "keyword": "Set Ascii Mode",
+    "arguments": "",
+    "description": "Set transfer mode to ASCII"
+  },
+  {
+    "keyword": "Set Binary Mode",
+    "arguments": "",
+    "description": "Set transfer mode to BINARY"
+  },
+  {
+    "keyword": "Set Debug Level",
+    "arguments": "level: int = 0",
+    "description": "Set debug level for the library 0 - no debugging output 1 - moderate amount of debugging 2+ - higher amount of debugging :param level: integer value of debug level, defaults to 0"
+  },
+  {
+    "keyword": "Upload",
+    "arguments": "localfile: str,remotefile: str",
+    "description": "Upload file to FTP server :param localfile: path to file to upload :param remotefile: name of uploaded file in the server"
+  }
+]

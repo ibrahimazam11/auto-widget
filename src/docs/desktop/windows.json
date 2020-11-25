@@ -1,0 +1,267 @@
+[
+  {
+    "keyword": "Boot Time In Seconds From Epoch",
+    "arguments": "",
+    "description": "Get machine boot time :return: boot time in seconds from Epoch Example: .. code-block:: robotframework ${epoch} Boot Time In Seconds From Epoch"
+  },
+  {
+    "keyword": "Calculate Rectangle Center",
+    "arguments": "rectangle: typing.Any",
+    "description": "Calculate x and y center coordinates from rectangle. :param rectangle: element rectangle coordinates :return: x and y coordinates of rectangle center Example: .. code-block:: robotframework Open Using Run Dialog calc Calculator &{rect}= Get Element Rectangle CalculatorResults ${x} ${y}= Calculate Rectangle Center ${rect}"
+  },
+  {
+    "keyword": "Click Type",
+    "arguments": "x: int = None,y: int = None,click_type: str = click",
+    "description": "Mouse click on coordinates x and y. Default click type is click meaning left :param x: horizontal coordinate for click, defaults to None :param y: vertical coordinate for click, defaults to None :param click_type: \"click\", \"right\" or \"double\", defaults to \"click\" :raises ValueError: if coordinates are not valid Example: .. code-block:: robotframework Click Type x=450 y=100 Click Type x=450 y=100 click_type=right Click Type x=450 y=100 click_type=double"
+  },
+  {
+    "keyword": "Close All Applications",
+    "arguments": "",
+    "description": "Close all applications Example: .. code-block:: robotframework Open Application Excel Open Application Word Open Executable notepad.exe Untitled - Notepad Close All Applications"
+  },
+  {
+    "keyword": "Connect By Handle",
+    "arguments": "handle: str,windowtitle: str = None,existing_app: bool = False",
+    "description": "Connect to application by its handle :param handle: handle of the application Example: .. code-block:: robotframework ${appid} Connect By Handle 88112"
+  },
+  {
+    "keyword": "Connect By Pid",
+    "arguments": "app_pid: str,windowtitle: str = None",
+    "description": "Connect to application by its pid :param app_pid: process id of the application Example: .. code-block:: robotframework ${appid} Connect By PID 3231"
+  },
+  {
+    "keyword": "Drag And Drop",
+    "arguments": "src: typing.Any,target: typing.Any,src_locator: str,target_locator: str = None,handle_ctrl_key: bool = False,drop_delay: float = 2.0",
+    "description": "Drag elements from source and drop them on target. Please note that if CTRL is not pressed down during drag and drop then operation is MOVE operation, on CTRL down the operation is COPY operation. There will be also overwrite notification if dropping over existing files. :param src: application object or instance id :param target: application object or instance id :param src_locator: elements to move :param handle_ctrl_key: True if keyword should press CTRL down dragging :param drop_delay: how many seconds to wait until releasing mouse drop, default 2.0 :raises ValueError: on validation errors Example: .. code-block:: robotframework ${app1}= Open Using Run Dialog explorer.exe{VK_SPACE}C:\\workfiles\\movethese movethese ${app2}= Open Using Run Dialog wordpad.exe Document - WordPad Drag And Drop ${app1} ${app2} regexp:testfile_\\d.txt name:Rich Text Window handle_ctrl_key=${True} Drag And Drop ${app1} ${app1} regexp:testfile_\\d.txt name:subdir handle_ctrl_key=${True}"
+  },
+  {
+    "keyword": "Find Element",
+    "arguments": "locator: str,search_criteria: str = None",
+    "description": "Find element from window by locator and criteria. :param locator: name of the locator :param search_criteria: criteria by which element is matched :return: list of matching elements and locators that were found on the window Example: .. code-block:: robotframework @{elements} Find Element CalculatorResults Log Many ${elements[0]} # list of matching elements Log Many ${elements[1]} # list of all available locators"
+  },
+  {
+    "keyword": "Get App",
+    "arguments": "app_id: int = None",
+    "description": "Get application object by id By default returns active_application application object. :param app_id: id of the application to get, defaults to None :return: application object Example: .. code-block:: robotframework ${app1} Open Application Excel &{appdetails} Get App ${app1}"
+  },
+  {
+    "keyword": "Get Boot Time",
+    "arguments": "as_datetime: bool = False,datetime_format: str = %Y-%m-%d %H:%M:%S",
+    "description": "Get computer boot time in seconds from Epoch or in datetime string. :param as_datetime: if True returns datetime string, otherwise seconds, defaults to False :param datetime_format: datetime string format, defaults to \"%Y-%m-%d %H:%M:%S\" :return: seconds from Epoch or datetime string Example: .. code-block:: robotframework ${boottime} Get Boot Time ${boottime} Get Boot Time as_datetime=True ${boottime} Get Boot Time as_datetime=True datetime_format=%d.%m.%Y"
+  },
+  {
+    "keyword": "Get Dialog Rectangle",
+    "arguments": "ctrl: typing.Any = None,as_dict: bool = False",
+    "description": "Get dialog rectangle coordinates If ctrl is None then get coordinates from dialog :param ctrl: name of the window control object, defaults to None :return: coordinates: left, top, right, bottom Example: .. code-block:: robotframework ${left} ${top} ${right} ${bottom}= Get Dialog Rectangle &{coords} Get Dialog Rectangle as_dict=True Log top=${coords.top} left=${coords.left}"
+  },
+  {
+    "keyword": "Get Element",
+    "arguments": "locator: str,screenshot: bool = False",
+    "description": "Get element by locator. :param locator: name of the locator :param screenshot: takes element screenshot if True, defaults to False :return: element if element was identified, else False Example: .. code-block:: robotframework ${element} Get Element CalculatorResults ${element} Get Element Result screenshot=True"
+  },
+  {
+    "keyword": "Get Element Center",
+    "arguments": "element: dict",
+    "description": "Get element center coordinates :param element: dictionary of element items :return: coordinates, x and y Example: .. code-block:: robotframework @{element} Find Element CalculatorResults ${x} ${y}= Get Element Center ${elements[0][0]}"
+  },
+  {
+    "keyword": "Get Element Rectangle",
+    "arguments": "locator: str,as_dict: bool = False",
+    "description": "Get value of element rectangle attribute. :param locator: element locator :param as_dict: return values in a dictionary, default False :return: (left, top, right, bottom) values if found, else False Example: .. code-block:: robotframework ${left} ${top} ${right} ${bottom}= Get Element Rectangle CalculatorResults &{coords} Get Element Rectangle CalculatorResults as_dict=True Log top=${coords.top} left=${coords.left}"
+  },
+  {
+    "keyword": "Get Element Rich Text",
+    "arguments": "locator: str",
+    "description": "Get value of element rich text attribute. :param locator: element locator :return: rich_text value if found, else False Example: .. code-block:: robotframework ${text} Get Element Rich Text CalculatorResults"
+  },
+  {
+    "keyword": "Get Machine Name",
+    "arguments": "",
+    "description": "Get machine name :return: machine name as string Example: .. code-block:: robotframework ${machine} Get Machine Name"
+  },
+  {
+    "keyword": "Get Memory Stats",
+    "arguments": "humanized: bool = True",
+    "description": "Get computer memory stats and return those in bytes or in humanized memory format. :param humanized: if False returns memory information in bytes, defaults to True :return: memory information in dictionary format Example: .. code-block:: robotframework &{mem} Get Memory Stats &{mem} Get Memory Stats humanized=False"
+  },
+  {
+    "keyword": "Get Open Applications",
+    "arguments": "",
+    "description": "Get list of all open applications Returns a dictionary Example: .. code-block:: robotframework ${app1} Open Application Excel ${app2} Open Executable calc.exe Calculator ${app3} Open File /path/to/myfile.txt &{apps} Get Open Applications"
+  },
+  {
+    "keyword": "Get Spaced String",
+    "arguments": "text",
+    "description": "Replace spaces in a text with pywinauto.keyboard space characters {VK_SPACE} :param text: replace spaces in this string Example: .. code-block:: robotframework ${txt} Get Spaced String My name is Bond # ${txt} = My{VK_SPACE}name{VK_SPACE}is{VK_SPACE}Bond"
+  },
+  {
+    "keyword": "Get Text",
+    "arguments": "locator: str",
+    "description": "Get text from element :param locator: element locator Example: .. code-block:: robotframework Open Using Run Dialog calc Calculator Type Into CalculatorResults 11 Type Into CalculatorResults 55 &{val} Get Text CalculatorResults"
+  },
+  {
+    "keyword": "Get Username",
+    "arguments": "",
+    "description": "Get username of logged in user :return: username as string Example: .. code-block:: robotframework ${user} Get Username"
+  },
+  {
+    "keyword": "Get Window Elements",
+    "arguments": "screenshot: bool = False,element_json: bool = False,outline: bool = False",
+    "description": "Get element information about all window dialog controls and their descendants. :param screenshot: save element screenshot if True, defaults to False :param element_json: save element json if True, defaults to False :param outline: highlight elements if True, defaults to False :return: all controls and all elements Example: .. code-block:: robotframework @{elements} Get Window Elements Log Many ${elements[0]} # list of all available locators Log Many ${elements[1]} # list of matching elements @{elements} Get Window Elements screenshot=True element_json=True outline=True"
+  },
+  {
+    "keyword": "Get Window List",
+    "arguments": "",
+    "description": "Get list of open windows Window dictionaries contain: title pid handle :return: list of window dictionaries Example: .. code-block:: robotframework @{windows} Get Window List FOR ${window} IN @{windows} Log Many ${window} END"
+  },
+  {
+    "keyword": "Is Element Enabled",
+    "arguments": "locator: str",
+    "description": "Is element enabled. :param locator: element locator :return: True if enabled, else False Example: .. code-block:: robotframework ${res}= Is Element Enabled CalculatorResults"
+  },
+  {
+    "keyword": "Is Element Matching",
+    "arguments": "itemdict: dict,locator: str,criteria: str,wildcard: bool = False",
+    "description": "Is element matching. Check if locator is found in any field or criteria field in the window items. :param itemDict: dictionary of element items :param locator: name of the locator :param criteria: criteria on which to match element :param wildcard: whether to do reg exp match or not, default False :return: True if element is matching locator and criteria, False if not"
+  },
+  {
+    "keyword": "Is Element Visible",
+    "arguments": "locator: str",
+    "description": "Is element visible. :param locator: element locator :return: True if visible, else False Example: .. code-block:: robotframework ${res}= Is Element Visible CalculatorResults"
+  },
+  {
+    "keyword": "Kill Process",
+    "arguments": "process_name: str",
+    "description": "Kill process by name :param process_name: name of the process :return: True if succeeds False if not Example: .. code-block:: robotframework ${process} Process Exists calc strict=False ${status} Kill Process ${process.name()}"
+  },
+  {
+    "keyword": "Kill Process By Pid",
+    "arguments": "pid: int",
+    "description": "Kill process by pid :param pid: process identifier Example: .. code-block:: robotframework ${process} Process Exists calc strict=False ${status} Kill Process ${process.pid}"
+  },
+  {
+    "keyword": "Lock Screen",
+    "arguments": "",
+    "description": "Put windows into lock mode Example: .. code-block:: robotframework Lock Screen"
+  },
+  {
+    "keyword": "Log In",
+    "arguments": "username: str,password: str,domain: str = .",
+    "description": "Log into Windows domain with username and password. :param username: name of the user :param password: password of the user :param domain: windows domain for the user, defaults to \".\" :return: handle Example: .. code-block:: robotframework Log In username=myname password=mypassword domain=company"
+  },
+  {
+    "keyword": "Menu Select",
+    "arguments": "menuitem: str",
+    "description": "Select item from menu :param menuitem: name of the menu item Example: .. code-block:: robotframework Open Using Run Dialog notepad Untitled - Notepad Menu Select File->Print"
+  },
+  {
+    "keyword": "Minimize Dialog",
+    "arguments": "windowtitle: str = None",
+    "description": "Minimize window by its title :param windowtitle: name of the window, default None means that active window is going to be minimized Example: .. code-block:: robotframework Open Using Run Dialog calc Calculator Open Using Run Dialog notepad Untitled - Notepad Minimize Dialog # Current window (Notepad) Minimize Dialog Calculator"
+  },
+  {
+    "keyword": "Mouse Click",
+    "arguments": "locator: str = None,x: int = 0,y: int = 0,off_x: int = 0,off_y: int = 0,image: str = None,method: str = locator,ctype: str = click,**kwargs",
+    "description": "Mouse click locator, coordinates, or image When using method locator,image or ocr mouse is clicked by default at center coordinates. Click types are: click normal left button mouse click double right :param locator: element locator on active window :param x: coordinate x on desktop :param y: coordinate y on desktop :param off_x: offset x (used for locator and image clicks) :param off_y: offset y (used for locator and image clicks) :param image: image to click on desktop :param method: one of the available methods to mouse click, default \"locator\" :param ctype: type of mouse click :param **kwargs: these keyword arguments can be used to pass arguments to underlying Images library to finetune image template matching, for example. tolerance=0.5 would adjust image tolerance for the image matching Example: .. code-block:: robotframework Mouse Click method=coordinates 100 100 Mouse Click CalculatorResults Mouse Click method=image image=myimage.png off_x=10 off_y=10 ctype=right Mouse Click method=image image=myimage.png tolerance=0.8"
+  },
+  {
+    "keyword": "Mouse Click Coords",
+    "arguments": "x: int,y: int,ctype: str = click,delay_time: float = None",
+    "description": "Click at coordinates on desktop :param x: horizontal coordinate on the windows to click :param y: vertical coordinate on the windows to click :param ctype: click type \"click\", \"right\" or \"double\", defaults to \"click\" :param delay: delay in seconds after, default is no delay Example: .. code-block:: robotframework Mouse Click Coords x=450 y=100 Mouse Click Coords x=300 y=300 ctype=right Mouse Click Coords x=450 y=100 delay=5.0"
+  },
+  {
+    "keyword": "Mouse Click Image",
+    "arguments": "template: str,off_x: int = 0,off_y: int = 0,ctype: str = click,**kwargs",
+    "description": "Click at template image on desktop :param image: image to click on desktop :param off_x: horizontal offset from top left corner to click on :param off_y: vertical offset from top left corner to click on :param ctype: type of mouse click :param **kwargs: these keyword arguments can be used to pass arguments to underlying Images library to finetune image template matching, for example. tolerance=0.5 would adjust image tolerance for the image matching Example: .. code-block:: robotframework Mouse Click image=myimage.png off_x=10 off_y=10 ctype=right Mouse Click image=myimage.png tolerance=0.8"
+  },
+  {
+    "keyword": "Open Application",
+    "arguments": "application: str",
+    "description": "Open application by dispatch method This keyword is used to launch Microsoft applications like Excel, Word, Outlook and Powerpoint. :param application: name of the application as str :return: application instance id Example: .. code-block:: robotframework ${app1} Open Application Excel ${app2} Open Application Word"
+  },
+  {
+    "keyword": "Open Dialog",
+    "arguments": "windowtitle: str = None,highlight: bool = False,timeout: int = 10,existing_app: bool = False",
+    "description": "Open window by its title. :param windowtitle: name of the window, defaults to active window if None :param highlight: draw outline for window if True, defaults to False :param timeout: time to wait for dialog to appear Example: .. code-block:: robotframework Open Dialog Untitled - Notepad Open Dialog Untitled - Notepad highlight=True timeout=5"
+  },
+  {
+    "keyword": "Open Executable",
+    "arguments": "executable: str,windowtitle: str,backend: str = None,work_dir: str = None",
+    "description": "Open Windows executable. Window title name is required to get handle on the application. :param executable: name of the executable :param windowtitle: name of the window :param backend: set Windows backend, default None means using library default value :param work_dir: path to working directory, default None :return: application instance id Example: .. code-block:: robotframework ${app1} Open Executable calc.exe Calculator"
+  },
+  {
+    "keyword": "Open File",
+    "arguments": "filename: str",
+    "description": "Open associated application when opening file :param filename: path to file :return: True if application is opened, False if not Example: .. code-block:: robotframework ${app1} Open File /path/to/myfile.txt"
+  },
+  {
+    "keyword": "Open From Search",
+    "arguments": "executable: str,windowtitle: str",
+    "description": "Open application using Windows search dialog. Window title name is required to get handle on the application. :param executable: name of the executable :param windowtitle: name of the window :return: application instance id Example: .. code-block:: robotframework ${app1} Open From Search calculator Calculator"
+  },
+  {
+    "keyword": "Open Using Run Dialog",
+    "arguments": "executable: str,windowtitle: str",
+    "description": "Open application using Windows run dialog. Window title name is required to get handle on the application. :param executable: name of the executable :param windowtitle: name of the window :return: application instance id Example: .. code-block:: robotframework ${app1} Open Using Run Dialog notepad Untitled - Notepad"
+  },
+  {
+    "keyword": "Process Exists",
+    "arguments": "process_name: str,strict: bool = True",
+    "description": "Check if process exists by its name :param process_name: search for this process :param strict: defines how match is made, default True which means that process name needs to be exact match and False does inclusive matching :return: process instance or False Example: .. code-block:: robotframework ${process} Process Exists calc ${process} Process Exists calc strict=False"
+  },
+  {
+    "keyword": "Put System To Sleep",
+    "arguments": "",
+    "description": "Put Windows into sleep mode Example: .. code-block:: robotframework Put System To Sleep"
+  },
+  {
+    "keyword": "Quit Application",
+    "arguments": "app_id: str = None,send_keys: bool = False",
+    "description": "Quit an application by application id or active application if app_id is None. :param app_id: application_id, defaults to None Example: .. code-block:: robotframework ${app1} Open Application Excel ${app2} Open Application Word Quit Application ${app1}"
+  },
+  {
+    "keyword": "Restore Dialog",
+    "arguments": "windowtitle: str = None",
+    "description": "Restore window by its title :param windowtitle: name of the window, default None means that active window is going to be restored Example: .. code-block:: robotframework Open Using Run Dialog notepad Untitled - Notepad Minimize Dialog Sleep 1s Restore Dialog Sleep 1s Restore Dialog Untitled - Notepad"
+  },
+  {
+    "keyword": "Screenshot",
+    "arguments": "filename: str,element: dict = None,ctrl: typing.Any = None,desktop: bool = False,overwrite: bool = False",
+    "description": "Save screenshot into filename. :param filename: name of the file :param element: take element screenshot, defaults to None :param ctrl: take control screenshot, defaults to None :param desktop: take desktop screenshot if True, defaults to False :param overwrite: file is overwritten if True, defaults to False Example: .. code-block:: robotframework @{element} Find Element CalculatorResults Screenshot element.png ${elements[0][0]} Screenshot desktop.png desktop=True Screenshot desktop.png desktop=True overwrite=True"
+  },
+  {
+    "keyword": "Send Keys",
+    "arguments": "keys: str",
+    "description": "Send keys into active windows. :param keys: list of keys to send Example: .. code-block:: robotframework Open Executable calc.exe Calculator Send Keys 2{+}3="
+  },
+  {
+    "keyword": "Send Keys To Input",
+    "arguments": "keys_to_type: str,with_enter: bool = True,send_delay: float = 0.5,enter_delay: float = 1.5",
+    "description": "Send keys to windows and add ENTER if with_enter is True At the end of send_keys there is by default 0.5 second delay. At the end of ENTER there is by default 1.5 second delay. :param keys_to_type: keys to type into Windows :param with_enter: send ENTER if with_enter is True :param send_delay: delay after send_keys :param enter_delay: delay after ENTER Example: .. code-block:: robotframework ${txt} Get Spaced String My name is Bond, James Bond Send Keys To Input ${txt} with_enter=False Send Keys To Input {ENTER}THE send_delay=5.0 with_enter=False Send Keys To Input {VK_SPACE}-{VK_SPACE}END enter_delay=5.0"
+  },
+  {
+    "keyword": "Set Windows Backend",
+    "arguments": "backend: str",
+    "description": "Set Windows backend which is used to interact with Windows applications Allowed values defined by SUPPORTED_BACKENDS :param backend: name of the backend to use Example: .. code-block:: robotframework Set Windows Backend uia Open Executable calc.exe Calculator Set Windows Backend win32 Open Executable calc.exe Calculator"
+  },
+  {
+    "keyword": "Switch To Application",
+    "arguments": "app_id: int",
+    "description": "Switch to application by id. :param app_id: application's id :raises ValueError: if application is not found by given id Example: .. code-block:: robotframework ${app1} Open Application Excel ${app2} Open Application Word Switch To Application ${app1}"
+  },
+  {
+    "keyword": "Type Into",
+    "arguments": "locator: str,keys: str,empty_field: bool = False",
+    "description": "Type keys into element matched by given locator. :param locator: element locator :param keys: list of keys to type Example: .. code-block:: robotframework Open Executable calc.exe Calculator Type Into CalculatorResults 11 Type Into CalculatorResults 22 empty_field=True"
+  },
+  {
+    "keyword": "Type Keys",
+    "arguments": "keys: str",
+    "description": "Type keys into active window element. :param keys: list of keys to type Example: .. code-block:: robotframework Open Executable notepad.exe Untitled - Notepad Type Keys My text"
+  },
+  {
+    "keyword": "Wait For Element",
+    "arguments": "locator: str,search_criteria: str = None,timeout: float = 30.0,interval: float = 2.0",
+    "description": "Wait for element to appear into the window. Can return 1 or more elements matching locator, or raises ElementNotFoundError if element is not found within timeout. :param locator: name of the locator :param search_criteria: criteria by which element is matched :param timeout: defines how long to wait for element to appear, defaults to 30.0 seconds :param interval: how often to poll for element, defaults to 2.0 seconds (minimum is 0.5 seconds) Example: .. code-block:: robotframework @{elements} Wait For Element CalculatorResults @{elements} Wait For Element Results timeout=10 interval=1.5"
+  }
+]

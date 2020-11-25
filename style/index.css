@@ -15,8 +15,11 @@
   background-color: #eeeeee;
   padding: 16px 15px;
   height: 0.7em;
+  width: '100%';
   line-height: .5em;
   color: #424242;
+  font-size: large;
+  font-weight: 600;
   cursor: pointer;
   border-bottom: 1px solid #bdbdbd;
   border-top: 1px solid #ffffff;
@@ -32,19 +35,19 @@
   background-color: #fff;
   margin: 0px;
 }
-#tm:checked ~ .hiddentext {
+#archive:checked ~ .hiddentext {
   display: block;
   opacity: 1;
 }
-input#tm {
+input#archive {
   display: none;
   position: relative;
 }
-#tn:checked ~ .hiddentext {
+#browser:checked ~ .hiddentext {
   display: block;
   opacity: 1;
 }
-input#tn {
+input#browser {
   display: none;
   position: relative;
 }
@@ -53,6 +56,126 @@ input#tn {
   opacity: 1;
 }
 input#to {
+  display: none;
+  position: relative;
+}
+#database:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#database {
+  display: none;
+  position: relative;
+}
+#filesystem:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#filesystem {
+  display: none;
+  position: relative;
+}
+#ftp:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#ftp {
+  display: none;
+  position: relative;
+}
+#http:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#http {
+  display: none;
+  position: relative;
+}
+#images:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#images {
+  display: none;
+  position: relative;
+}
+#netsuite:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#netsuite {
+  display: none;
+  position: relative;
+}
+#notifier:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#notifier {
+  display: none;
+  position: relative;
+}
+#pdf:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#pdf {
+  display: none;
+  position: relative;
+}
+#robot:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#robot {
+  display: none;
+  position: relative;
+}
+#salesforce:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#salesforce {
+  display: none;
+  position: relative;
+}
+#sap:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#sap {
+  display: none;
+  position: relative;
+}
+#slack:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#slack {
+  display: none;
+  position: relative;
+}
+#tables:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#tables {
+  display: none;
+  position: relative;
+}
+#tasks:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#tasks {
+  display: none;
+  position: relative;
+}
+#twitter:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#twitter {
   display: none;
   position: relative;
 }

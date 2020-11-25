@@ -1,0 +1,67 @@
+[
+  {
+    "keyword": "Add New Sheet",
+    "arguments": "sheetname: str,tabname: str = None,create_workbook: bool = True",
+    "description": "Add new worksheet to workbook. Workbook is created by default if it does not exist. :param sheetname: name for sheet :param tabname: name for tab, defaults to None :param create_workbook: create workbook if True, defaults to True :raises ValueError: error is raised if workbook does not exist and create_workbook is False"
+  },
+  {
+    "keyword": "Add New Workbook",
+    "arguments": "",
+    "description": "Adds new workbook for Excel application"
+  },
+  {
+    "keyword": "Close Document",
+    "arguments": "save_changes: bool = False",
+    "description": "Close the active document (if open)."
+  },
+  {
+    "keyword": "Find First Available Row",
+    "arguments": "worksheet: typing.Any = None,row: int = 1,column: int = 1",
+    "description": "Find first available free row and cell :param worksheet: worksheet to handle, defaults to active worksheet if None :param row: starting row for search, defaults to 1 :param column: starting column for search, defaults to 1 :return: tuple (row, column) or (None, None) if not found"
+  },
+  {
+    "keyword": "Open Application",
+    "arguments": "visible: bool = False,display_alerts: bool = False",
+    "description": "Open the Excel application. :param visible: show window after opening :param display_alerts: show alert popups"
+  },
+  {
+    "keyword": "Open Workbook",
+    "arguments": "filename: str",
+    "description": "Open Excel by filename :param filename: path to filename"
+  },
+  {
+    "keyword": "Quit Application",
+    "arguments": "save_changes: bool = False",
+    "description": "Quit the application."
+  },
+  {
+    "keyword": "Read From Cells",
+    "arguments": "worksheet: typing.Any = None,row: int = None,column: int = None",
+    "description": "Read value from cell. :param worksheet: worksheet to handle, defaults to active worksheet if None :param row: target row, defaults to None :param column: target row, defaults to None :raises ValueError: if cell is not given"
+  },
+  {
+    "keyword": "Run Macro",
+    "arguments": "macro_name: str = None",
+    "description": "Run Excel macro with given name :param macro_name: macro to run"
+  },
+  {
+    "keyword": "Save Excel",
+    "arguments": "",
+    "description": "Saves Excel file"
+  },
+  {
+    "keyword": "Save Excel As",
+    "arguments": "filename: str,autofit: bool = False",
+    "description": "Save Excel with name if workbook is open :param filename: where to save file :param autofit: autofit cell widths if True, defaults to False"
+  },
+  {
+    "keyword": "Set Active Worksheet",
+    "arguments": "sheetname: str = None,sheetnumber: int = None",
+    "description": "Set active worksheet by either its sheet number or name :param sheetname: name of Excel sheet, defaults to None :param sheetnumber: index of Excel sheet, defaults to None"
+  },
+  {
+    "keyword": "Write To Cells",
+    "arguments": "worksheet: typing.Any = None,row: int = None,column: int = None,value: str = None,number_format: str = None,formula: str = None",
+    "description": "Write value, number_format and/or formula into cell. :param worksheet: worksheet to handle, defaults to active worksheet if None :param row: target row, defaults to None :param column: target row, defaults to None :param value: possible value to set, defaults to None :param number_format: possible number format to set, defaults to None :param formula: possible format to set, defaults to None :raises ValueError: if cell is not given"
+  }
+]
