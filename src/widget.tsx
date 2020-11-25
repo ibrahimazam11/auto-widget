@@ -13,7 +13,7 @@ const Libraries = (): JSX.Element => {
   console.log("here")
   let array = browser;
   const browserData = browser.map(br => (
-    <p style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+      <p className="hiddentext" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
   ))
   console.log(array)
   return (
@@ -23,8 +23,12 @@ const Libraries = (): JSX.Element => {
     <input type="text" name="search" />
       </label>
 
-      <h6>Browser</h6>
-      {browserData}
+      <div className="accordion">
+        <label htmlFor="tm" className="accordionitem">Browser <span className="arrow">&raquo;</span></label>
+        <input type="checkbox" id="tm"/>
+        {browserData}
+      </div>
+     
     </div>
   );
 };

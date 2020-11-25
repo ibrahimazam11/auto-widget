@@ -7,3 +7,55 @@
   justify-content: center;
   text-align: center;
 }
+
+/* Start CSS of the accordion */
+
+.accordion label {
+  display:block;
+  background-color: #eeeeee;
+  padding: 16px 15px;
+  height: 0.7em;
+  line-height: .5em;
+  color: #424242;
+  cursor: pointer;
+  border-bottom: 1px solid #bdbdbd;
+  border-top: 1px solid #ffffff;
+}
+.accordion p {
+  color: #424242;
+  padding: 10px;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  opacity: 0;
+  display: none;
+  text-align: left;
+  background-color: #fff;
+  margin: 0px;
+}
+#tm:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#tm {
+  display: none;
+  position: relative;
+}
+#tn:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#tn {
+  display: none;
+  position: relative;
+}
+#to:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#to {
+  display: none;
+  position: relative;
+}
+.arrow{
+  color: #666666;
+}
