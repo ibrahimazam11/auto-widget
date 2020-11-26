@@ -121,12 +121,17 @@ const Libraries = (): JSX.Element => {
       {arr.data}
     </div>
   ))
+
+  function change() {
+    alert("hello")
+  }
+
   return (
     <div style={{ overflowY: 'scroll', maxHeight: '100%', textAlign: 'left' }}>
 
       <label style={{ fontSize: '16px' }}>
         Search:
-    <input type="text" name="search" />
+    <input type="text" name="search" onChange={change}/>
       </label>
 
       {allData}
