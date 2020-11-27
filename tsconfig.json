@@ -37,7 +37,27 @@
     "src/docs/slack.json",
     "src/docs/Tables.json",
     "src/docs/Tasks.json",
-    "src/docs/Twitter.json"
+    "src/docs/Twitter.json",
+    "src/docs/cloud/aws.json",
+    "src/docs/cloud/azure.json",
+    "src/docs/cloud/google.json",
+    "src/docs/core/decorator.json",
+    "src/docs/core/helpers.json",
+    "src/docs/core/locators.json",
+    "src/docs/core/notebook.json",
+    "src/docs/core/types.json",
+    "src/docs/core/webdriver.json",
+    "src/docs/desktop/clipboard.json",
+    "src/docs/desktop/operatingsystem.json",
+    "src/docs/desktop/windows.json",
+    "src/docs/email/Exchange.json",
+    "src/docs/email/imapsmtp.json",
+    "src/docs/excel/application.json",
+    "src/docs/excel/files.json",
+    "src/docs/outlook/application.json",
+    "src/docs/robocloud/items.json",
+    "src/docs/robocloud/secrets.json",
+    "src/docs/word/application.json"
   ],
   "include": ["src/*"]
 }

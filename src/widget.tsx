@@ -21,6 +21,35 @@ import Tables from './docs/Tables.json';
 import Tasks from './docs/Tasks.json';
 import Twitter from './docs/Twitter.json';
 
+import aws from './docs/cloud/aws.json';
+import azure from './docs/cloud/azure.json';
+import google from './docs/cloud/google.json';
+
+import decorator from './docs/core/decorator.json';
+import helpers from './docs/core/helpers.json';
+import locators from './docs/core/locators.json';
+import notebook from './docs/core/notebook.json';
+import types from './docs/core/types.json';
+import webdriver from './docs/core/webdriver.json';
+
+import clipboard from './docs/desktop/clipboard.json';
+import operatingsystem from './docs/desktop/operatingsystem.json';
+import windows from './docs/desktop/windows.json';
+
+import exchange from './docs/email/Exchange.json';
+import imapsmtp from './docs/email/imapsmtp.json';
+
+import excelapp from './docs/excel/application.json';
+import files from './docs/excel/files.json';
+
+import outlookapp from './docs/outlook/application.json';
+
+import items from './docs/robocloud/items.json';
+import secrets from './docs/robocloud/secrets.json';
+
+import wordapp from './docs/word/application.json';
+
+
 /**
  * React component for a counter.
  *
@@ -114,6 +143,106 @@ const Libraries = (): JSX.Element => {
   ))
   array.push({ id: 'twitter', name: 'Twitter', data: twitterData })
 
+  const awsData = aws.map(br => (
+    <p className="hiddentext p-aws" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'aws', name: 'AWS', data: awsData })
+
+  const azureData = azure.map(br => (
+    <p className="hiddentext p-azure" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'azure', name: 'Azure', data: azureData })
+
+  const googleData = google.map(br => (
+    <p className="hiddentext p-google" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'google', name: 'Google', data: googleData })
+
+  const decoratorsData = decorator.map(br => (
+    <p className="hiddentext p-decorator" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'decorator', name: 'Decorator', data: decoratorsData })
+
+  const helpersData = helpers.map(br => (
+    <p className="hiddentext p-helpers" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'helpers', name: 'Helpers', data: helpersData })
+
+  const locatorsData = locators.map(br => (
+    <p className="hiddentext p-locators" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'locators', name: 'Locators', data: locatorsData })
+  
+  const notebookData = notebook.map(br => (
+    <p className="hiddentext p-notebook" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'notebook', name: 'Notebook', data: notebookData })
+  
+  const typesData = types.map(br => (
+    <p className="hiddentext p-types" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'types', name: 'Types', data: typesData })
+  
+  const webdriverData = webdriver.map(br => (
+    <p className="hiddentext p-webdriver" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'webdriver', name: 'Webdriver', data: webdriverData })
+  
+  const clipboardData = clipboard.map(br => (
+    <p className="hiddentext p-clipboard" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'clipboard', name: 'Clipboard', data: clipboardData })
+  
+  const operatingsystemData = operatingsystem.map(br => (
+    <p className="hiddentext p-operatingsystem" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'operatingsystem', name: 'Operating System', data: operatingsystemData })
+  
+  const windowsData = windows.map(br => (
+    <p className="hiddentext p-windows" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'windows', name: 'windows', data: windowsData })
+  
+  const exchangeData = exchange.map(br => (
+    <p className="hiddentext p-exchange" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'exchange', name: 'Exchange', data: exchangeData })
+  
+  const imapsmtpData = imapsmtp.map(br => (
+    <p className="hiddentext p-imapsmtp" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'imapsmtp', name: 'IMAP SMTP', data: imapsmtpData })
+
+  const excelappData = excelapp.map(br => (
+    <p className="hiddentext p-excelapp" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'excelapp', name: 'Excel Application', data: excelappData })
+  
+  const filesData = files.map(br => (
+    <p className="hiddentext p-files" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'files', name: 'Files', data: filesData })
+    
+  const outlookappData = outlookapp.map(br => (
+    <p className="hiddentext p-outlookapp" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'outlookapp', name: 'Outlook Application', data: outlookappData })
+    
+  const itemsData = items.map(br => (
+    <p className="hiddentext p-items" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'items', name: 'Items', data: itemsData })
+    
+  const secretsData = secrets.map(br => (
+    <p className="hiddentext p-secrets" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'secrets', name: 'Secrets', data: secretsData })
+    
+  const wordappData = wordapp.map(br => (
+    <p className="hiddentext p-wordapp" style={{ fontSize: '15px', textAlign: 'left' }}>{br.keyword}</p>
+  ))
+  array.push({ id: 'wordapp', name: 'Word Application', data: wordappData })
+    
 
   const allData = array.map((arr, i) => (
     <div key={i} className= {arr.name.toLowerCase( ) + ' accordion'} >

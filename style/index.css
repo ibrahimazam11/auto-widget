@@ -179,6 +179,168 @@ input#twitter {
   display: none;
   position: relative;
 }
+
+#aws:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#aws {
+  display: none;
+  position: relative;
+}
+#azure:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#azure {
+  display: none;
+  position: relative;
+}
+#google:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#google {
+  display: none;
+  position: relative;
+}
+#decorator:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#decorator {
+  display: none;
+  position: relative;
+}
+#helpers:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#helpers {
+  display: none;
+  position: relative;
+}
+#locators:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#locators {
+  display: none;
+  position: relative;
+}
+#notebook:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#notebook {
+  display: none;
+  position: relative;
+}
+#types:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#types {
+  display: none;
+  position: relative;
+}
+#webdriver:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#webdriver {
+  display: none;
+  position: relative;
+}
+#clipboard:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#clipboard {
+  display: none;
+  position: relative;
+}
+#operatingsystem:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#operatingsystem {
+  display: none;
+  position: relative;
+}
+#windows:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#windows {
+  display: none;
+  position: relative;
+}
+#exchange:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#exchange {
+  display: none;
+  position: relative;
+}
+#imapsmtp:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#imapsmtp {
+  display: none;
+  position: relative;
+}
+
+#excelapp:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#excelapp {
+  display: none;
+  position: relative;
+}
+#files:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#files {
+  display: none;
+  position: relative;
+}
+#outlookapp:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#outlookapp {
+  display: none;
+  position: relative;
+}
+#items:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#items {
+  display: none;
+  position: relative;
+}
+#secrets:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#secrets {
+  display: none;
+  position: relative;
+}
+#wordapp:checked ~ .hiddentext {
+  display: block;
+  opacity: 1;
+}
+input#wordapp {
+  display: none;
+  position: relative;
+}
 .arrow{
   color: #666666;
 }
