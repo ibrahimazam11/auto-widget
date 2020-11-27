@@ -128,6 +128,8 @@ const Libraries = (): JSX.Element => {
     debugger;
     $(".accordion").css("display","none");
     let searchedText: string = $(".searchText").val() as string;
+    searchedText = searchedText.charAt(0).toUpperCase() + searchedText.slice(1);
+    
     $('.hiddentext').css('background-color',"#fff");
     $(".hiddentext:contains("+searchedText+")").each(function() {
       //$(this).toggle(contains($(this).text(), searchText));
