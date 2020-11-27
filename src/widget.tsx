@@ -254,7 +254,7 @@ const Libraries = (): JSX.Element => {
 
   function change() {
     //alert($(".searchText").val());
-    debugger;
+
     $(".accordion").css("display","none");
     let searchedText: string = $(".searchText").val() as string;
     searchedText = searchedText.charAt(0).toUpperCase() + searchedText.slice(1);
@@ -262,7 +262,6 @@ const Libraries = (): JSX.Element => {
     $('.hiddentext').css('background-color',"#fff");
     $(".hiddentext:contains("+searchedText+")").each(function() {
       //$(this).toggle(contains($(this).text(), searchText));
-    debugger;
 
       var cla=$(this).attr('class');
       var str=cla.split(" ");
