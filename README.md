@@ -1,6 +1,6 @@
 # React Widget
 
-> Create a React.js Widget in JupyterLab.
+> Create Autosphere panel Widget in JupyterLab.
 
 
 ## Install
