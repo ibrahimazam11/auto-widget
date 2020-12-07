@@ -1,6 +1,6 @@
 import _ from "lodash";
 import { ReactWidget } from '@jupyterlab/apputils';
-// import $ from 'jquery';
+import $ from 'jquery';
 import 'jqueryui';
 import "bootstrap";
 
@@ -76,12 +76,16 @@ const Libraries = (): JSX.Element => {
     };
   }, []);
 
-  const clickHandler = (data: any) => {
-    console.log(data)
-    setDescription(data.description)
-    setParams(data.arguments)
-
-    navigator.clipboard.writeText(data.keyword)
+  function clickHandler(data: any) {
+    console.log(data);
+    setDescription(data.description);
+    setParams(data.arguments);
+    //alert(data.keyword);
+    $(".copiedtext").html("copied: "+data.keyword);
+    setTimeout(function(){
+      $(".copiedtext").html('');
+  }, 5000);
+    navigator.clipboard.writeText(data.keyword);
   }
 
   let array: any = [];
@@ -330,7 +334,7 @@ const Libraries = (): JSX.Element => {
 
   return (
     <div style={{ textAlign: 'left', verticalAlign: 'top', width: '300px' }}>
-      <div style={{ overflowY: 'scroll', maxHeight: '450px', minHeight: '450px', textAlign: 'left', maxWidth: '300px' }}>
+      <div className='listofdata'>
 
         <label style={{ fontSize: '16px' }}>
           Search:
@@ -339,10 +343,12 @@ const Libraries = (): JSX.Element => {
           </form>
           <button onClick={searchListener} >search</button>
         </label>
+<p className='copiedtext'>
 
+</p>
         {allData}
       </div>
-      <div style={{ maxHeight: '200px', minHeight: '200px', verticalAlign: 'bottom', overflowY: 'scroll', maxWidth: '300px' }}>
+      <div className='discriptionofdata'>
         <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>parameters:</b> {params}</p>
         <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>description:</b> {description}</p>
 

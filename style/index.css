@@ -1,349 +1,466 @@
 .jp-ReactWidget {
-  color: var(--jp-ui-font-color1);
-  background: var(--jp-layout-color1);
-  font-size: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    color: var(--jp-ui-font-color1);
+    background: var(--jp-layout-color1);
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
 
 /* Start CSS of the accordion */
 
+.listofdata {
+    overflow-y: scroll;
+    max-height: 450px;
+    min-height: 450px;
+    text-align: left;
+    max-width: 300px;
+}
+
+.discriptionofdata {
+    max-height: 200px;
+    min-height: 200px;
+    vertical-align: bottom;
+    overflow-y: scroll;
+    max-width: 300px;
+}
+
+.copiedtext {
+    font-size: 24px;
+    position: fixed;
+    background-color: #4ac565;
+}
+
+@media only screen and (max-width: 1200px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 218px;
+        min-height: 218px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
 .accordion label {
-  display:block;
-  background-color: #eeeeee;
-  padding: 16px 15px;
-  height: 0.7em;
-  width: '100%';
-  line-height: .5em;
-  color: #424242;
-  font-size: large;
-  font-weight: 600;
-  cursor: pointer;
-  border-bottom: 1px solid #bdbdbd;
-  border-top: 1px solid #ffffff;
+    display: block;
+    background-color: #eeeeee;
+    padding: 16px 15px;
+    height: 0.7em;
+    width: '100%';
+    line-height: .5em;
+    color: #424242;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid #bdbdbd;
+    border-top: 1px solid #ffffff;
 }
+
 .accordion p {
-  color: #424242;
-  padding: 10px;
-  font-size: 0.8em;
-  line-height: 1.7em;
-  opacity: 0;
-  display: none;
-  text-align: left;
-  background-color: #fff;
-  margin: 0px;
+    color: #424242;
+    padding: 10px;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    opacity: 0;
+    display: none;
+    text-align: left;
+    background-color: #fff;
+    margin: 0px;
 }
-#archive:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#archive:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#archive {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#browser:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#browser:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#browser {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#to:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#to:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#to {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#database:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#database:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#database {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#filesystem:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#filesystem:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#filesystem {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#ftp:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#ftp:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#ftp {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#http:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#http:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#http {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#images:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#images:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#images {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#netsuite:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#netsuite:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#netsuite {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#notifier:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#notifier:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#notifier {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#pdf:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#pdf:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#pdf {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#robot:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#robot:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#robot {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#salesforce:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#salesforce:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#salesforce {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#sap:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#sap:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#sap {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#slack:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#slack:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#slack {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#tables:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#tables:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#tables {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#tasks:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#tasks:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#tasks {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#twitter:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#twitter:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#twitter {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
 
-#aws:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+#aws:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#aws {
-  display: none;
-  position: relative;
-}
-#azure:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#azure {
-  display: none;
-  position: relative;
-}
-#google:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#google {
-  display: none;
-  position: relative;
-}
-#decorator:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#decorator {
-  display: none;
-  position: relative;
-}
-#helpers:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#helpers {
-  display: none;
-  position: relative;
-}
-#locators:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#locators {
-  display: none;
-  position: relative;
-}
-#notebook:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#notebook {
-  display: none;
-  position: relative;
-}
-#types:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#types {
-  display: none;
-  position: relative;
-}
-#webdriver:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#webdriver {
-  display: none;
-  position: relative;
-}
-#clipboard:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#clipboard {
-  display: none;
-  position: relative;
-}
-#operatingsystem:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#operatingsystem {
-  display: none;
-  position: relative;
-}
-#windows:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#windows {
-  display: none;
-  position: relative;
-}
-#exchange:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#exchange {
-  display: none;
-  position: relative;
-}
-#imapsmtp:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
-}
-input#imapsmtp {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
 
-#excelapp:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+#azure:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
+input#azure {
+    display: none;
+    position: relative;
+}
+
+#google:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#google {
+    display: none;
+    position: relative;
+}
+
+#decorator:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#decorator {
+    display: none;
+    position: relative;
+}
+
+#helpers:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#helpers {
+    display: none;
+    position: relative;
+}
+
+#locators:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#locators {
+    display: none;
+    position: relative;
+}
+
+#notebook:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#notebook {
+    display: none;
+    position: relative;
+}
+
+#types:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#types {
+    display: none;
+    position: relative;
+}
+
+#webdriver:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#webdriver {
+    display: none;
+    position: relative;
+}
+
+#clipboard:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#clipboard {
+    display: none;
+    position: relative;
+}
+
+#operatingsystem:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#operatingsystem {
+    display: none;
+    position: relative;
+}
+
+#windows:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#windows {
+    display: none;
+    position: relative;
+}
+
+#exchange:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#exchange {
+    display: none;
+    position: relative;
+}
+
+#imapsmtp:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#imapsmtp {
+    display: none;
+    position: relative;
+}
+
+#excelapp:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
 input#excelapp {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#files:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#files:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#files {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#outlookapp:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#outlookapp:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#outlookapp {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#items:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#items:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#items {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#secrets:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#secrets:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#secrets {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-#wordapp:checked ~ .hiddentext {
-  display: block;
-  opacity: 1;
+
+#wordapp:checked~.hiddentext {
+    display: block;
+    opacity: 1;
 }
+
 input#wordapp {
-  display: none;
-  position: relative;
+    display: none;
+    position: relative;
 }
-.arrow{
-  color: #666666;
+
+.arrow {
+    color: #666666;
 }
+
 .search-found {
-  text-decoration: underline;
+    text-decoration: underline;
 }
