@@ -13,10 +13,10 @@
 
 .listofdata {
     overflow-y: scroll;
-    max-height: 450px;
-    min-height: 450px;
+    max-height: 377px;
+    min-height: 377px;
     text-align: left;
-    max-width: 300px;
+    /* max-width: 300px; */
 }
 
 .discriptionofdata {
@@ -24,26 +24,57 @@
     min-height: 200px;
     vertical-align: bottom;
     overflow-y: scroll;
-    max-width: 300px;
+    padding: 4px;
+    /* max-width: 300px; */
 }
 
 .copiedtext {
-    font-size: 24px;
+    font-size: 15px;
     position: fixed;
-    background-color: #4ac565;
+    padding: 13px 0 13px 13px;
+    display: none;
+    margin-left: 0px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+}
+
+.formstyle {
+    background-color: #bdbdbd;
+    padding: 19px 0;
+}
+
+.searchText {
+    border-radius: 7px;
+    padding: 3px;
+    margin-right: 10px;
+    margin-left: 8px;
+}
+
+.btn {
+    background: #000;
+    font-weight: 500;
+    color: #fff;
+    font-size: 13px;
+    border-radius: 7px;
+    padding: 3px 13px;
+    white-space: nowrap;
+    -webkit-transition: background 0.12s cubic-bezier(0.4, 0, 0.2, 1), color 0.12s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 0.12s cubic-bezier(0.4, 0, 0.2, 1), color 0.12s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.12s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (max-width: 1200px) {
     .listofdata {
         overflow-y: scroll;
-        max-height: 218px;
-        min-height: 218px;
+        max-height: 175px;
+        min-height: 175px;
         text-align: left;
         max-width: 300px;
     }
     .discriptionofdata {
         max-height: 200px;
         min-height: 200px;
+        padding: 4px;
         vertical-align: bottom;
         overflow-y: scroll;
         max-width: 300px;
@@ -58,7 +89,7 @@
     width: '100%';
     line-height: .5em;
     color: #424242;
-    font-size: large;
+    font-size: small;
     font-weight: 600;
     cursor: pointer;
     border-bottom: 1px solid #bdbdbd;
@@ -68,7 +99,7 @@
 .accordion p {
     color: #424242;
     padding: 10px;
-    font-size: 0.8em;
+    font-size: small;
     line-height: 1.7em;
     opacity: 0;
     display: none;

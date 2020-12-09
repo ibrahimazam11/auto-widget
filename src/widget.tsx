@@ -81,196 +81,199 @@ const Libraries = (): JSX.Element => {
     setDescription(data.description);
     setParams(data.arguments);
     //alert(data.keyword);
-    $(".copiedtext").html("copied: "+data.keyword);
-    setTimeout(function(){
+    $(".copiedtext").css('display','block');
+    $(".copiedtext").html("Copied: <br />" + data.keyword);
+    setTimeout(function () {
+      $(".copiedtext").css('display','none');
       $(".copiedtext").html('');
-  }, 5000);
+
+    }, 5000);
     navigator.clipboard.writeText(data.keyword);
   }
 
   let array: any = [];
   const archiveData = archive.map((dataObj: any, i: any) => (
-    <p className="hiddentext p-archive" key={i} style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p className="hiddentext p-archive" key={i} style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'archive', name: 'Archive', data: archiveData })
 
   const browserData = browser.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-browser" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-browser" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'browser', name: 'Browser', data: browserData })
 
   const databaseData = database.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-database" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-database" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'database', name: 'Database', data: databaseData })
 
   const filesystemData = filesystem.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-filesystem" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-filesystem" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'filesystem', name: 'File System', data: filesystemData })
 
   const ftpData = ftp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-ftp" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-ftp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'ftp', name: 'FTP', data: ftpData })
 
   const httpData = http.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-http" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-http" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'http', name: 'HTTP', data: httpData })
 
   const imagesData = images.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-images" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-images" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'images', name: 'Images', data: imagesData })
 
   const NetsuiteData = Netsuite.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-netsuite" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-netsuite" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'netsuite', name: 'Net Suite', data: NetsuiteData })
 
   const NotifierData = Notifier.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-notifier" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-notifier" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'notifier', name: 'Notifier', data: NotifierData })
 
   const PDFData = PDF.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-pdf" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-pdf" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'pdf', name: 'PDF', data: PDFData })
 
   const robotData = RobotLogListener.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-robot" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-robot" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'robot', name: 'Robot Log Listener', data: robotData })
 
   const salesforceData = SalesForce.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-salesforce" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-salesforce" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'salesforce', name: 'Sales Force', data: salesforceData })
 
   const sapData = sap.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-sap" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-sap" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'sap', name: 'SAP', data: sapData })
 
   const slackData = slack.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-slack" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-slack" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'slack', name: 'Slack', data: slackData })
 
   const tablesData = Tables.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-tables" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-tables" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'tables', name: 'Tables', data: tablesData })
 
   const tasksData = Tasks.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-tasks" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-tasks" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'tasks', name: 'Tasks', data: tasksData })
 
   const twitterData = Twitter.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-twitter" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-twitter" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'twitter', name: 'Twitter', data: twitterData })
 
   const awsData = aws.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-aws" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-aws" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'aws', name: 'AWS', data: awsData })
 
   const azureData = azure.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-azure" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-azure" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'azure', name: 'Azure', data: azureData })
 
   const googleData = google.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-google" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-google" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'google', name: 'Google', data: googleData })
 
   const decoratorsData = decorator.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-decorator" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-decorator" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'decorator', name: 'Decorator', data: decoratorsData })
 
   const helpersData = helpers.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-helpers" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-helpers" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'helpers', name: 'Helpers', data: helpersData })
 
   const locatorsData = locators.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-locators" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-locators" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'locators', name: 'Locators', data: locatorsData })
 
   const notebookData = notebook.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-notebook" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-notebook" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'notebook', name: 'Notebook', data: notebookData })
 
   const typesData = types.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-types" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-types" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'types', name: 'Types', data: typesData })
 
   const webdriverData = webdriver.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-webdriver" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-webdriver" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'webdriver', name: 'Webdriver', data: webdriverData })
 
   const clipboardData = clipboard.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-clipboard" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-clipboard" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'clipboard', name: 'Clipboard', data: clipboardData })
 
   const operatingsystemData = operatingsystem.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-operatingsystem" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-operatingsystem" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'operatingsystem', name: 'Operating System', data: operatingsystemData })
 
   const windowsData = windows.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-windows" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-windows" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'windows', name: 'windows', data: windowsData })
 
   const exchangeData = exchange.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-exchange" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-exchange" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'exchange', name: 'Exchange', data: exchangeData })
 
   const imapsmtpData = imapsmtp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-imapsmtp" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-imapsmtp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'imapsmtp', name: 'IMAP SMTP', data: imapsmtpData })
 
   const excelappData = excelapp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-excelapp" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-excelapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'excelapp', name: 'Excel Application', data: excelappData })
 
   const filesData = files.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-files" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-files" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'files', name: 'Files', data: filesData })
 
   const outlookappData = outlookapp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-outlookapp" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-outlookapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'outlookapp', name: 'Outlook Application', data: outlookappData })
 
   const itemsData = items.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-items" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-items" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'items', name: 'Items', data: itemsData })
 
   const secretsData = secrets.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-secrets" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-secrets" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'secrets', name: 'Secrets', data: secretsData })
 
   const wordappData = wordapp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-wordapp" style={{ fontSize: '15px', textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+    <p key={i} className="hiddentext p-wordapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
   ))
   array.push({ id: 'wordapp', name: 'Word Application', data: wordappData })
 
@@ -333,24 +336,25 @@ const Libraries = (): JSX.Element => {
   }
 
   return (
-    <div style={{ textAlign: 'left', verticalAlign: 'top', width: '300px' }}>
+    <div style={{ textAlign: 'left', verticalAlign: 'top', width: '100%' }}>
       <div className='listofdata'>
+        <p className='copiedtext'>
 
+        </p>
         <label style={{ fontSize: '16px' }}>
-          Search:
-        <form ref={searchForm} action="javascript:void(-1)">
-            <input type="text" className="searchText" name="search" />
-          </form>
-          <button onClick={searchListener} >search</button>
-        </label>
-<p className='copiedtext'>
+          {/* Search: */}
+          <form className='formstyle' ref={searchForm} action="javascript:void(-1)">
+            <input type="text" placeholder='Type to Search' className="searchText" name="search" />
+            <button className='btn' onClick={searchListener} >Search</button>
 
-</p>
+          </form>
+        </label>
+
         {allData}
       </div>
       <div className='discriptionofdata'>
-        <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>parameters:</b> {params}</p>
-        <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>description:</b> {description}</p>
+        <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>Parameters:</b> {params}</p>
+        <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>Description:</b> {description}</p>
 
       </div>
     </div>
