@@ -79,7 +79,13 @@ const Libraries = (): JSX.Element => {
   function clickHandler(data: any) {
     console.log(data);
     setDescription(data.description);
-    setParams(data.arguments);
+    
+    let args = data.arguments.split(',')
+    
+    const paramArr = args.map((arg: any) => <tr>{arg}</tr>)
+    
+    setParams(paramArr);
+
     //alert(data.keyword);
     $(".copiedtext").css('display','block');
     $(".copiedtext").html("Copied: <br />" + data.keyword);
@@ -353,7 +359,11 @@ const Libraries = (): JSX.Element => {
         {allData}
       </div>
       <div className='discriptionofdata'>
-        <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>Parameters:</b> {params}</p>
+        <div style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>Parameters:</b>
+          <table>
+            {params}
+          </table>
+        </div>
         <p style={{ fontSize: 'small', border: 'ridge', wordWrap: 'break-word', minHeight: '80px' }}><b>Description:</b> {description}</p>
 
       </div>
