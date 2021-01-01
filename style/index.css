@@ -10,13 +10,14 @@
 
 .jp-Auto-icon {
     background-image: url(auto.svg);
-  }
+}
+
 
 /* Start CSS of the accordion */
 
 .listofdata {
     overflow-y: scroll;
-    max-height: 377px;
+    max-height: 631px;
     min-height: 377px;
     text-align: left;
     /* max-width: 300px; */
@@ -31,13 +32,247 @@
     /* max-width: 300px; */
 }
 
+@media only screen and (max-height: 1600px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 1300px;
+        min-height: 1300px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 1500px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 1125px;
+        min-height: 1125px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 1400px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 1014px;
+        min-height: 1014px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 1300px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 933px;
+        min-height: 933px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 1200px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 860px;
+        min-height: 860px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 1100px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 751px;
+        min-height: 751px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 1000px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 659px;
+        min-height: 659px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 900px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 559px;
+        min-height: 559px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 800px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 462px;
+        min-height: 462px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 363px;
+        min-height: 363px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 264px;
+        min-height: 264px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 163px;
+        min-height: 163px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-height: 400px) {
+    .listofdata {
+        overflow-y: scroll;
+        max-height: 100px;
+        min-height: 100px;
+        text-align: left;
+        max-width: 300px;
+    }
+    .discriptionofdata {
+        max-height: 200px;
+        min-height: 200px;
+        padding: 4px;
+        vertical-align: bottom;
+        overflow-y: scroll;
+        max-width: 300px;
+    }
+}
+
 .copiedtext {
     font-size: 15px;
     position: fixed;
     padding: 13px 0 13px 13px;
     display: none;
     margin-left: 0px;
-    width: 100%;
+    width: 30%;
     background-color: #000;
     color: #fff;
 }
@@ -64,24 +299,6 @@
     white-space: nowrap;
     -webkit-transition: background 0.12s cubic-bezier(0.4, 0, 0.2, 1), color 0.12s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.12s cubic-bezier(0.4, 0, 0.2, 1);
     transition: background 0.12s cubic-bezier(0.4, 0, 0.2, 1), color 0.12s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.12s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@media only screen and (max-width: 1200px) {
-    .listofdata {
-        overflow-y: scroll;
-        max-height: 175px;
-        min-height: 175px;
-        text-align: left;
-        max-width: 300px;
-    }
-    .discriptionofdata {
-        max-height: 200px;
-        min-height: 200px;
-        padding: 4px;
-        vertical-align: bottom;
-        overflow-y: scroll;
-        max-width: 300px;
-    }
 }
 
 .accordion label {

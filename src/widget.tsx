@@ -342,7 +342,7 @@ const Libraries = (): JSX.Element => {
   }
 
   return (
-    <div style={{ textAlign: 'left', verticalAlign: 'top', width: '100%' }}>
+    <div style={{ textAlign: 'left', verticalAlign: 'top', width: '100%',height:'100%' }}>
       <div className='listofdata'>
         <p className='copiedtext'>
 
