@@ -31,6 +31,7 @@ const extension: JupyterFrontEndPlugin<void> = {
     const content = new Panel();
     const widget = new MainAreaWidget<Panel>({ content });
     widget.title.iconClass = 'jp-Auto-icon'
+    widget.title.caption  = 'Autosphere Libraries'
     app.shell.add(widget, 'left', { rank: 102 });
     // const command = CommandIDs.create;
     // commands.addCommand(command, {

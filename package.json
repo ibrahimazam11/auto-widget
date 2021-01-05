@@ -1,67 +1,67 @@
 {
-  "name": "autosphere-widget",
-  "version": "0.1.0",
-  "description": "Example of using a React Widget in a Jupyterlab extension",
-  "keywords": [
-    "jupyter",
-    "jupyterlab",
-    "jupyterlab-extension"
-  ],
-  "homepage": "https://github.com/jupyterlab/extension-examples",
-  "bugs": {
-    "url": "https://github.com/jupyterlab/extension-examples/issues"
-  },
-  "license": "BSD-3-Clause",
-  "author": "Project Jupyter Contributors",
-  "files": [
-    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
-    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
-  ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "style": "style/index.css",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jupyterlab/extension-examples.git"
-  },
-  "scripts": {
-    "build": "tsc",
-    "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
-    "install-ext": "jupyter labextension install . --no-build",
-    "eslint": "eslint . --ext .ts,.tsx --fix",
-    "eslint:check": "eslint . --ext .ts,.tsx",
-    "watch": "tsc -w"
-  },
-  "dependencies": {
-    "@jupyterlab/application": "^2.0.0",
-    "@jupyterlab/launcher": "^2.0.0",
-    "@jupyterlab/ui-components": "^2.0.0",
-    "@types/bootstrap": "^5.0.1",
-    "@types/jquery": "^3.5.4",
-    "@types/jqueryui": "^1.12.13",
-    "@types/lodash": "^4.14.165",
-    "bootstrap": "^4.5.3",
-    "jquery": "^3.5.1",
-    "jqueryui": "^1.11.1",
-    "lodash": "^4.17.20",
-    "primer-tooltips": "^2.0.0"
-  },
-  "devDependencies": {
-    "@types/jquery": "^3.5.4",
-    "@typescript-eslint/eslint-plugin": "^2.21.0",
-    "@typescript-eslint/parser": "^2.21.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-jsdoc": "^22.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "rimraf": "^3.0.0",
-    "typescript": "~3.7.5"
-  },
-  "sideEffects": [
-    "style/*.css"
-  ],
-  "jupyterlab": {
-    "extension": true
-  }
+    "name": "autosphere-widget",
+    "version": "0.1.0",
+    "description": "A JupyterLab extensions for Autosphere Libraries and Skills",
+    "keywords": [
+        "jupyter",
+        "jupyterlab",
+        "jupyterlab-extension"
+    ],
+    "homepage": "http://autosphere.ai/",
+    "bugs": {
+        "url": "http://autosphere.ai/contact-us/"
+    },
+    "license": "BSD-3-Clause",
+    "author": "Project Jupyter Contributors",
+    "files": [
+        "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+        "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+    ],
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "style": "style/index.css",
+    "repository": {
+        "type": "git",
+        "url": "http://autosphere.ai/contact-us/"
+    },
+    "scripts": {
+        "build": "tsc",
+        "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
+        "install-ext": "jupyter labextension install . --no-build",
+        "eslint": "eslint . --ext .ts,.tsx --fix",
+        "eslint:check": "eslint . --ext .ts,.tsx",
+        "watch": "tsc -w"
+    },
+    "dependencies": {
+        "@jupyterlab/application": "^2.0.0",
+        "@jupyterlab/launcher": "^2.0.0",
+        "@jupyterlab/ui-components": "^2.0.0",
+        "@types/bootstrap": "^5.0.1",
+        "@types/jquery": "^3.5.4",
+        "@types/jqueryui": "^1.12.13",
+        "@types/lodash": "^4.14.165",
+        "bootstrap": "^4.5.3",
+        "jquery": "^3.5.1",
+        "jqueryui": "^1.11.1",
+        "lodash": "^4.17.20",
+        "primer-tooltips": "^2.0.0"
+    },
+    "devDependencies": {
+        "@types/jquery": "^3.5.4",
+        "@typescript-eslint/eslint-plugin": "^2.21.0",
+        "@typescript-eslint/parser": "^2.21.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-jsdoc": "^22.0.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.18.3",
+        "rimraf": "^3.0.0",
+        "typescript": "~3.7.5"
+    },
+    "sideEffects": [
+        "style/*.css"
+    ],
+    "jupyterlab": {
+        "extension": true
+    }
 }
