@@ -7,7 +7,7 @@
         "jupyterlab",
         "jupyterlab-extension"
     ],
-    "homepage": "http://autosphere.ai/",
+    "homepage": "https://github.com/Autosphere-ai/code.git",
     "bugs": {
         "url": "http://autosphere.ai/contact-us/"
     },
