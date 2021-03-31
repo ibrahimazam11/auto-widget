@@ -1,82 +1,222 @@
-[
-  {
-    "keyword": "Detect Face",
-    "arguments": "image_file: str = None,image_url: str = None,face_attributes: str = None,face_landmarks: bool = False,recognition_model: str = recognition_02,json_file: str = None",
-    "description": "Detect facial attributes in the image Read more about face_attributes at Face detection explained_: age gender smile facialHair headPose glasses emotion hair makeup accessories blur exposure nouse :param image_file: filepath of image file :param image_url: URI to image, if given will be used instead of image_file :param face_attributes: comma separated list of attributes, for example. \"age,gender,smile\" :param face_landmarks: return face landmarks of the detected faces or not. The default value is False :param recognition_model: model used by Azure to detech faces, options are \"recognition_01\" or \"recognition_02\", default is \"recognition_02\" :param json_file: filepath to write results into :return: analysis in json format .. _Face detection explained: https://docs.microsoft.com/en-us/azure/cognitive-services/face/concepts/face-detection # noqa: E501"
-  },
-  {
-    "keyword": "Detect Language",
-    "arguments": "text: str,json_file: str = None",
-    "description": "Detect languages in the given text :param text: A UTF-8 text string :param json_file: filepath to write results into :return: analysis in json format"
-  },
-  {
-    "keyword": "Find Entities",
-    "arguments": "text: str,language: str = None,json_file=None",
-    "description": "Detect entities in the given text :param text: A UTF-8 text string :param language: if input language is known :param json_file: filepath to write results into :return: analysis in json format"
-  },
-  {
-    "keyword": "Init Computer Vision Service",
-    "arguments": "region: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Azure Computer Vision :param region: identifier for service region :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Face Service",
-    "arguments": "region: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Azure Face :param region: identifier for service region :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Speech Service",
-    "arguments": "region: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Azure Speech :param region: identifier for service region :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Text Analytics Service",
-    "arguments": "region: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Azure Text Analyticts :param region: identifier for service region :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Key Phrases",
-    "arguments": "text: str,language: str = None,json_file: str = None",
-    "description": "Detect key phrases in the given text :param text: A UTF-8 text string :param language: if input language is known :param json_file: filepath to write results into :return: analysis in json format"
-  },
-  {
-    "keyword": "List Supported Voices",
-    "arguments": "locale: str = None,neural_only: bool = False,json_file: str = None",
-    "description": "List supported voices for Azure API Speech Services. Available voice selection might differ between regions. :param locale: list only voices specific to locale, by default return all voices :param neural_only: True if only neural voices should be returned, False by default :param json_file: filepath to write results into :return: voices in json"
-  },
-  {
-    "keyword": "Sentiment Analyze",
-    "arguments": "text: str,language: str = None,json_file: str = None",
-    "description": "Analyze sentiments in the given text :param text: A UTF-8 text string :param language: if input language is known :param json_file: filepath to write results into :return: analysis in json format"
-  },
-  {
-    "keyword": "Set Robocloud Vault",
-    "arguments": "vault_name",
-    "description": "Set Robocloud Vault name :param vault_name: Robocloud Vault name"
-  },
-  {
-    "keyword": "Text To Speech",
-    "arguments": "text: str,language: str = en-US,name: str = en-US-AriaRUS,gender: str = FEMALE,encoding: str = MP3,neural_voice_style: typing.Any = None,target_file: str = synthesized.mp3",
-    "description": "Synthesize speech synchronously Neural voices are only supported for Speech resources created in East US, South East Asia, and West Europe regions. :param text: input text to synthesize :param language: voice language, defaults to \"en-US\" :param name: voice name, defaults to \"en-US-AriaRUS\" :param gender: voice gender, defaults to \"FEMALE\" :param encoding: result encoding type, defaults to \"MP3\" :param neural_voice_style: if given then neural voice is used, example style. \"cheerful\" :param target_file: save synthesized output to file, defaults to \"synthesized.mp3\" :return: synthesized output in bytes"
-  },
-  {
-    "keyword": "Vision Analyze",
-    "arguments": "image_file: str = None,image_url: str = None,visual_features: str = None,json_file: str = None",
-    "description": "Identify features in the image See Computer Vision API_ for valid feature names and their explanations: Adult Brands Categories Color Description Faces ImageType Objects Tags :param image_file: filepath of image file :param image_url: URI to image, if given will be used instead of image_file :param visual_features: comma separated list of features, for example. \"Categories,Description,Color\" :param json_file: filepath to write results into :return: analysis in json format .. _Computer Vision API: https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga # noqa: E501"
-  },
-  {
-    "keyword": "Vision Describe",
-    "arguments": "image_file: str = None,image_url: str = None,json_file: str = None",
-    "description": "Describe image with tags and captions :param image_file: filepath of image file :param image_url: URI to image, if given will be used instead of image_file :param json_file: filepath to write results into :return: analysis in json format"
-  },
-  {
-    "keyword": "Vision Detect Objects",
-    "arguments": "image_file: str = None,image_url: str = None,json_file: str = None",
-    "description": "Detect objects in the image :param image_file: filepath of image file :param image_url: URI to image, if given will be used instead of image_file :param json_file: filepath to write results into :return: analysis in json format"
-  },
-  {
-    "keyword": "Vision Ocr",
-    "arguments": "image_file: str = None,image_url: str = None,json_file: str = None",
-    "description": "Optical Character Recognition (OCR) detects text in an image :param image_file: filepath of image file :param image_url: URI to image, if given will be used instead of image_file :param json_file: filepath to write results into :return: analysis in json format"
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "`Azure` is a library for operating with Microsoft Azure API endpoints.\n\nList of supported service names:\n\n- computervision (`Azure Computer Vision API`_)\n- face (`Azure Face API`_)\n- speech (`Azure Speech Services API`_)\n- textanalytics (`Azure Text Analytics API`_)\n\n**Azure authentication**\n\nAuthentication for Azure is set with `service subscription key` which can be given to the library\nin two different ways.\n\n- Method 1 as environment variables, either service specific environment variable\n  for example ``AZURE_TEXTANALYTICS_KEY`` or with common key ``AZURE_SUBSCRIPTION_KEY`` which\n  will be used for all the services.\n- Method 2 as Robocloud vault secret. The vault name needs to be given in library init or\n  with keyword ``Set Robocloud Vault``. Secret keys are expected to match environment variable\n  names.\n\nMethod 1. subscription key using environment variable\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Azure\n\n    *** Tasks ***\n    Init Azure services\n        # NO parameters for client, expecting to get subscription key\n        # with AZURE_TEXTANALYTICS_KEY or AZURE_SUBSCRIPTION_KEY environment variable\n        Init Text Analytics Service\n\nMethod 2. setting Robocloud Vault in the library init\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Azure  robocloud_vault_name=azure\n\n    *** Tasks ***\n    Init Azure services\n        Init Text Analytics Service  use_robocloud_vault=${TRUE}\n\nMethod 2. setting Robocloud Vault with keyword\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Azure\n\n    *** Tasks ***\n    Init Azure services\n        Set Robocloud Vault          vault_name=googlecloud\n        Init Text Analytics Service  use_robocloud_vault=${TRUE}\n\n**References**\n\nList of supported language locales - `Azure locale list`_\n\nList of supported region identifiers - `Azure region list`_\n\n.. _Azure Computer Vision API: https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/\n.. _Azure Face API: https://docs.microsoft.com/en-us/azure/cognitive-services/face/\n.. _Azure Speech Services API: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/\n.. _Azure Text Analytics API: https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/\n.. _Azure locale list: https://docs.microsoft.com/en-gb/azure/cognitive-services/speech-service/language-support#speech-to-text\n.. _Azure region list: https://docs.microsoft.com/en-gb/azure/cognitive-services/speech-service/regions#speech-to-text-text-to-speech-and-translation\n\n**Examples**\n\n**Robot Framework**\n\nThis is a section which describes how to use the library in your\nRobot Framework tasks.\n\n.. code-block:: robotframework\n\n   *** Settings ***\n   Library  Autosphere.Cloud.Azure\n\n   *** Variables ***\n   ${IMAGE_URL}   IMAGE_URL\n   ${FEATURES}    Faces,ImageType\n\n   *** Tasks ***\n   Visioning image information\n      Init Computer Vision Service\n      &{result}   Vision Analyze  image_url=${IMAGE_URL}  visual_features=${FEATURES}\n      @{faces}    Set Variable  ${result}[faces]\n      FOR  ${face}  IN   @{faces}\n         Log  Age: ${face}[age], Gender: ${face}[gender], Rectangle: ${face}[faceRectangle]\n      END\n\n**Python**\n\nThis is a section which describes how to use the library in your\nown Python modules.\n\n.. code-block:: python\n\n   library = Azure()\n   library.init_text_analytics_service()\n   library.init_face_service()\n   library.init_computer_vision_service()\n   library.init_speech_service(\"westeurope\")\n\n   response = library.sentiment_analyze(\n      text=\"The rooms were wonderful and the staff was helpful.\"\n   )\n   response = library.detect_face(\n      image_file=PATH_TO_FILE,\n      face_attributes=\"age,gender,smile,hair,facialHair,emotion\",\n   )\n   for item in response:\n      gender = item[\"faceAttributes\"][\"gender\"]\n      age = item[\"faceAttributes\"][\"age\"]\n      print(f\"Detected a face, gender:{gender}, age: {age}\")\n\n   response = library.vision_analyze(\n      image_url=URL_TO_IMAGE,\n      visual_features=\"Faces,ImageType\",\n   )\n   meta = response['metadata']\n   print(\n      f\"Image dimensions meta['width']}x{meta['height']} pixels\"\n   )\n\n   for face in response[\"faces\"]:\n      left = face[\"faceRectangle\"][\"left\"]\n      top = face[\"faceRectangle\"][\"top\"]\n      width = face[\"faceRectangle\"][\"width\"]\n      height = face[\"faceRectangle\"][\"height\"]\n      print(f\"Detected a face, gender:{face['gender']}, age: {face['age']}\")\n      print(f\"      Face rectangle: (left={left}, top={top})\")\n      print(f\"      Face rectangle: (width={width}, height={height})\")\n\n   library.text_to_speech(\n       text=\"Developer tools for open-source Autosphere leveraging the Robot Framework ecosystem\",\n       neural_voice_style=\"cheerful\",\n       target_file='output.mp3'\n   )",
+      "init": {
+         "arguments": {
+            "arg": [
+               "region: str = northeurope",
+               "robocloud_vault_name: str = None"
+            ]
+         },
+         "doc": "Initialize self.  See help(type(self)) for accurate signature.",
+         "_lineno": "740"
+      },
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str = None",
+                  "image_url: str = None",
+                  "face_attributes: str = None",
+                  "face_landmarks: bool = False",
+                  "recognition_model: str = recognition_02",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect facial attributes in the image\n\n:param image_file: filepath of image file\n:param image_url: URI to image, if given will be used instead of `image_file`\n:param face_attributes: comma separated list of attributes,\n    for example. \"age,gender,smile\"\n:param face_landmarks: return face landmarks of the detected faces\n    or not. The default value is `False`\n:param recognition_model: model used by Azure to detech faces, options\n    are \"recognition_01\" or \"recognition_02\", default is \"recognition_02\"\n:param json_file: filepath to write results into\n:return: analysis in json format\n\nRead more about `face_attributes` at `Face detection explained`_:\n\n- age\n- gender\n- smile\n- facialHair\n- headPose\n- glasses\n- emotion\n- hair\n- makeup\n- accessories\n- blur\n- exposure\n- nouse\n\n.. _Face detection explained: https://docs.microsoft.com/en-us/azure/cognitive-services/face/concepts/face-detection",
+            "_name": "Detect Face",
+            "_lineno": "294"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: str",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect languages in the given text\n\n:param text: A UTF-8 text string\n:param json_file: filepath to write results into\n:return: analysis in json format",
+            "_name": "Detect Language",
+            "_lineno": "223"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: str",
+                  "language: str = None",
+                  "json_file=None"
+               ]
+            },
+            "doc": "Detect entities in the given text\n\n:param text: A UTF-8 text string\n:param language: if input language is known\n:param json_file: filepath to write results into\n:return: analysis in json format",
+            "_name": "Find Entities",
+            "_lineno": "256"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "region: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Azure Computer Vision\n\n:param region: identifier for service region\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init Computer Vision Service",
+            "_lineno": "359"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "region: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Azure Face\n\n:param region: identifier for service region\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init Face Service",
+            "_lineno": "282"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "region: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Azure Speech\n\n:param region: identifier for service region\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init Speech Service",
+            "_lineno": "478"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "region: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Azure Text Analyticts\n\n:param region: identifier for service region\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init Text Analytics Service",
+            "_lineno": "191"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: str",
+                  "language: str = None",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect key phrases in the given text\n\n:param text: A UTF-8 text string\n:param language: if input language is known\n:param json_file: filepath to write results into\n:return: analysis in json format",
+            "_name": "Key Phrases",
+            "_lineno": "237"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "locale: str = None",
+                  "neural_only: bool = False",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "List supported voices for Azure API Speech Services.\n\n:param locale: list only voices specific to locale, by default return all voices\n:param neural_only: `True` if only neural voices should be returned,\n    `False` by default\n:param json_file: filepath to write results into\n:return: voices in json\n\nAvailable voice selection might differ between regions.",
+            "_name": "List Supported Voices",
+            "_lineno": "564"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: str",
+                  "language: str = None",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Analyze sentiments in the given text\n\n:param text: A UTF-8 text string\n:param language: if input language is known\n:param json_file: filepath to write results into\n:return: analysis in json format",
+            "_name": "Sentiment Analyze",
+            "_lineno": "203"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "vault_name"
+               ]
+            },
+            "doc": "Set Robocloud Vault name\n\n:param vault_name: Robocloud Vault name",
+            "_name": "Set Robocloud Vault",
+            "_lineno": "173"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: str",
+                  "language: str = en-US",
+                  "name: str = en-US-AriaRUS",
+                  "gender: str = FEMALE",
+                  "encoding: str = MP3",
+                  "neural_voice_style: typing.Any = None",
+                  "target_file: str = synthesized.mp3"
+               ]
+            },
+            "doc": "Synthesize speech synchronously\n\n:param text: input text to synthesize\n:param language: voice language, defaults to \"en-US\"\n:param name: voice name, defaults to \"en-US-AriaRUS\"\n:param gender: voice gender, defaults to \"FEMALE\"\n:param encoding: result encoding type, defaults to \"MP3\"\n:param neural_voice_style: if given then neural voice is used,\n    example style. \"cheerful\"\n:param target_file: save synthesized output to file,\n    defaults to \"synthesized.mp3\"\n:return: synthesized output in bytes\n\nNeural voices are only supported for Speech resources created in\nEast US, South East Asia, and West Europe regions.",
+            "_name": "Text To Speech",
+            "_lineno": "490"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str = None",
+                  "image_url: str = None",
+                  "visual_features: str = None",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Identify features in the image\n\n:param image_file: filepath of image file\n:param image_url: URI to image, if given will be used instead of `image_file`\n:param visual_features: comma separated list of features,\n    for example. \"Categories,Description,Color\"\n:param json_file: filepath to write results into\n:return: analysis in json format\n\nSee `Computer Vision API`_ for valid feature names and their explanations:\n\n- Adult\n- Brands\n- Categories\n- Color\n- Description\n- Faces\n- ImageType\n- Objects\n- Tags\n\n.. _Computer Vision API: https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga",
+            "_name": "Vision Analyze",
+            "_lineno": "371"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str = None",
+                  "image_url: str = None",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Describe image with tags and captions\n\n:param image_file: filepath of image file\n:param image_url: URI to image, if given will be used instead of `image_file`\n:param json_file: filepath to write results into\n:return: analysis in json format",
+            "_name": "Vision Describe",
+            "_lineno": "412"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str = None",
+                  "image_url: str = None",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect objects in the image\n\n:param image_file: filepath of image file\n:param image_url: URI to image, if given will be used instead of `image_file`\n:param json_file: filepath to write results into\n:return: analysis in json format",
+            "_name": "Vision Detect Objects",
+            "_lineno": "448"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str = None",
+                  "image_url: str = None",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Optical Character Recognition (OCR) detects text in an image\n\n:param image_file: filepath of image file\n:param image_url: URI to image, if given will be used instead of `image_file`\n:param json_file: filepath to write results into\n:return: analysis in json format",
+            "_name": "Vision Ocr",
+            "_lineno": "430"
+         }
+      ],
+      "_name": "Azure",
+      "_type": "LIBRARY",
+      "_format": "REST",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-31T06:14:05Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Cloud\\Azure.py",
+      "_lineno": "591"
+   }
+}

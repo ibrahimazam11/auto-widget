@@ -1,17 +1,58 @@
-[
-  {
-    "keyword": "Contextmanager",
-    "arguments": "func",
-    "description": "@contextmanager decorator. Typical usage: @contextmanager def some_generator(<arguments>): <setup> try: yield <value> finally: <cleanup> This makes this: with some_generator(<arguments>) as <variable>: <body> equivalent to this: <setup> try: <variable> = <value> <body> finally: <cleanup>"
-  },
-  {
-    "keyword": "Default Locators Path",
-    "arguments": "",
-    "description": "Return default path for locators database file"
-  },
-  {
-    "keyword": "Open Stream",
-    "arguments": "obj,*args,**kwargs",
-    "description": "Wrapper for built-in open(), which allows using existing IO streams."
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "Documentation for library ``locators``.",
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "func"
+               ]
+            },
+            "doc": "@contextmanager decorator.\n\nTypical usage:\n\n    @contextmanager\n    def some_generator(<arguments>):\n        <setup>\n        try:\n            yield <value>\n        finally:\n            <cleanup>\n\nThis makes this:\n\n    with some_generator(<arguments>) as <variable>:\n        <body>\n\nequivalent to this:\n\n    <setup>\n    try:\n        <variable> = <value>\n        <body>\n    finally:\n        <cleanup>",
+            "_name": "Contextmanager",
+            "_source": "C:\\Program Files\\Autosphere\\Process Tray\\App\\Python\\lib\\contextlib.py",
+            "_lineno": "211"
+         },
+         {
+            "doc": "Return default path for locators database file.",
+            "_name": "Default Locators Path",
+            "_lineno": "9"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "path",
+                  "name"
+               ]
+            },
+            "doc": "",
+            "_name": "Load By Name",
+            "_lineno": "33"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "obj",
+                  "*args",
+                  "**kwargs"
+               ]
+            },
+            "doc": "Wrapper for built-in open(), which allows using\nexisting IO streams.",
+            "_name": "Open Stream",
+            "_lineno": "20"
+         }
+      ],
+      "_name": "locators",
+      "_type": "LIBRARY",
+      "_format": "ROBOT",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-30T11:11:35Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\core\\locators.py",
+      "_lineno": "1"
+   }
+}

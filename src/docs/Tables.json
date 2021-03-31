@@ -1,147 +1,371 @@
-[
-  {
-    "keyword": "Add Table Column",
-    "arguments": "table,name=None,values=None",
-    "description": "Append a column to a table. :param table: table to modify :param name: name of new column :param values: row values (or single scalar value for all rows)"
-  },
-  {
-    "keyword": "Add Table Row",
-    "arguments": "table,row,index=None",
-    "description": "Append rows to a table. :param table: table to modify :param row: value for new row :param index: index name for new row"
-  },
-  {
-    "keyword": "Clear Table",
-    "arguments": "table",
-    "description": "Clear table in-place, but keep columns. :param table: table to clear"
-  },
-  {
-    "keyword": "Copy Table",
-    "arguments": "table",
-    "description": "Copy table object. :param table: table to copy"
-  },
-  {
-    "keyword": "Create Table",
-    "arguments": "data=None,trim=False",
-    "description": "Create Table object from data. Data can be a combination of various iterable containers, e.g. list of lists, list of dicts, dict of lists. :param data: source data for table :param trim: remove all empty rows from the end of the worksheet, default False"
-  },
-  {
-    "keyword": "Export Table",
-    "arguments": "table,with_index=False,as_list=True",
-    "description": "Convert table object to standard Python containers. :param table: table to convert to dict :param with_index: include index in values :param as_list: export data as list instead of dict"
-  },
-  {
-    "keyword": "Filter Empty Rows",
-    "arguments": "table",
-    "description": "Remove all rows from the table which have only None values. :param table: table to filter"
-  },
-  {
-    "keyword": "Filter Table By Column",
-    "arguments": "table,column,operator,value",
-    "description": "Return all rows where the column values match the given condition. :param table: table to filter :param column: column to filter with :param operator: filtering operator, e.g. >, <, ==, contains :param value: value to compare column to (using operator)"
-  },
-  {
-    "keyword": "Get Table Cell",
-    "arguments": "table,row,column",
-    "description": "Get a cell value from table. :param table: table to read from :param row: row of cell :param column: column of cell"
-  },
-  {
-    "keyword": "Get Table Column",
-    "arguments": "table,column,as_list=False",
-    "description": "Get all column values from table. :param table: table to read :param column: column to read :param as_list: return list instead of dictionary"
-  },
-  {
-    "keyword": "Get Table Dimensions",
-    "arguments": "table",
-    "description": "Return table dimensions, as (rows, columns). :param table: table to inspect"
-  },
-  {
-    "keyword": "Get Table Row",
-    "arguments": "table,index,as_list=False",
-    "description": "Get a single row from table. :param table: table to read :param row: row to read :param as_list: return list instead of dictionary"
-  },
-  {
-    "keyword": "Get Table Slice",
-    "arguments": "table,start=None,end=None",
-    "description": "Return a new Table from a subset of given Table rows. :param table: table to read from :param start: start index (inclusive) :param start: end index (inclusive)"
-  },
-  {
-    "keyword": "Group Table By Column",
-    "arguments": "table,column",
-    "description": "Group table by column and return a list of grouped Tables. :param table: table to use for grouping :param column: column which is used as grouping criteria"
-  },
-  {
-    "keyword": "Pop Table Column",
-    "arguments": "table,column=None,as_list=False",
-    "description": "Remove column from table and return it. :param table: table to modify :param column: column to remove :param as_list: return list instead of dictionary"
-  },
-  {
-    "keyword": "Pop Table Row",
-    "arguments": "table,index=None,as_list=False",
-    "description": "Remove row from table and return it. :param table: table to modify :param index: row index, pops first row if none given :param as_list: return list instead of dictionary"
-  },
-  {
-    "keyword": "Read Table From Csv",
-    "arguments": "path,header=None,columns=None,dialect=None,delimiters=None",
-    "description": "Read a CSV file as a table. By default attempts to deduce the CSV format and headers from a sample of the input file. If it's unable to determine the format automatically, the dialect and header will have to be defined manually. Valid dialect values are excel, excel-tab, and unix, and header is boolean argument (True`/`False). Optionally a set of valid delimiters can be given as a string. The columns argument can be used to override the names of columns in the resulting table. The amount of columns must match the input data. :param path: path to CSV file :param header: CSV file includes header :param columns: names of columns in resulting table :param dialect: format of CSV file :param delimiters: string of possible delimiters"
-  },
-  {
-    "keyword": "Rename Table Columns",
-    "arguments": "table,columns,strict=False",
-    "description": "Renames columns in the Table with given values. Columns with name as None will be use previous value. :param table: table to modify :param columns: list of new column names :param strict: if True, raises ValueError if column lengths do not match"
-  },
-  {
-    "keyword": "Requires Table",
-    "arguments": "obj",
-    "description": ""
-  },
-  {
-    "keyword": "Set Column As Index",
-    "arguments": "table,column=None",
-    "description": "Set existing column as index for rows. :param table: table to modify :param column: column to convert to index"
-  },
-  {
-    "keyword": "Set Table Cell",
-    "arguments": "table,row,column,value",
-    "description": "Set a cell value in the table. :param table: table to modify to :param row: row of cell :param column: column of cell :param value: value to set"
-  },
-  {
-    "keyword": "Set Table Column",
-    "arguments": "table,column,values",
-    "description": "Assign values to entire column in the table. :param table: table to modify :param column: column to modify :param values: value(s) to set"
-  },
-  {
-    "keyword": "Set Table Row",
-    "arguments": "table,row,values",
-    "description": "Assign values to a row in the table. :param table: table to modify :param row: row to modify :param values: value(s) to set"
-  },
-  {
-    "keyword": "Sort Table By Column",
-    "arguments": "table,column,ascending=False",
-    "description": "Sort table in-place according to column. :param table: table to sort :param column: column to sort with :param ascending: table sort order"
-  },
-  {
-    "keyword": "Table Head",
-    "arguments": "table,count=5,as_list=False",
-    "description": "Return first count rows from table. :param table: table to read from :param count: number of lines to read :param as_list: return list instead of Table"
-  },
-  {
-    "keyword": "Table Tail",
-    "arguments": "table,count=5,as_list=False",
-    "description": "Return last count rows from table. :param table: table to read from :param count: number of lines to read :param as_list: return list instead of Table"
-  },
-  {
-    "keyword": "Trim Column Names",
-    "arguments": "table",
-    "description": "Remove all extraneous whitespace from column names."
-  },
-  {
-    "keyword": "Trim Empty Rows",
-    "arguments": "table",
-    "description": "Remove all rows from the end of the table which have only None values. :param table: table to filter"
-  },
-  {
-    "keyword": "Write Table To Csv",
-    "arguments": "table,path,header=True,dialect=excel",
-    "description": "Write a table as a CSV file. Valid dialect values are excel, excel-tab, and unix. :param path: path to write to :param table: table to write :param header: write columns as header to CSV file :param dialect: the format of output CSV"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "global",
+        "namedargs": "yes",
+        "doc": "`Tables` is a library for manipulating tabular data inside Robot Framework.\n\nIt can import data from various sources and apply different operations to it.\nCommon use-cases are reading and writing CSV files, inspecting files in\ndirectories, or running tasks using existing Excel data.\n\n**Import types**\n\nThe data from which a table can be created can be of two main types:\n\n1. An iterable of individual rows, like a list of lists, or list of dictionaries\n2. A dictionary of columns, where each dictionary value is a list of values\n\nFor instance, these two input values:\n\n.. code-block:: python\n\n    data1 = [\n        {\"name\": \"Mark\", \"age\": 58},\n        {\"name\": \"John\", \"age\": 22},\n        {\"name\": \"Adam\", \"age\": 67},\n    ]\n\n    data2 = {\n        \"name\": [\"Mark\", \"John\", \"Adam\"],\n        \"age\":  [    58,     22,     67],\n    }\n\nWould both result in the following table:\n\n+-------+------+-----+\n| Index | Name | Age |\n+=======+======+=====+\n| 1     | Mark | 58  |\n+-------+------+-----+\n| 2     | John | 22  |\n+-------+------+-----+\n| 3     | Adam | 67  |\n+-------+------+-----+\n\n**Examples**\n\n**Robot Framework**\n\nThe `Tables` library can load tabular data from various other libraries\nand manipulate it inside Robot Framework.\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library    RPA.Tables\n\n    *** Keywords ***\n    Files to Table\n        ${files}=    List files in directory    ${CURDIR}\n        ${files}=    Create table    ${files}\n        Filter table by column    ${files}    size  >=  ${1024}\n        FOR    ${file}    IN    @{files}\n            Log    ${file}[name]\n        END\n        Write table to CSV    ${files}    ${OUTPUT_DIR}${/}files.csv\n\n**Python**\n\nThe library is also available directly through Python, where it\nis easier to handle multiple different tables or do more bespoke\nmanipulation operations.\n\n.. code-block:: python\n\n    from RPA.Tables import Tables\n\n    library = Tables()\n    orders = library.read_table_from_csv(\n        \"orders.csv\", columns=[\"name\", \"mail\", \"product\"]\n    )\n\n    customers = library.group_table_by_column(rows, \"mail\")\n    for customer in customers:\n        for order in customer:\n            add_cart(order)\n        make_order()",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "name=None",
+                        "values=None"
+                    ]
+                },
+                "doc": "Append a column to a table.\n\n:param table:   table to modify\n:param name:    name of new column\n:param values:  row values (or single scalar value for all rows)",
+                "_name": "Add Table Column",
+                "_lineno": "1164"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "row",
+                        "index=None"
+                    ]
+                },
+                "doc": "Append rows to a table.\n\n:param table:   table to modify\n:param row:     value for new row\n:param index:   index name for new row",
+                "_name": "Add Table Row",
+                "_lineno": "1174"
+            },
+            {
+                "arguments": {
+                    "arg": "table"
+                },
+                "doc": "Clear table in-place, but keep columns.\n\n:param table:   table to clear",
+                "_name": "Clear Table",
+                "_lineno": "1035"
+            },
+            {
+                "arguments": {
+                    "arg": "table"
+                },
+                "doc": "Copy table object.\n\n:param table:   table to copy",
+                "_name": "Copy Table",
+                "_lineno": "1027"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "data=None",
+                        "trim=False",
+                        "columns=None",
+                        "index=None"
+                    ]
+                },
+                "doc": "Create Table object from data.\n\nData can be a combination of various iterable containers, e.g.\nlist of lists, list of dicts, dict of lists.\n\n:param data:    source data for table\n:param trim:    remove all empty rows from the end of the worksheet,\n                default `False`\n:param columns: names of columns (optional)\n:param index:   names of rows (optional)",
+                "_name": "Create Table",
+                "_lineno": "991"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "with_index=False",
+                        "as_list=True"
+                    ]
+                },
+                "doc": "Convert table object to standard Python containers.\n\n:param table:       table to convert to dict\n:param with_index:  include index in values\n:param as_list:     export data as list instead of dict",
+                "_name": "Export Table",
+                "_lineno": "1014"
+            },
+            {
+                "arguments": {
+                    "arg": "table"
+                },
+                "doc": "Remove all rows from the table which have only None values.\n\nThe filtering will be done in-place.\n\n:param table:   table to filter",
+                "_name": "Filter Empty Rows",
+                "_lineno": "1393"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column",
+                        "operator",
+                        "value"
+                    ]
+                },
+                "doc": "Remove all rows where the column values don't match the\ngiven condition.\n\nThe filtering will be done in-place.\n\n:param table:       table to filter\n:param column:      column to filter with\n:param operator:    filtering operator, e.g. >, <, ==, contains\n:param value:       value to compare column to (using operator)",
+                "_name": "Filter Table By Column",
+                "_lineno": "1361"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column",
+                        "value",
+                        "as_list=False"
+                    ]
+                },
+                "doc": "Find a row in the table by a given column value.\n\n:param table:   Table to find from\n:param column:  name of column to search\n:param value:   value to match for\n:param as_list: return list instead of dictionary",
+                "_name": "Find Table Rows",
+                "_lineno": "1265"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "row",
+                        "column"
+                    ]
+                },
+                "doc": "Get a cell value from table.\n\n:param table:   table to read from\n:param row:     row of cell\n:param column:  column of cell",
+                "_name": "Get Table Cell",
+                "_lineno": "1319"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column",
+                        "as_list=False"
+                    ]
+                },
+                "doc": "Get all column values from table.\n\n:param table:   table to read\n:param column:  column to read\n:param as_list: return list instead of dictionary",
+                "_name": "Get Table Column",
+                "_lineno": "1196"
+            },
+            {
+                "arguments": {
+                    "arg": "table"
+                },
+                "doc": "Return table dimensions, as (rows, columns).\n\n:param table:    table to inspect",
+                "_name": "Get Table Dimensions",
+                "_lineno": "1129"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "index",
+                        "as_list=False"
+                    ]
+                },
+                "doc": "Get a single row from table.\n\n:param table:   table to read\n:param row:     row to read\n:param as_list: return list instead of dictionary",
+                "_name": "Get Table Row",
+                "_lineno": "1184"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "start=None",
+                        "end=None"
+                    ]
+                },
+                "doc": "Return a new Table from a subset of given Table rows.\n\n:param table:   table to read from\n:param start:   start index (inclusive)\n:param start:   end index (inclusive)",
+                "_name": "Get Table Slice",
+                "_lineno": "1255"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column"
+                    ]
+                },
+                "doc": "Group table by `column` and return a list of grouped Tables.\n\n:param table:   table to use for grouping\n:param column:  column which is used as grouping criteria",
+                "_name": "Group Table By Column",
+                "_lineno": "1350"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "*tables",
+                        "index=None"
+                    ]
+                },
+                "doc": "Create a union of two tables and their contents.\n\n:param tables: Tables to merge\n:param index:  Column name to use as index for merge\n\nBy default rows from all tables are appended one after the other.\nOptionally a column name can be given with ``index``, which is\nused to merge rows together.\n\nExample:\n\nFor instance, a ``name`` column could be used to identify\nunique rows and the merge operation should overwrite values\ninstead of appending multiple copies of the same name.\n\n====== =====\nName   Price\n====== =====\nEgg    10.0\nCheese 15.0\nHam    20.0\n====== =====\n\n====== =====\nName   Stock\n====== =====\nEgg    12.0\nCheese 99.0\nHam    0.0\n====== =====\n\n.. code-block:: robotframework\n\n    ${products}=    Merge tables    ${prices}    ${stock}    index=Name\n    FOR    ${product}    IN    @{products}\n        Log many\n        ...    Product: ${product}[Name]\n        ...    Price: ${product}[Price]\n        ...    Stock: ${product}[Stock]\n    END",
+                "_name": "Merge Tables",
+                "_lineno": "1043"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column=None",
+                        "as_list=False"
+                    ]
+                },
+                "doc": "Remove column from table and return it.\n\n:param table:   table to modify\n:param column:  column to remove\n:param as_list: return list instead of dictionary",
+                "_name": "Pop Table Column",
+                "_lineno": "1241"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "index=None",
+                        "as_list=False"
+                    ]
+                },
+                "doc": "Remove row from table and return it.\n\n:param table:   table to modify\n:param index:   row index, pops first row if none given\n:param as_list: return list instead of dictionary",
+                "_name": "Pop Table Row",
+                "_lineno": "1227"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "header=None",
+                        "columns=None",
+                        "dialect=None",
+                        "delimiters=None",
+                        "column_unknown=Unknown"
+                    ]
+                },
+                "doc": "Read a CSV file as a table.\n\n:param path:            path to CSV file\n:param header:          CSV file includes header\n:param columns:         names of columns in resulting table\n:param dialect:         format of CSV file\n:param delimiters:      string of possible delimiters\n:param column_unknown:  column name for unknown fields\n\nBy default attempts to deduce the CSV format and headers\nfrom a sample of the input file. If it's unable to determine\nthe format automatically, the dialect and header will\nhave to be defined manually.\n\nValid ``dialect`` values are ``excel``, ``excel-tab``, and ``unix``,\nand ``header`` is boolean argument (``True``/``False``). Optionally a\nset of valid ``delimiters`` can be given as a string.\n\nThe ``columns`` argument can be used to override the names of columns\nin the resulting table. The amount of columns must match the input\ndata.\n\nIf the source data has a header and rows have more fields than\nthe header defines, the remaining values are put into the column\ngiven by ``column_unknown``. By default it has the value \"Unknown\".\n\nExamples:\n\n.. code-block:: robotframework\n\n    # Source dialect is deduced automatically\n    ${table}=    Read table from CSV    export.csv\n    Log   Found columns: ${table.columns}\n\n    # Source dialect is known and given explicitly\n    ${table}=    Read table from CSV    export-excel.csv    dialect=excel\n    Log   Found columns: ${table.columns}",
+                "_name": "Read Table From Csv",
+                "_lineno": "1434"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "columns",
+                        "strict=False"
+                    ]
+                },
+                "doc": "Renames columns in the Table with given values. Columns with\nname as `None` will be use previous value.\n\n:param table:   table to modify\n:param columns: list of new column names\n:param strict:  if True, raises ValueError if column lengths\n                do not match",
+                "_name": "Rename Table Columns",
+                "_lineno": "1138"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column=None"
+                    ]
+                },
+                "doc": "Set existing column as index for rows.\n\n:param table:   table to modify\n:param column:  column to convert to index",
+                "_name": "Set Column As Index",
+                "_lineno": "1290"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "index"
+                    ]
+                },
+                "doc": "Set existing row as names for columns.\n\n:param table: table to modify\n:param index: row to use as column names",
+                "_name": "Set Row As Column Names",
+                "_lineno": "1281"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "row",
+                        "column",
+                        "value"
+                    ]
+                },
+                "doc": "Set a cell value in the table.\n\n:param table:   table to modify to\n:param row:     row of cell\n:param column:  column of cell\n:param value:   value to set",
+                "_name": "Set Table Cell",
+                "_lineno": "1329"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column",
+                        "values"
+                    ]
+                },
+                "doc": "Assign values to entire column in the table.\n\n:param table:   table to modify\n:param column:  column to modify\n:param values:  value(s) to set",
+                "_name": "Set Table Column",
+                "_lineno": "1217"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "row",
+                        "values"
+                    ]
+                },
+                "doc": "Assign values to a row in the table.\n\n:param table:   table to modify\n:param row:     row to modify\n:param values:  value(s) to set",
+                "_name": "Set Table Row",
+                "_lineno": "1207"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "column",
+                        "ascending=False"
+                    ]
+                },
+                "doc": "Sort table in-place according to `column`.\n\n:param table:       table to sort\n:param column:      column to sort with\n:param ascending:   table sort order",
+                "_name": "Sort Table By Column",
+                "_lineno": "1340"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "count=5",
+                        "as_list=False"
+                    ]
+                },
+                "doc": "Return first `count` rows from table.\n\n:param table:   table to read from\n:param count:   number of lines to read\n:param as_list: return list instead of Table",
+                "_name": "Table Head",
+                "_lineno": "1299"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "count=5",
+                        "as_list=False"
+                    ]
+                },
+                "doc": "Return last `count` rows from table.\n\n:param table:   table to read from\n:param count:   number of lines to read\n:param as_list: return list instead of Table",
+                "_name": "Table Tail",
+                "_lineno": "1309"
+            },
+            {
+                "arguments": {
+                    "arg": "table"
+                },
+                "doc": "Remove all extraneous whitespace from column names.",
+                "_name": "Trim Column Names",
+                "_lineno": "1426"
+            },
+            {
+                "arguments": {
+                    "arg": "table"
+                },
+                "doc": "Remove all rows from the end of the table\nwhich have only None values.\n\n:param table:    table to filter",
+                "_name": "Trim Empty Rows",
+                "_lineno": "1409"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "table",
+                        "path",
+                        "header=True",
+                        "dialect=excel"
+                    ]
+                },
+                "doc": "Write a table as a CSV file.\n\n:param path:    path to write to\n:param table:   table to write\n:param header:  write columns as header to CSV file\n:param dialect: the format of output CSV\n\nValid ``dialect`` values are ``excel``, ``excel-tab``, and ``unix``.",
+                "_name": "Write Table To Csv",
+                "_lineno": "1511"
+            }
+        ],
+        "_name": "Tables",
+        "_type": "LIBRARY",
+        "_format": "REST",
+        "_scope": "GLOBAL",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T10:23:11Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Tables.py",
+        "_lineno": "895"
+    }
+}

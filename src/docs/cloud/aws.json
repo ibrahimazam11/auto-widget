@@ -1,127 +1,353 @@
-[
-  {
-    "keyword": "Analyze Document",
-    "arguments": "image_file: str = None,json_file: str = None,bucket_name: str = None",
-    "description": "Analyzes an input document for relationships between detected items :param image_file: filepath (or object name) of image file :param json_file: filepath to resulting json file :param bucket_name: if given then using image_file from the bucket :return: analysis response in json"
-  },
-  {
-    "keyword": "Create Bucket",
-    "arguments": "bucket_name: str = None",
-    "description": "Create S3 bucket with name :param bucket_name: name for the bucket :return: boolean indicating status of operation"
-  },
-  {
-    "keyword": "Create Queue",
-    "arguments": "queue_name: str = None",
-    "description": "Create queue with name :param queue_name: [description], defaults to None :return: create queue response as dict"
-  },
-  {
-    "keyword": "Delete Bucket",
-    "arguments": "bucket_name: str = None",
-    "description": "Delete S3 bucket with name :param bucket_name: name for the bucket :return: boolean indicating status of operation"
-  },
-  {
-    "keyword": "Delete Files",
-    "arguments": "bucket_name: str = None,files: list = None",
-    "description": "Delete files in the bucket :param bucket_name: name for the bucket :param files: list of files to delete :return: number of files deleted or False"
-  },
-  {
-    "keyword": "Delete Message",
-    "arguments": "receipt_handle: str = None",
-    "description": "Delete message in the queue :param receipt_handle: message handle to delete :return: delete message response as dict"
-  },
-  {
-    "keyword": "Delete Queue",
-    "arguments": "queue_name: str = None",
-    "description": "Delete queue with name :param queue_name: [description], defaults to None :return: delete queue response as dict"
-  },
-  {
-    "keyword": "Detect Document Text",
-    "arguments": "image_file: str = None,json_file: str = None,bucket_name: str = None",
-    "description": "Detects text in the input document. :param image_file: filepath (or object name) of image file :param json_file: filepath to resulting json file :param bucket_name: if given then using image_file from the bucket :return: analysis response in json"
-  },
-  {
-    "keyword": "Detect Entities",
-    "arguments": "text: str = None,lang=en",
-    "description": "Inspects text for named entities, and returns information about them :param text: A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters :param lang: language code of the text, defaults to \"en"
-  },
-  {
-    "keyword": "Detect Sentiment",
-    "arguments": "text: str = None,lang=en",
-    "description": "Inspects text and returns an inference of the prevailing sentiment :param text: A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters :param lang: language code of the text, defaults to \"en"
-  },
-  {
-    "keyword": "Download Files",
-    "arguments": "bucket_name: str = None,files: list = None,target_directory: str = None",
-    "description": "Download files from bucket to local filesystem :param bucket_name: name for the bucket :param files: list of S3 object names :param target_directory: location for the downloaded files, default current directory :return: number of files downloaded"
-  },
-  {
-    "keyword": "Get Cells",
-    "arguments": "",
-    "description": "[summary] :return: [description]"
-  },
-  {
-    "keyword": "Get Tables",
-    "arguments": "",
-    "description": "[summary] :return: [description]"
-  },
-  {
-    "keyword": "Get Words",
-    "arguments": "",
-    "description": "[summary] :return: [description]"
-  },
-  {
-    "keyword": "Init Comprehend Client",
-    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize AWS Comprehend client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init S3 Client",
-    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize AWS S3 client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Sqs Client",
-    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,queue_url: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize AWS SQS client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param queue_url: SQS queue url :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Textract Client",
-    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize AWS Textract client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param use_robocloud_vault: use secret stored into Robocloud Vault"
-  },
-  {
-    "keyword": "List Buckets",
-    "arguments": "",
-    "description": "List all buckets for this account :return: list of buckets"
-  },
-  {
-    "keyword": "List Files",
-    "arguments": "bucket_name",
-    "description": "List files in the bucket :param bucket_name: name for the bucket :return: list of files"
-  },
-  {
-    "keyword": "Receive Message",
-    "arguments": "",
-    "description": "Receive message from queue :return: message as dict"
-  },
-  {
-    "keyword": "Send Message",
-    "arguments": "message: str = None,message_attributes: dict = None",
-    "description": "Send message to the queue :param message: body of the message :param message_attributes: attributes of the message :return: send message response as dict"
-  },
-  {
-    "keyword": "Set Robocloud Vault",
-    "arguments": "vault_name",
-    "description": "Set Robocloud Vault name :param vault_name: Robocloud Vault name"
-  },
-  {
-    "keyword": "Upload File",
-    "arguments": "bucket_name: str = None,filename: str = None,object_name: str = None",
-    "description": "Upload single file into bucket If object_name is not given then basename of the file is used as object_name. :param bucket_name: name for the bucket :param filename: filepath for the file to be uploaded :param object_name: name of the object in the bucket, defaults to None :return: tuple of upload status and error"
-  },
-  {
-    "keyword": "Upload Files",
-    "arguments": "bucket_name: str = None,files: list = None",
-    "description": "Upload multiple files into bucket Giving files as list of filepaths: ['/path/to/file1.txt', '/path/to/file2.txt'] Giving files as list of dictionaries (including filepath and object name): [{'filepath':'/path/to/file1.txt', 'object_name': 'file1.txt'}, {'filepath': '/path/to/file2.txt', 'object_name': 'file2.txt'}] :param bucket_name: name for the bucket :param files: list of files (2 possible ways, see above) :return: number of files uploaded"
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "`AWS` is a library for operating with Amazon AWS services S3, SQS,\nTextract and Comprehend.\n\nServices are initialized with keywords like ``Init S3 Client`` for S3.\n\n**AWS authentication**\n\nAuthentication for AWS is set with `key id` and `access key` which can be given to the library\nin three different ways.\n\n- Method 1 as environment variables, ``AWS_KEY_ID`` and ``AWS_KEY``.\n- Method 2 as keyword parameters to ``Init Textract Client`` for example.\n- Method 3 as Robocloud vault secret. The vault name needs to be given in library init or\n  with keyword ``Set Robocloud Vault``. Secret keys are expected to match environment variable\n  names.\n\nMethod 1. credentials using environment variable\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.AWS\n\n    *** Tasks ***\n    Init AWS services\n        # NO parameters for client, expecting to get credentials\n        # with AWS_KEY and AWS_KEY_ID environment variable\n        Init S3 Client\n\nMethod 2. credentials with keyword parameter\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.AWS\n\n    *** Tasks ***\n    Init AWS services\n        Init S3 Client  aws_key_id=${AWS_KEY_ID}  aws_key=${AWS_KEY}\n\nMethod 3. setting Robocloud Vault in the library init\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.AWS  robocloud_vault_name=aws\n\n    *** Tasks ***\n    Init AWS services\n        Init S3 Client  use_robocloud_vault=${TRUE}\n\nMethod 3. setting Robocloud Vault with keyword\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.AWS\n\n    *** Tasks ***\n    Init AWS services\n        Set Robocloud Vault     vault_name=aws\n        Init Textract Client    use_robocloud_vault=${TRUE}\n\n**Requirements**\n\nThe default installation depends on `boto3`_ library. Due to the size of the\ndependency, this library has been set as an optional package for ``rpaframework``.\n\nThis can be installed by opting in to the `aws` dependency:\n\n``pip install rpaframework[aws]``\n\n.. _boto3:\n    https://boto3.amazonaws.com/v1/documentation/api/latest/index.html\n\n**Example**\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.AWS   region=us-east-1\n\n    *** Variables ***\n    ${BUCKET_NAME}        testbucket12213123123\n\n    *** Tasks ***\n    Upload a file into S3 bucket\n        [Setup]   Init S3 Client\n        Upload File      ${BUCKET_NAME}   ${/}path${/}to${/}file.pdf\n        @{files}         List Files   ${BUCKET_NAME}\n        FOR   ${file}  IN   @{files}\n            Log  ${file}\n        END",
+      "init": {
+         "arguments": {
+            "arg": [
+               "region: str = eu-west-1",
+               "robocloud_vault_name: str = None"
+            ]
+         },
+         "doc": "Initialize self.  See help(type(self)) for accurate signature.",
+         "_lineno": "989"
+      },
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str = None",
+                  "json_file: str = None",
+                  "bucket_name: str = None",
+                  "model: bool = False"
+               ]
+            },
+            "doc": "Analyzes an input document for relationships between detected items\n\n:param image_file: filepath (or object name) of image file\n:param json_file: filepath to resulting json file\n:param bucket_name: if given then using `image_file` from the bucket\n:param model: set `True` to return Textract Document model, default `False`\n:return: analysis response in json or TextractDocument model\n\nExample:\n\n.. code-block:: robotframework\n\n    ${response}    Analyze Document    ${filename}    model=True\n    FOR    ${page}    IN    @{response.pages}\n        Log Many    ${page.tables}\n        Log Many    ${page.form}\n        Log Lines    ${page.lines}\n        Log Many    ${page}\n        Log    ${page}\n        Log    ${page.form}\n    END",
+            "_name": "Analyze Document",
+            "_lineno": "361"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "response"
+               ]
+            },
+            "doc": "Convert AWS Textract JSON response into TextractDocument object,\nwhich has following structure:\n\n    - Document\n    - Page\n    - Tables\n    - Rows\n    - Cells\n    - Lines\n    - Words\n    - Form\n    - Field\n\n:param response: JSON response from AWS Textract service\n:return: `TextractDocument` object\n\nExample:\n\n.. code-block:: robotframework\n\n    ${response}    Analyze Document    ${filename}\n    ${model}=    Convert Textract Response To Model    ${response}\n    FOR    ${page}    IN    @{model.pages}\n        Log Many    ${page.tables}\n        Log Many    ${page.form}\n        Log Lines    ${page.lines}\n        Log Many    ${page}\n        Log    ${page}\n        Log    ${page.form}\n    END",
+            "_name": "Convert Textract Response To Model",
+            "_lineno": "690"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str = None"
+               ]
+            },
+            "doc": "Create S3 bucket with name\n\n:param bucket_name: name for the bucket\n:return: boolean indicating status of operation",
+            "_name": "Create Bucket",
+            "_lineno": "144"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "queue_name: str = None"
+               ]
+            },
+            "doc": "Create queue with name\n\n:param queue_name: [description], defaults to None\n:return: create queue response as dict",
+            "_name": "Create Queue",
+            "_lineno": "866"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str = None"
+               ]
+            },
+            "doc": "Delete S3 bucket with name\n\n:param bucket_name: name for the bucket\n:return: boolean indicating status of operation",
+            "_name": "Delete Bucket",
+            "_lineno": "160"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str = None",
+                  "files: list = None"
+               ]
+            },
+            "doc": "Delete files in the bucket\n\n:param bucket_name: name for the bucket\n:param files: list of files to delete\n:return: number of files deleted or `False`",
+            "_name": "Delete Files",
+            "_lineno": "186"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "receipt_handle: str = None"
+               ]
+            },
+            "doc": "Delete message in the queue\n\n:param receipt_handle: message handle to delete\n:return: delete message response as dict",
+            "_name": "Delete Message",
+            "_lineno": "852"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "queue_name: str = None"
+               ]
+            },
+            "doc": "Delete queue with name\n\n:param queue_name: [description], defaults to None\n:return: delete queue response as dict",
+            "_name": "Delete Queue",
+            "_lineno": "878"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str = None",
+                  "json_file: str = None",
+                  "bucket_name: str = None"
+               ]
+            },
+            "doc": "Detects text in the input document.\n\n:param image_file: filepath (or object name) of image file\n:param json_file: filepath to resulting json file\n:param bucket_name: if given then using `image_file` from the bucket\n:return: analysis response in json",
+            "_name": "Detect Document Text",
+            "_lineno": "489"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: str = None",
+                  "lang=en"
+               ]
+            },
+            "doc": "Inspects text for named entities, and returns information about them\n\n:param text: A UTF-8 text string. Each string must contain fewer\n    that 5,000 bytes of UTF-8 encoded characters\n:param lang: language code of the text, defaults to \"en\"",
+            "_name": "Detect Entities",
+            "_lineno": "777"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: str = None",
+                  "lang=en"
+               ]
+            },
+            "doc": "Inspects text and returns an inference of the prevailing sentiment\n\n:param text: A UTF-8 text string. Each string must contain fewer\n    that 5,000 bytes of UTF-8 encoded characters\n:param lang: language code of the text, defaults to \"en\"",
+            "_name": "Detect Sentiment",
+            "_lineno": "759"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str = None",
+                  "files: list = None",
+                  "target_directory: str = None"
+               ]
+            },
+            "doc": "Download files from bucket to local filesystem\n\n:param bucket_name: name for the bucket\n:param files: list of S3 object names\n:param target_directory: location for the downloaded files, default\n    current directory\n:return: number of files downloaded",
+            "_name": "Download Files",
+            "_lineno": "305"
+         },
+         {
+            "doc": "Get parsed cells from the response\n\n:return: cells",
+            "_name": "Get Cells",
+            "_lineno": "481"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "job_id: str = None",
+                  "max_results: int = 1000",
+                  "next_token: str = None"
+               ]
+            },
+            "doc": "Get the results of Textract asynchronous `Document Analysis` operation\n\n:param job_id: job identifier, defaults to None\n:param max_results: number of blocks to get at a time, defaults to 1000\n:param next_token: pagination token for getting next set of results,\n       defaults to None\n:return: dictionary\n\nResponse dictionary has key `JobStatus` with value `SUCCEEDED` when analysis\nhas been completed.\n\nExample:\n\n.. code-block:: robotframework\n\n    Init Textract Client  %{AWS_KEY_ID}  %{AWS_KEY_SECRET}  %{AWS_REGION}\n    ${jobid}=    Start Document Analysis  s3bucket_name  invoice.pdf\n    FOR    ${i}    IN RANGE    50\n        ${response}    Get Document Analysis  ${jobid}\n        Exit For Loop If    \"${response}[JobStatus]\" == \"SUCCEEDED\"\n        Sleep    1s\n    END",
+            "_name": "Get Document Analysis",
+            "_lineno": "562"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "job_id: str = None",
+                  "max_results: int = 1000",
+                  "next_token: str = None"
+               ]
+            },
+            "doc": "Get the results of Textract asynchronous `Document Text Detection` operation\n\n:param job_id: job identifier, defaults to None\n:param max_results: number of blocks to get at a time, defaults to 1000\n:param next_token: pagination token for getting next set of results,\n       defaults to None\n:return: dictionary\n\nResponse dictionary has key `JobStatus` with value `SUCCEEDED` when analysis\nhas been completed.\n\nExample:\n\n.. code-block:: robotframework\n\n    Init Textract Client  %{AWS_KEY_ID}  %{AWS_KEY_SECRET}  %{AWS_REGION}\n    ${jobid}=    Start Document Text Detection  s3bucket_name  invoice.pdf\n    FOR    ${i}    IN RANGE    50\n        ${response}    Get Document Text Detection    ${jobid}\n        Exit For Loop If    \"${response}[JobStatus]\" == \"SUCCEEDED\"\n        Sleep    1s\n    END",
+            "_name": "Get Document Text Detection",
+            "_lineno": "656"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "textract_response: dict"
+               ]
+            },
+            "doc": "Get pages and text out of Textract response json\n\n:param textract_response: JSON from Textract\n:return: dictionary, page numbers as keys and value is a list\n         of text lines",
+            "_name": "Get Pages And Text",
+            "_lineno": "596"
+         },
+         {
+            "doc": "Get parsed tables from the response\n\n:return: tables",
+            "_name": "Get Tables",
+            "_lineno": "467"
+         },
+         {
+            "doc": "Get parsed words from the response\n\n:return: words",
+            "_name": "Get Words",
+            "_lineno": "474"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "aws_key_id: str = None",
+                  "aws_key: str = None",
+                  "region: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize AWS Comprehend client\n\n:param aws_key_id: access key ID\n:param aws_key: secret access key\n:param region: AWS region\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init Comprehend Client",
+            "_lineno": "740"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "aws_key_id: str = None",
+                  "aws_key: str = None",
+                  "region: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize AWS S3 client\n\n:param aws_key_id: access key ID\n:param aws_key: secret access key\n:param region: AWS region\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init S3 Client",
+            "_lineno": "127"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "aws_key_id: str = None",
+                  "aws_key: str = None",
+                  "region: str = None",
+                  "queue_url: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize AWS SQS client\n\n:param aws_key_id: access key ID\n:param aws_key: secret access key\n:param region: AWS region\n:param queue_url: SQS queue url\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init Sqs Client",
+            "_lineno": "798"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "aws_key_id: str = None",
+                  "aws_key: str = None",
+                  "region: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize AWS Textract client\n\n:param aws_key_id: access key ID\n:param aws_key: secret access key\n:param region: AWS region\n:param use_robocloud_vault: use secret stored into `Robocloud Vault`",
+            "_name": "Init Textract Client",
+            "_lineno": "344"
+         },
+         {
+            "doc": "List all buckets for this account\n\n:return: list of buckets",
+            "_name": "List Buckets",
+            "_lineno": "176"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name"
+               ]
+            },
+            "doc": "List files in the bucket\n\n:param bucket_name: name for the bucket\n:return: list of files",
+            "_name": "List Files",
+            "_lineno": "211"
+         },
+         {
+            "doc": "Receive message from queue\n\n:return: message as dict",
+            "_name": "Receive Message",
+            "_lineno": "840"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "message: str = None",
+                  "message_attributes: dict = None"
+               ]
+            },
+            "doc": "Send message to the queue\n\n:param message: body of the message\n:param message_attributes: attributes of the message\n:return: send message response as dict",
+            "_name": "Send Message",
+            "_lineno": "818"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "vault_name"
+               ]
+            },
+            "doc": "Set Robocloud Vault name\n\n:param vault_name: Robocloud Vault name",
+            "_name": "Set Robocloud Vault",
+            "_lineno": "111"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name_in: str = None",
+                  "object_name_in: str = None",
+                  "object_version_in: str = None",
+                  "bucket_name_out: str = None",
+                  "prefix_object_out: str = textract_output"
+               ]
+            },
+            "doc": "Starts the asynchronous analysis of an input document\nfor relationships between detected items such as key-value pairs,\ntables, and selection elements.\n\n:param bucket_name_in: name of the S3 bucket for the input object,\n    defaults to None\n:param object_name_in: name of the input object, defaults to None\n:param object_version_in: version of the input object, defaults to None\n:param bucket_name_out: name of the S3 bucket where to save analysis result\n    object, defaults to None\n:param prefix_object_out: name of the S3 bucket for the analysis result object,\n:return: job identifier\n\nInput object can be in JPEG, PNG or PDF format. Documents should\nbe located in the Amazon S3 bucket.\n\nBy default Amazon Textract will save the analysis result internally\nto be accessed by keyword ``Get Document Analysis``. This can\nbe overridden by giving parameter ``bucket_name_out``.",
+            "_name": "Start Document Analysis",
+            "_lineno": "516"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name_in: str = None",
+                  "object_name_in: str = None",
+                  "object_version_in: str = None",
+                  "bucket_name_out: str = None",
+                  "prefix_object_out: str = textract_output"
+               ]
+            },
+            "doc": "Starts the asynchronous detection of text in a document.\nAmazon Textract can detect lines of text and the words that make up a\nline of text.\n\n:param bucket_name_in: name of the S3 bucket for the input object,\n    defaults to None\n:param object_name_in: name of the input object, defaults to None\n:param object_version_in: version of the input object, defaults to None\n:param bucket_name_out: name of the S3 bucket where to save analysis result\n    object, defaults to None\n:param prefix_object_out: name of the S3 bucket for the analysis result object,\n:return: job identifier\n\nInput object can be in JPEG, PNG or PDF format. Documents should\nbe located in the Amazon S3 bucket.\n\nBy default Amazon Textract will save the analysis result internally\nto be accessed by keyword ``Get Document Text Detection``. This can\nbe overridden by giving parameter ``bucket_name_out``.",
+            "_name": "Start Document Text Detection",
+            "_lineno": "613"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str = None",
+                  "filename: str = None",
+                  "object_name: str = None"
+               ]
+            },
+            "doc": "Upload single file into bucket\n\n:param bucket_name: name for the bucket\n:param filename: filepath for the file to be uploaded\n:param object_name: name of the object in the bucket, defaults to None\n:return: tuple of upload status and error\n\nIf `object_name` is not given then basename of the file is\nused as `object_name`.",
+            "_name": "Upload File",
+            "_lineno": "247"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str = None",
+                  "files: list = None"
+               ]
+            },
+            "doc": "Upload multiple files into bucket\n\n:param bucket_name: name for the bucket\n:param files: list of files (2 possible ways, see above)\n:return: number of files uploaded\n\nGiving files as list of filepaths:\n    ['/path/to/file1.txt', '/path/to/file2.txt']\n\nGiving files as list of dictionaries (including filepath and object name):\n    [{'filepath':'/path/to/file1.txt', 'object_name': 'file1.txt'},\n    {'filepath': '/path/to/file2.txt', 'object_name': 'file2.txt'}]",
+            "_name": "Upload Files",
+            "_lineno": "266"
+         }
+      ],
+      "_name": "AWS",
+      "_type": "LIBRARY",
+      "_format": "REST",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-31T06:13:13Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Cloud\\AWS.py",
+      "_lineno": "890"
+   }
+}

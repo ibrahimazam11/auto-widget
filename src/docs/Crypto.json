@@ -1,0 +1,111 @@
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "global",
+        "namedargs": "yes",
+        "doc": "Library for common encryption and hashing operations.\n\nIt uses the `Fernet <https://github.com/fernet/spec/blob/master/Spec.md>`_\nformat for encryption. More specifically, it uses AES in\nCBC mode with a 128-bit key for encryption and HMAC with SHA256 for\nauthentication.\n\nTo use the encryption features, generate a key with the command line\nutility ``rpa-crypto`` or with the keyword ``Generate Key``. Store\nthe key in a secure place, such as Robocorp Vault, and load it within\nthe execution before calling encryption/decryption keywords.\n\n**Example usage with Robocorp Vault**\n\nCreate an encryption key with the CLI utility:\n\n.. code-block:: console\n\n    > rpa-crypto key\n    rGx1edA07yz7uD08ChiPSunn8vaauRxw0pAbsal9zjM=\n\nStore the key in Robocorp Vault, in this case with the name ``EncryptionKey``.\n\nLoad the key from the vault before encryption operations:\n\n.. code-block:: robotframework\n\n    Use encryption key from vault    EncryptionKey\n    ${encrypted}=   Encrypt file    orders.xlsx\n    Add work item file    ${encrypted}    name=Orders\n\nIn another task, this same key can be used to decrypt the file:\n\n.. code-block:: robotframework\n\n    Use encryption key from vault    EncryptionKey\n    ${encrypted}=    Get work item file    Orders\n    ${orders}=   Decrypt file    ${encrypted}",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "path: str",
+                        "output: str = None"
+                    ]
+                },
+                "doc": "Decrypt a file.\n\n:param path: Path to encrypted input file\n:param output: Path to decrypted output file\n\nIf not output path is given, it will generate one from the input path.\nThe resulting output path is returned.\n\nExample:\n\n.. code-block:: robotframework\n\n    Use encryption key    ${key}\n    ${path}=    Decrypt file    orders.xlsx.enc\n    Log    Path to decrypted file is: ${path}",
+                "_name": "Decrypt File",
+                "_lineno": "296"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "data: typing.Union[str, bytes]",
+                        "encoding=utf-8"
+                    ]
+                },
+                "doc": "Decrypt a string.\n\n:param data: Encrypted data as base64 string\n:param encoding: Original encoding of string\n\nReturns the decrypted string that is parsed with the given encoding,\nor if the encoding is ``None`` the raw bytes are returned.\n\nExample:\n\n.. code-block:: robotframework\n\n    Use encryption key    ${key}\n    ${text}=    Decrypt string    ${token}\n    Log    Secret string is: ${text}",
+                "_name": "Decrypt String",
+                "_lineno": "225"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path: str",
+                        "output: str = None"
+                    ]
+                },
+                "doc": "Encrypt a file.\n\n:param path: Path to source input file\n:param output: Path to encrypted output file\n\nIf not output path is given, it will generate one from the input path.\nThe resulting output path is returned.\n\nExample:\n\n.. code-block:: robotframework\n\n    Use encryption key    ${key}\n    ${path}=    Encrypt file    orders.xlsx\n    Log    Path to encrypted file is: ${path}",
+                "_name": "Encrypt File",
+                "_lineno": "262"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "text: typing.Union[str, bytes]",
+                        "encoding=utf-8"
+                    ]
+                },
+                "doc": "Encrypt a string.\n\n:param text: Source text to encrypt\n:param encoding: Used text encoding\n\nExample:\n\n.. code-block:: robotframework\n\n    Use encryption key    ${key}\n    ${token}=    Encrypt string    This is a secret, don't share it",
+                "_name": "Encrypt String",
+                "_lineno": "203"
+            },
+            {
+                "arguments": "",
+                "doc": "Generate a Fernet encryption key as base64 string.\n\nThis key can be used for encryption/decryption operations\nwith this library.\n\n*NOTE:* Store the generated key in a secure place!\nIf the key is lost, the encrypted data can not be recovered.\nIf anyone else gains access to it, they can decrypt your data.",
+                "_name": "Generate Key",
+                "_lineno": "95"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path: str",
+                        "method: Hash { MD5 | SHA1 | SHA224 | SHA256 | ... } = Hash.SHA1"
+                    ]
+                },
+                "doc": "Calculate a hash from a file, in base64 format.\n\n:param path: Path to file\n:param method: The used hashing method\n\nExample:\n\n.. code-block:: robotframework\n\n    ${digest}=    Hash file    orders.xlsx    method=MD5\n    Should not be equal    ${digest}    uSlyRHlbu8NzY29YMZhDUpdErP4=",
+                "_name": "Hash File",
+                "_lineno": "179"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "text: str",
+                        "method: Hash { MD5 | SHA1 | SHA224 | SHA256 | ... } = Hash.SHA1",
+                        "encoding=utf-8"
+                    ]
+                },
+                "doc": "Calculate a hash from a string, in base64 format.\n\n:param text: String to hash\n:param method: Used hashing method\n:param encoding: Used text encoding\n\nExample:\n\n.. code-block:: robotframework\n\n    ${digest}=    Hash string    A value that will be hashed\n    Should be equal    ${digest}    uSlyRHlbu8NzY29YMZhDUpdErP4=",
+                "_name": "Hash String",
+                "_lineno": "156"
+            },
+            {
+                "arguments": {
+                    "arg": "key: str"
+                },
+                "doc": "Set key for all following encryption/decryption operations.\n\n:param key: Encryption key as base64 string\n\nAssumes the given key has been generated previously using\neither the keyword ``Generate Key`` or with the matching command\nline utility.\n\nExample:\n\n.. code-block:: robotframework\n\n    ${key}=    Read file    encryption.key\n    Use encryption key      ${key}",
+                "_name": "Use Encryption Key",
+                "_lineno": "107"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "name: str",
+                        "key: str = None"
+                    ]
+                },
+                "doc": "Load an encryption key from Robocorp Vault.\n\n:param name: Name of secret in Vault\n:param key: Name of encryption key in secret\n\nIf the secret only has one value, the key argument is optional.\n\nExample:\n\n.. code-block:: robotframework\n\n    # Secret with one value\n    Use encryption key from vault    Encryption\n    # Secret with multiple values\n    Use encryption key from vault    name=Encryption    key=CryptoKey",
+                "_name": "Use Encryption Key From Vault",
+                "_lineno": "125"
+            }
+        ],
+        "_name": "Crypto",
+        "_type": "LIBRARY",
+        "_format": "REST",
+        "_scope": "GLOBAL",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T07:50:23Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Crypto.py",
+        "_lineno": "43"
+    }
+}

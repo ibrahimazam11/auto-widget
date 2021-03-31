@@ -1,217 +1,436 @@
-[
-  {
-    "keyword": "Absolute Path",
-    "arguments": "path",
-    "description": "Returns the absolute path to a file, and resolves symlinks. :param path: path that will be resolved :return: absolute path to file"
-  },
-  {
-    "keyword": "Append To Binary File",
-    "arguments": "path,content",
-    "description": "Appends binary content to the given file. :param path: path to file to append to :param content: content to append"
-  },
-  {
-    "keyword": "Append To File",
-    "arguments": "path,content,encoding=utf-8",
-    "description": "Appends text to the given file. :param path: path to file to append to :param content: content to append :param encoding: character encoding of appended content"
-  },
-  {
-    "keyword": "Change File Extension",
-    "arguments": "path,extension",
-    "description": "Replaces file extension for file at given path. :param path: path to file to rename :param extension: new extension, e.g. .xlsx"
-  },
-  {
-    "keyword": "Copy Directory",
-    "arguments": "source,destination",
-    "description": "Copy directory from source path to destination path. :param source: path to source directory :param destination: path to copy destination"
-  },
-  {
-    "keyword": "Copy File",
-    "arguments": "source,destination",
-    "description": "Copy a file from source path to destination path. :param source: path to source file :param destination: path to copy destination"
-  },
-  {
-    "keyword": "Copy Files",
-    "arguments": "sources,destination",
-    "description": "Copy multiple files to destination folder. :param sources: list of source files :param destination: path to destination folder"
-  },
-  {
-    "keyword": "Create Binary File",
-    "arguments": "path,content=None,overwrite=False",
-    "description": "Creates a new binary file, and writes content if any is given. :param path: path to file to write :param content: content to write to file (optional) :param overwrite: replace destination file if it already exists"
-  },
-  {
-    "keyword": "Create Directory",
-    "arguments": "path,parents=False,exist_ok=True",
-    "description": "Creates a directory and (optionally) non-existing parent directories. :param path: path to new directory :param parents: create missing parent directories :param exist_ok: continue without errors if directory already exists"
-  },
-  {
-    "keyword": "Create File",
-    "arguments": "path,content=None,encoding=utf-8,overwrite=False",
-    "description": "Creates a new text file, and writes content if any is given. :param path: path to file to write :param content: content to write to file (optional) :param encoding: character encoding of written content :param overwrite: replace destination file if it already exists"
-  },
-  {
-    "keyword": "Does Directory Exist",
-    "arguments": "path",
-    "description": "Returns True if the given directory exists, False if not. :param path: path to inspected directory"
-  },
-  {
-    "keyword": "Does Directory Not Exist",
-    "arguments": "path",
-    "description": "Returns True if the directory does not exist, False if it does. :param path: path to inspected directory"
-  },
-  {
-    "keyword": "Does File Exist",
-    "arguments": "path",
-    "description": "Returns True if the given file exists, False if not. :param path: path to inspected file"
-  },
-  {
-    "keyword": "Does File Not Exist",
-    "arguments": "path",
-    "description": "Returns True if the file does not exist, False if it does. :param path: path to inspected file"
-  },
-  {
-    "keyword": "Empty Directory",
-    "arguments": "path",
-    "description": "Removes all the files in the given directory. :param path: directory to remove files from"
-  },
-  {
-    "keyword": "Find Files",
-    "arguments": "pattern,include_dirs=True,include_files=True",
-    "description": "Find files recursively according to a pattern. :param pattern: search path in glob format pattern, e.g. *.xls or **/orders.txt :param include_dirs: include directories in results :param include_files: include files in results :return: list of paths that match the pattern"
-  },
-  {
-    "keyword": "Get File Creation Date",
-    "arguments": "path",
-    "description": "Returns the creation time in seconds. Note: Linux sets this whenever file metadata changes :param path: path to file to inspect"
-  },
-  {
-    "keyword": "Get File Extension",
-    "arguments": "path",
-    "description": "Returns the suffix for the file. :param path: path to file"
-  },
-  {
-    "keyword": "Get File Modified Date",
-    "arguments": "path",
-    "description": "Returns the modified time in seconds. :param path: path to file to inspect"
-  },
-  {
-    "keyword": "Get File Name",
-    "arguments": "path",
-    "description": "Returns only the filename portion of a path. :param path: path to file"
-  },
-  {
-    "keyword": "Get File Size",
-    "arguments": "path",
-    "description": "Returns the file size in bytes. :param path: path to file to inspect"
-  },
-  {
-    "keyword": "Is Directory Empty",
-    "arguments": "path=None",
-    "description": "Returns True if the given directory has no files or subdirectories. :param path: path to inspected directory"
-  },
-  {
-    "keyword": "Is Directory Not Empty",
-    "arguments": "path=None",
-    "description": "Returns True if the given directory has any files or subdirectories. :param path: path to inspected directory"
-  },
-  {
-    "keyword": "Is File Empty",
-    "arguments": "path",
-    "description": "Returns True if the given file has no content, i.e. has zero size. :param path: path to inspected file"
-  },
-  {
-    "keyword": "Is File Not Empty",
-    "arguments": "path",
-    "description": "Returns True if the given file has content, i.e. larger than zero size. :param path: path to inspected file"
-  },
-  {
-    "keyword": "Join Path",
-    "arguments": "*parts",
-    "description": "Joins multiple parts of a path together. :param parts: Components of the path, e.g. dir, subdir, filename.ext"
-  },
-  {
-    "keyword": "List Directories In Directory",
-    "arguments": "path=None",
-    "description": "Lists all the directories in the given directory, relative to it. :param path: base directory for search, defaults to current working dir"
-  },
-  {
-    "keyword": "List Files In Directory",
-    "arguments": "path=None",
-    "description": "Lists all the files in the given directory, relative to it. :param path: base directory for search, defaults to current working dir"
-  },
-  {
-    "keyword": "Log Directory Tree",
-    "arguments": "path=None",
-    "description": "Logs all the files in the directory recursively. :param path: base directory to start from, defaults to current working dir"
-  },
-  {
-    "keyword": "Move Directory",
-    "arguments": "source,destination,overwrite=False",
-    "description": "Move a directory from source path to destination path. :param source: source directory path for moving :param destination: path to move to :param overwrite: replace destination directory if it already exists"
-  },
-  {
-    "keyword": "Move File",
-    "arguments": "source,destination,overwrite=False",
-    "description": "Move a file from source path to destination path, optionally overwriting the destination. :param source: source file path for moving :param destination: path to move to :param overwrite: replace destination file if it already exists"
-  },
-  {
-    "keyword": "Move Files",
-    "arguments": "sources,destination,overwrite=False",
-    "description": "Move multiple files to the destination folder. :param sources: list of files to move :param destination: path to move destination :param overwrite: replace destination files if they already exist"
-  },
-  {
-    "keyword": "Normalize Path",
-    "arguments": "path",
-    "description": "Removes redundant separators or up-level references from path. :param path: path that will be normalized :return: path to file"
-  },
-  {
-    "keyword": "Read Binary File",
-    "arguments": "path",
-    "description": "Reads a file in binary mode and returns the content. Does not attempt to decode the content in any way. :param path: path to file to read"
-  },
-  {
-    "keyword": "Read File",
-    "arguments": "path,encoding=utf-8",
-    "description": "Reads a file as text, with given encoding, and returns the content.\" :param path: path to file to read :param encoding: character encoding of file"
-  },
-  {
-    "keyword": "Remove Directory",
-    "arguments": "path,recursive=False",
-    "description": "Removes the given directory, and optionally everything it contains. :param path: path to directory :param recursive: remove all subdirectories and files"
-  },
-  {
-    "keyword": "Remove File",
-    "arguments": "path,force=False",
-    "description": "Removes the given file. :param path: path to the file to remove :param force: ignore non-existent files"
-  },
-  {
-    "keyword": "Remove Files",
-    "arguments": "*paths,force=False",
-    "description": "Removes multiple files. :param paths: paths to files to be removed :param force: ignore non-existent files"
-  },
-  {
-    "keyword": "Run Keyword If File Exists",
-    "arguments": "path,keyword,*args",
-    "description": "If file exists at path, execute given keyword with arguments. *Example* .. code:: robotframework Run keyword if file exists orders.xlsx Process orders :param path: path to file to inspect :param keyword: Robot Framework keyword to execute :param args: arguments to keyword"
-  },
-  {
-    "keyword": "Touch File",
-    "arguments": "path",
-    "description": "Creates a file with no content, or if file already exists, updates the modification and access times. :param path: path to file which is touched"
-  },
-  {
-    "keyword": "Wait Until Created",
-    "arguments": "path,timeout=5.0",
-    "description": "Poll path until it exists, or raise exception if timeout is reached. :param path: path to poll :param timeout: time in seconds until keyword fails"
-  },
-  {
-    "keyword": "Wait Until Modified",
-    "arguments": "path,timeout=5.0",
-    "description": "Poll path until it has been modified after the keyword was called, or raise exception if timeout is reached. :param path: path to poll :param timeout: time in seconds until keyword fails"
-  },
-  {
-    "keyword": "Wait Until Removed",
-    "arguments": "path,timeout=5.0",
-    "description": "Poll path until it doesn't exist, or raise exception if timeout is reached. :param path: path to poll :param timeout: time in seconds until keyword fails"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "`FileSystem` is a library for finding, creating, and modifying\nfiles on a local filesystem.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns the absolute path to a file, and resolves symlinks.\n\n:param path:    path that will be resolved\n:return:        absolute path to file\n\n${Path} = Absolute Path  FileName.ext \n\nExample:\n\n    Returns : C:/Folder/FileName.ext (Return the path of File)",
+                "_name": "Absolute Path",
+                "_lineno": "664"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "content"
+                    ]
+                },
+                "doc": "Appends binary content to the given file.\n\n:param path:        path to file to append to\n:param content:     content to append\n\nExample:\n\n    Append To Binary File   C:/Folder/Test.bin   \"AutoSphere\"",
+                "_name": "Append To Binary File",
+                "_lineno": "393"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "content",
+                        "encoding=utf-8"
+                    ]
+                },
+                "doc": "Appends text to the given file.\n\n:param path:        path to file to append to\n:param content:     content to append\n:param encoding:    character encoding of appended content\n\nExample:\n\n    Append To File   C:/Folder/Test.txt   \"AutoSphere\"",
+                "_name": "Append To File",
+                "_lineno": "375"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "extension"
+                    ]
+                },
+                "doc": "Replaces file extension for file at given path.\n\n:param path:        path to file to rename\n:param extension:   new extension, e.g. .xlsx\n\nExample: \n\n    Change File Extension  C:/Folder/File.ext  .ext (new extension)",
+                "_name": "Change File Extension",
+                "_lineno": "633"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "source",
+                        "destination"
+                    ]
+                },
+                "doc": "Copy directory from source path to destination path.\n\n:param source:      path to source directory\n:param destination: path to copy destination\n\nExample:\n     \n    Copy Directory   C:/Folder/Test    D:/Folder",
+                "_name": "Copy Directory",
+                "_lineno": "536"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "source",
+                        "destination"
+                    ]
+                },
+                "doc": "Copy a file from source path to destination path.\n\n:param source:      path to source file\n:param destination: path to copy destination\n\nExample:\n\n    Copy file    C:/folder/file.txt    C:/folder/subfolder/file.txt\n\nCopy specified file to new directory.",
+                "_name": "Copy File",
+                "_lineno": "490"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "sources",
+                        "destination"
+                    ]
+                },
+                "doc": "Copy multiple files to destination folder.\n\n:param sources:     list of source files\n:param destination: path to destination folder\n\nExample:\n\n    Copy file    C:/folder/file.txt  C:/folder/file2.txt   C:/folder/subfolder\n\nCopy specified files to new directory.",
+                "_name": "Copy Files",
+                "_lineno": "512"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "content=None",
+                        "overwrite=False"
+                    ]
+                },
+                "doc": "Creates a new binary file, and writes content if any is given.\n\n:param path:        path to file to write\n:param content:     content to write to file (optional)\n:param overwrite:   replace destination file if it already exists\n\nExample:\n\n    Create Binary File   C:/Folder/test.bin     Content \n\nor\n\n    Create Binary File  ${dir}/example.png      ${image content}\n    Create Binary File  ${path}",
+                "_name": "Create Binary File",
+                "_lineno": "351"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "parents=False",
+                        "exist_ok=True"
+                    ]
+                },
+                "doc": "Creates a directory and (optionally) non-existing parent directories.\n\n:param path:        path to new directory\n:param parents:     create missing parent directories\n:param exist_ok:    continue without errors if directory already exists\n\nExample:\n\n    Create directory   C:/Folder/Directory",
+                "_name": "Create Directory",
+                "_lineno": "409"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "content=None",
+                        "encoding=utf-8",
+                        "overwrite=False"
+                    ]
+                },
+                "doc": "Creates a new text file, and writes content if any is given.\n\n:param path:        path to file to write\n:param content:     content to write to file (optional)\n:param encoding:    character encoding of written content\n:param overwrite:   replace destination file if it already exists\n\nExample:\n\n    Create File    C:/Folder/file.ext    Content    overwrite=True",
+                "_name": "Create File",
+                "_lineno": "331"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns True if the given directory exists, False if not.\n\n:param path:    path to inspected directory\n\nExample:\n\n    ${A} = Does Directory Exist   C: / FolderName \n    log to console   ${A}\n\nReturns True if it Exists And False if it does not",
+                "_name": "Does Directory Exist",
+                "_lineno": "191"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns True if the directory does not exist, False if it does.\n\n:param path:    path to inspected directory\n\n Example:\n\n    ${B} = Does Directory Not Exist   C:/FolderName \n    log to console   ${B} \n\nReturns False if it exist and True if it does not",
+                "_name": "Does Directory Not Exist",
+                "_lineno": "206"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns True if the given file exists, False if not.\n\n:param path:    path to inspected file\n\nExample:\n    \n    Does File Exist   C:/Folder/file.txt",
+                "_name": "Does File Exist",
+                "_lineno": "163"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns True if the file does not exist, False if it does.\n\n:param path:    path to inspected file\n\nExample:\n\n    ${D} = Does File Not Exist   C:/folder/file.ext \n    log to console   ${D} \n\nReturns True if file does not Exist and false if it does exists",
+                "_name": "Does File Not Exist",
+                "_lineno": "176"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Removes all the files in the given directory.\n\n:param path:    directory to remove files from\n\nExample:\n\n    Empty Directory   C:/Directory",
+                "_name": "Empty Directory",
+                "_lineno": "474"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "pattern",
+                        "include_dirs=True",
+                        "include_files=True"
+                    ]
+                },
+                "doc": "Find files recursively according to a pattern.\n\n:param pattern:         search path in glob format pattern,\n                        e.g. *.xls or **/orders.txt\n:param include_dirs:    include directories in results\n:param include_files:   include files in results\n:return:                list of paths that match the pattern",
+                "_name": "Find Files",
+                "_lineno": "72"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns the creation time in seconds.\nNote: Linux sets this whenever file metadata changes\n\n:param path:    path to file to inspect\n\nExample:\n\n    Get File Creation Date    C:/Folder/movecopy_multi-1.txt",
+                "_name": "Get File Creation Date",
+                "_lineno": "741"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns the suffix for the file.\n\n:param path:    path to file\n\nExample:\n\n    Get File Extension    C:/Folder/File1",
+                "_name": "Get File Extension",
+                "_lineno": "716"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns the modified time in seconds.\n\n:param path:    path to file to inspect\n\nExample:\n\n    Get File Modified Date    C:/Folder/File1",
+                "_name": "Get File Modified Date",
+                "_lineno": "728"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns only the filename portion of a path.\n\n:param path:    path to file\n\nExample:\n\n    ${H} = Get File Name   C:/folder/file.ext \n    log to console   ${H} \n\nReturns just the name of specified file",
+                "_name": "Get File Name",
+                "_lineno": "702"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns the file size in bytes.\n\n:param path:    path to file to inspect\n\nExample:\n\n    ${I} = Get File Size   C:/folder/file.ext \n    Log to console   ${I} \n\nReturns Size of the specified file in bytes.",
+                "_name": "Get File Size",
+                "_lineno": "755"
+            },
+            {
+                "arguments": {
+                    "arg": "path=None"
+                },
+                "doc": "Returns True if the given directory has no files or subdirectories.\n\n:param path:    path to inspected directory\n\nExample:\n\n    ${J} = Is Directory Empty   C:/folder/subfolder \n    log to console   ${J} \n\nReturns True if Directory is empty and False if it is not.",
+                "_name": "Is Directory Empty",
+                "_lineno": "221"
+            },
+            {
+                "arguments": {
+                    "arg": "path=None"
+                },
+                "doc": "Returns True if the given directory has any files or subdirectories.\n\n:param path:    path to inspected directory\n\nExample:\n\n    ${J} = Is Directory Not Empty   C:/folder/subfolder \n    log to console   ${J} \n\nReturns True if Directory is not empty and False if it is.",
+                "_name": "Is Directory Not Empty",
+                "_lineno": "239"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns True if the given file has no content, i.e. has zero size.\n\n:param path:    path to inspected file\n\nExample:\n\n    ${J} = Is File Empty   C:/folder/subfolder/file.ext \n    log to console   ${J} \n\nReturns True if File is empty and False if it is not.",
+                "_name": "Is File Empty",
+                "_lineno": "254"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Returns True if the given file has content, i.e. larger than zero size.\n\n:param path:    path to inspected file\n\nExample:\n    \n    ${J} = Is File Not Empty   C:/folder/subfolder/file.ext \n    log to console   ${J} \n\nReturns True if File is not empty and False if it is.",
+                "_name": "Is File Not Empty",
+                "_lineno": "271"
+            },
+            {
+                "arguments": {
+                    "arg": "*parts"
+                },
+                "doc": "Joins multiple parts of a path together.\n\n:param parts:  Components of the path, e.g. dir, subdir, filename.ext\n\nExamples:\n\n    ${path} =   Join Path       my      path            \n    ${p2} =     Join Path       my/     path/           \n    ${p3} =     Join Path       my      path    my      file.txt\n    ${p4} =     Join Path       my      /path           \n    ${p5} =     Join Path       /my/path/       ..      path2",
+                "_name": "Join Path",
+                "_lineno": "647"
+            },
+            {
+                "arguments": {
+                    "arg": "path=None"
+                },
+                "doc": "Lists all the directories in the given directory, relative to it.\n\n:param path:    base directory for search, defaults to current working dir\n\n Example:\n\n    ${N} = List Directories In Directory   D:/Folder \n    log to console   ${N} \n\nReturns All the directories in specified directory.",
+                "_name": "List Directories In Directory",
+                "_lineno": "117"
+            },
+            {
+                "arguments": {
+                    "arg": "path=None"
+                },
+                "doc": "Lists all the files in the given directory, relative to it.\n\n:param path:    base directory for search, defaults to current working dir\n\nExample:\n\n    ${N} = List Files In Directory   D:/Directory \n    log to console   ${N} \n\nReturns All the files In the specified Directory",
+                "_name": "List Files In Directory",
+                "_lineno": "103"
+            },
+            {
+                "arguments": {
+                    "arg": "path=None"
+                },
+                "doc": "Logs all the files in the directory recursively.\n\n:param path:    base directory to start from, defaults to current working dir\n\nExample:\n\n    Log Directory Tree   C:/Folder",
+                "_name": "Log Directory Tree",
+                "_lineno": "131"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "source",
+                        "destination",
+                        "overwrite=False"
+                    ]
+                },
+                "doc": "Move a directory from source path to destination path.\n\n:param source:      source directory path for moving\n:param destination: path to move to\n:param overwrite:   replace destination directory if it already exists\n\nExample:\n\n    Move directory     C:/Folder/Directory    C:/Folder \n\n\nMove the source Directory to Destination folder. \n\nNote:\n    \n    Works fine with library OperatingSystem",
+                "_name": "Move Directory",
+                "_lineno": "604"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "source",
+                        "destination",
+                        "overwrite=False"
+                    ]
+                },
+                "doc": "Move a file from source path to destination path,\noptionally overwriting the destination.\n\n:param source:      source file path for moving\n:param destination: path to move to\n:param overwrite:   replace destination file if it already exists\n\nExample:\n\n    Move file    C:/folder/file.txt    C:/folder/subfolder/file.txt\n\nMove specified file to new directory.",
+                "_name": "Move File",
+                "_lineno": "557"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "sources",
+                        "destination",
+                        "overwrite=False"
+                    ]
+                },
+                "doc": "Move multiple files to the destination folder.\n\n:param sources:     list of files to move\n:param destination: path to move destination\n:param overwrite:   replace destination files if they already exist\n\nExample:\n\n    Move file    C:/folder/file1.txt  C:/folder/file2.txt    C:/folder/subfolder\n\nMove specified file to new directory.",
+                "_name": "Move Files",
+                "_lineno": "582"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Removes redundant separators or up-level references from path.\n\n:param path:    path that will be normalized\n:return:        path to file\n\nExamples:\n\n    ${path1} =  Normalize Path  abc/\n    ${path2} =  Normalize Path  abc/../def\n    ${path3} =  Normalize Path  abc/./def//ghi\n    ${path4} =  Normalize Path  ~robot/stuff\n    \nOutput:\n\n    ${path1} = 'abc'\n    ${path2} = 'def'\n    ${path3} = 'abc/def/ghi'\n    ${path4} = '/home/robot/stuff'",
+                "_name": "Normalize Path",
+                "_lineno": "679"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Reads a file in binary mode and returns the content.\nDoes not attempt to decode the content in any way.\n\n:param path:        path to file to read\n\nExample:\n\n    ${Q} = Read Binary File    C:/Folder/file.ext \n    log to console    ${Q} \n\nReturns the content of specified file",
+                "_name": "Read Binary File",
+                "_lineno": "301"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "encoding=utf-8"
+                    ]
+                },
+                "doc": "Reads a file as text, with given `encoding`, and returns the content.\"\n\n:param path:        path to file to read\n:param encoding:    character encoding of file\n\nExample:\n\n    ${z} = Read File   C:/Folder/File.ext   encoding=utf-8 \n    log to console  $(z) \n\nReturns the content of the specified file.",
+                "_name": "Read File",
+                "_lineno": "285"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "recursive=False"
+                    ]
+                },
+                "doc": "Removes the given directory, and optionally everything it contains.\n\n:param path:        path to directory\n:param recursive:   remove all subdirectories and files\n\nExample:\n\n    Remove Directory    C:/Folder/SubFolder    recursive=True \n\nRemoves the specified directory and its containing content",
+                "_name": "Remove Directory",
+                "_lineno": "457"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "force=False"
+                    ]
+                },
+                "doc": "Removes the given file.\n\n:param path:    path to the file to remove\n:param force:   ignore non-existent files\n\nExample:\n\n    Remove File    C:/Folder/Subfolder/file.ext   force=True \n\nRemove the specified file",
+                "_name": "Remove File",
+                "_lineno": "423"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "*paths",
+                        "force=False"
+                    ]
+                },
+                "doc": "Removes multiple files.\n\n:param paths:   paths to files to be removed\n:param force:   ignore non-existent files\n\nExample:\n\n    Remove Files    C:/folder/subfolder/file1.ext      C:/folder/subfolder/file2.ext \n\nRemove multiple files",
+                "_name": "Remove Files",
+                "_lineno": "441"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "keyword",
+                        "*args"
+                    ]
+                },
+                "doc": "If file exists at `path`, execute given keyword with arguments.\n\n**Example**\n\n.. code:: robotframework\n\n    Run keyword if file exists    orders.xlsx    Process orders\n\n:param path:    path to file to inspect\n:param keyword: Robot Framework keyword to execute\n:param args:    arguments to keyword\n\nExample:\n\n    FOR    ${file}  IN  @{FILES}\n        Run keyword if    ${file.size} > 10**8    Remove file    ${file}\n    END",
+                "_name": "Run Keyword If File Exists",
+                "_lineno": "822"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Creates a file with no content, or if file already exists,\nupdates the modification and access times.\n\n:param path:        path to file which is touched\n\nExample:\n\n    Touch File    C:/folder/subfolder/file.ext \n\nCreates the file at specified dir if not already exists",
+                "_name": "Touch File",
+                "_lineno": "317"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "timeout=5.0"
+                    ]
+                },
+                "doc": "Poll path until it exists, or raise exception if timeout\nis reached.\n\n:param path:    path to poll\n:param timeout: time in seconds until keyword fails",
+                "_name": "Wait Until Created",
+                "_lineno": "782"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "timeout=5.0"
+                    ]
+                },
+                "doc": "Poll path until it has been modified after the keyword was called,\nor raise exception if timeout is reached.\n\n:param path:    path to poll\n:param timeout: time in seconds until keyword fails\n\nExample:\n\n    Wait until modified    process.log",
+                "_name": "Wait Until Modified",
+                "_lineno": "794"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path",
+                        "timeout=5.0"
+                    ]
+                },
+                "doc": "Poll path until it doesn't exist, or raise exception if timeout\nis reached.\n\n:param path:    path to poll\n:param timeout: time in seconds until keyword fails",
+                "_name": "Wait Until Removed",
+                "_lineno": "812"
+            }
+        ],
+        "_name": "FileSystem",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:01:29Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\FileSystem.py",
+        "_lineno": "64"
+    }
+}

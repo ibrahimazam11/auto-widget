@@ -1,17 +1,43 @@
-[
-  {
-    "keyword": "Is Dict Like",
-    "Arguments": "obj",
-    "Documentation": "Check if obj behaves like a dictionary."
-  },
-  {
-    "keyword": "Is List Like",
-    "Arguments": "obj",
-    "Documentation": "Check if obj behaves like a list."
-  },
-  {
-    "keyword": "Is Namedtuple",
-    "Arguments": "obj",
-    "Documentation": "Check if obj is a namedtuple."
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "Documentation for library ``types``.",
+      "kw": [
+         {
+            "arguments": {
+               "arg": "obj"
+            },
+            "doc": "Check if `obj` behaves like a dictionary.",
+            "_name": "Is Dict Like",
+            "_lineno": "4"
+         },
+         {
+            "arguments": {
+               "arg": "obj"
+            },
+            "doc": "Check if `obj` behaves like a list.",
+            "_name": "Is List Like",
+            "_lineno": "11"
+         },
+         {
+            "arguments": {
+               "arg": "obj"
+            },
+            "doc": "Check if `obj` is a namedtuple.",
+            "_name": "Is Namedtuple",
+            "_lineno": "16"
+         }
+      ],
+      "_name": "types",
+      "_type": "LIBRARY",
+      "_format": "ROBOT",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-30T11:13:22Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\core\\types.py",
+      "_lineno": "1"
+   }
+}

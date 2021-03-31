@@ -1,67 +1,115 @@
-[
-  {
-    "keyword": "Add New Sheet",
-    "arguments": "sheetname: str,tabname: str = None,create_workbook: bool = True",
-    "description": "Add new worksheet to workbook. Workbook is created by default if it does not exist. :param sheetname: name for sheet :param tabname: name for tab, defaults to None :param create_workbook: create workbook if True, defaults to True :raises ValueError: error is raised if workbook does not exist and create_workbook is False"
-  },
-  {
-    "keyword": "Add New Workbook",
-    "arguments": "",
-    "description": "Adds new workbook for Excel application"
-  },
-  {
-    "keyword": "Close Document",
-    "arguments": "save_changes: bool = False",
-    "description": "Close the active document (if open)."
-  },
-  {
-    "keyword": "Find First Available Row",
-    "arguments": "worksheet: typing.Any = None,row: int = 1,column: int = 1",
-    "description": "Find first available free row and cell :param worksheet: worksheet to handle, defaults to active worksheet if None :param row: starting row for search, defaults to 1 :param column: starting column for search, defaults to 1 :return: tuple (row, column) or (None, None) if not found"
-  },
-  {
-    "keyword": "Open Application",
-    "arguments": "visible: bool = False,display_alerts: bool = False",
-    "description": "Open the Excel application. :param visible: show window after opening :param display_alerts: show alert popups"
-  },
-  {
-    "keyword": "Open Workbook",
-    "arguments": "filename: str",
-    "description": "Open Excel by filename :param filename: path to filename"
-  },
-  {
-    "keyword": "Quit Application",
-    "arguments": "save_changes: bool = False",
-    "description": "Quit the application."
-  },
-  {
-    "keyword": "Read From Cells",
-    "arguments": "worksheet: typing.Any = None,row: int = None,column: int = None",
-    "description": "Read value from cell. :param worksheet: worksheet to handle, defaults to active worksheet if None :param row: target row, defaults to None :param column: target row, defaults to None :raises ValueError: if cell is not given"
-  },
-  {
-    "keyword": "Run Macro",
-    "arguments": "macro_name: str = None",
-    "description": "Run Excel macro with given name :param macro_name: macro to run"
-  },
-  {
-    "keyword": "Save Excel",
-    "arguments": "",
-    "description": "Saves Excel file"
-  },
-  {
-    "keyword": "Save Excel As",
-    "arguments": "filename: str,autofit: bool = False",
-    "description": "Save Excel with name if workbook is open :param filename: where to save file :param autofit: autofit cell widths if True, defaults to False"
-  },
-  {
-    "keyword": "Set Active Worksheet",
-    "arguments": "sheetname: str = None,sheetnumber: int = None",
-    "description": "Set active worksheet by either its sheet number or name :param sheetname: name of Excel sheet, defaults to None :param sheetnumber: index of Excel sheet, defaults to None"
-  },
-  {
-    "keyword": "Write To Cells",
-    "arguments": "worksheet: typing.Any = None,row: int = None,column: int = None,value: str = None,number_format: str = None,formula: str = None",
-    "description": "Write value, number_format and/or formula into cell. :param worksheet: worksheet to handle, defaults to active worksheet if None :param row: target row, defaults to None :param column: target row, defaults to None :param value: possible value to set, defaults to None :param number_format: possible number format to set, defaults to None :param formula: possible format to set, defaults to None :raises ValueError: if cell is not given"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for managing Twitter.\n\nLibrary usage requires Twitter developer credentials, which can\nbe requested from https://developer.twitter.com/",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "consumer_key: str = None",
+                        "consumer_secret: str = None",
+                        "access_token: str = None",
+                        "access_token_secret: str = None"
+                    ]
+                },
+                "doc": "Authorize to Twitter API\n\n:param consumer_key: app consumer key\n:param consumer_secret: app consumer secret\n:param access_token: user access token\n:param access_token_secret: user access token secret",
+                "_name": "Authorize",
+                "_lineno": "67"
+            },
+            {
+                "arguments": {
+                    "arg": "user: str = None"
+                },
+                "doc": "Follow Twitter user\n\n:param user: screen name of the user\n:return:  `True` if user was followed, `False` if not",
+                "_name": "Follow",
+                "_lineno": "269"
+            },
+            {
+                "arguments": "",
+                "doc": "Get Twitter profile of authenticated user\n\n:return: user profile as dictionary or `None`",
+                "_name": "Get Me",
+                "_lineno": "100"
+            },
+            {
+                "arguments": {
+                    "arg": "username: str = None"
+                },
+                "doc": "Get user's Twitter profile\n\n:param username: whose profile to get\n:return: profile as dictionary",
+                "_name": "Get User Profile",
+                "_lineno": "210"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "username: str = None",
+                        "count: int = 100"
+                    ]
+                },
+                "doc": "Get user tweets\n\n:param username: whose tweets to get\n:param count: maximum number of tweets, defaults to 100\n:return: list of user tweets",
+                "_name": "Get User Tweets",
+                "_lineno": "109"
+            },
+            {
+                "arguments": {
+                    "arg": "tweet: Tweet = None"
+                },
+                "doc": "Like a tweet\n\n:param tweet: as a class `Tweet`\n:return: `True` if Tweet was liked, `False` if not",
+                "_name": "Like",
+                "_lineno": "233"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "query: str = None",
+                        "count: int = 100",
+                        "geocode: str = None",
+                        "lang: str = None",
+                        "locale: str = None",
+                        "result_type: str = mixed",
+                        "until: str = None",
+                        "since_id: str = None",
+                        "max_id: str = None"
+                    ]
+                },
+                "doc": "Search tweets defined by search query\n\nResults types:\n    - mixed : include both popular and real time results in the response\n    - recent : return only the most recent results in the response\n    - popular : return only the most popular results in the response\n\n:param query: search query string of 500 characters maximum,\n    including operators\n:param count: maximum number of tweets, defaults to 100\n:param geocode: tweets by users located within a given\n    radius of the given latitude/longitude\n:param lang: language code of tweets\n:param locale: language of the query you are sending\n:param result_type: type of search results you would prefer to receive,\n    default \"mixed\"\n:param until: tweets created before the given date\n:param since_id: Returns only statuses with an ID greater than\n:param max_id: only statuses with an ID less than\n:return: list of matching tweets",
+                "_name": "Text Search Tweets",
+                "_lineno": "142"
+            },
+            {
+                "arguments": {
+                    "arg": "content: str = None"
+                },
+                "doc": "Make a tweet with content\n\n:param content: text for the status update",
+                "_name": "Tweet",
+                "_lineno": "225"
+            },
+            {
+                "arguments": {
+                    "arg": "user: str = None"
+                },
+                "doc": "Unfollow Twitter user\n\n:param user: screen name of the user\n:return:  `True` if user was followed, `False` if not",
+                "_name": "Unfollow",
+                "_lineno": "283"
+            },
+            {
+                "arguments": {
+                    "arg": "tweet: Tweet = None"
+                },
+                "doc": "Unlike a tweet\n\n:param tweet: as a class `Tweet`\n:return: `True` if Tweet was unliked, `False` if not",
+                "_name": "Unlike",
+                "_lineno": "251"
+            }
+        ],
+        "_name": "Twitter",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:07:08Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Twitter.py",
+        "_lineno": "41"
+    }
+}

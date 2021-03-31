@@ -1,0 +1,70 @@
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "Documentation for library ``geometry``.",
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "obj",
+                  "*",
+                  "tuple_factory=<class 'tuple'>"
+               ]
+            },
+            "doc": "Return the fields of a dataclass instance as a new tuple of field values.\n\nExample usage::\n\n  @dataclass\n  class C:\n      x: int\n      y: int\n\nc = C(1, 2)\nassert astuple(c) == (1, 2)\n\nIf given, 'tuple_factory' will be used instead of built-in tuple.\nThe function applies recursively to field values that are\ndataclass instances. This will also look into built-in containers:\ntuples, lists, and dicts.",
+            "_name": "Astuple",
+            "_source": "C:\\Program Files\\Autosphere\\Process Tray\\App\\Python\\lib\\dataclasses.py",
+            "_lineno": "1117"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "cls=None",
+                  "*",
+                  "init=True",
+                  "repr=True",
+                  "eq=True",
+                  "order=False",
+                  "unsafe_hash=False",
+                  "frozen=False"
+               ]
+            },
+            "doc": "Returns the same class as was passed in, with dunder methods\nadded based on the fields defined in the class.\n\nExamines PEP 526 __annotations__ to determine fields.\n\nIf init is true, an __init__() method is added to the class. If\nrepr is true, a __repr__() method is added. If order is true, rich\ncomparison dunder methods are added. If unsafe_hash is true, a\n__hash__() method function is added. If frozen is true, fields may\nnot be assigned to after instance creation.",
+            "_name": "Dataclass",
+            "_source": "C:\\Program Files\\Autosphere\\Process Tray\\App\\Python\\lib\\dataclasses.py",
+            "_lineno": "996"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "obj: typing.Any"
+               ]
+            },
+            "doc": "Convert `obj` to instance of Point.",
+            "_name": "To Point",
+            "_lineno": "5"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "obj: typing.Any"
+               ]
+            },
+            "doc": "Convert `obj` to instance of Region.",
+            "_name": "To Region",
+            "_lineno": "14"
+         }
+      ],
+      "_name": "geometry",
+      "_type": "LIBRARY",
+      "_format": "ROBOT",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-30T11:10:54Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\core\\geometry.py",
+      "_lineno": "1"
+   }
+}

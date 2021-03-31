@@ -1,47 +1,123 @@
-[
-  {
-    "keyword": "Crop Image",
-    "arguments": "image,region,filename=None",
-    "description": "Crop an existing image. :param image: Image to crop :param region: Region to crop image to :param filename: Save cropped image to filename"
-  },
-  {
-    "keyword": "Find Template In Image",
-    "arguments": "image,template,region=None,limit=None,tolerance=None",
-    "description": "Attempt to find the template from the given image. :param image: Path to image or Image instance, used to search from :param template: Path to image or Image instance, used to search with :param limit: Limit returned results to maximum of limit. :param region: Area to search from. Can speed up search significantly. :param tolerance: Tolerance for matching, value between 0.1 and 1.0 :return: List of matching regions :raises ImageNotFoundError: No match was found"
-  },
-  {
-    "keyword": "Find Template On Screen",
-    "arguments": "template,**kwargs",
-    "description": "Attempt to find the template image from the current desktop. For argument descriptions, see find_template_in_image()"
-  },
-  {
-    "keyword": "Get Pixel Color In Image",
-    "arguments": "image,point",
-    "description": "Get the RGB value of a pixel in the image. :param image: image to get pixel from :param point: coordinates for pixel or Point object"
-  },
-  {
-    "keyword": "Get Pixel Color On Screen",
-    "arguments": "point",
-    "description": "Get the RGB value of a pixel currently on screen. :param point: coordinates for pixel or Point object"
-  },
-  {
-    "keyword": "Show Region In Image",
-    "arguments": "image,region,color=red,width=5",
-    "description": "Draw a rectangle onto the image around the given region. :param image: image to draw onto :param region: coordinates for region or Region object :param color: color of rectangle :param width: line width of rectangle"
-  },
-  {
-    "keyword": "Show Region On Screen",
-    "arguments": "region,color=red,width=5",
-    "description": "Draw a rectangle around the given region on the current desktop. :param region: coordinates for region or Region object :param color: color of rectangle :param width: line width of rectangle"
-  },
-  {
-    "keyword": "Take Screenshot",
-    "arguments": "filename=None,region=None",
-    "description": "Take a screenshot of the current desktop. :param filename: Save screenshot to filename :param region: Region to crop screenshot to"
-  },
-  {
-    "keyword": "Wait Template On Screen",
-    "arguments": "template,timeout=5,**kwargs",
-    "description": "Wait for template image to appear on current desktop. For further argument descriptions, see find_template_in_image() :param timeout: Time to wait for template (in seconds)"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for taking screenshots, matching templates, and\nmanipulating images.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "image",
+                        "region",
+                        "filename=None"
+                    ]
+                },
+                "doc": "Crop an existing image.\n\n:param image:       Image to crop\n:param region:      Region to crop image to\n:param filename:    Save cropped image to filename",
+                "_name": "Crop Image",
+                "_lineno": "194"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "image",
+                        "template",
+                        "region=None",
+                        "limit=None",
+                        "tolerance=None"
+                    ]
+                },
+                "doc": "Attempt to find the template from the given image.\n\n:param image:       Path to image or Image instance, used to search from\n:param template:    Path to image or Image instance, used to search with\n:param limit:       Limit returned results to maximum of `limit`.\n:param region:      Area to search from. Can speed up search significantly.\n:param tolerance:   Tolerance for matching, value between 0.1 and 1.0\n:return:            List of matching regions\n:raises ImageNotFoundError: No match was found",
+                "_name": "Find Template In Image",
+                "_lineno": "212"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "template",
+                        "**kwargs"
+                    ]
+                },
+                "doc": "Attempt to find the template image from the current desktop.\nFor argument descriptions, see ``find_template_in_image()``",
+                "_name": "Find Template On Screen",
+                "_lineno": "259"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "image",
+                        "point"
+                    ]
+                },
+                "doc": "Get the RGB value of a pixel in the image.\n\n:param image:   image to get pixel from\n:param point:   coordinates for pixel or Point object",
+                "_name": "Get Pixel Color In Image",
+                "_lineno": "304"
+            },
+            {
+                "arguments": {
+                    "arg": "point"
+                },
+                "doc": "Get the RGB value of a pixel currently on screen.\n\n:param point:   coordinates for pixel or Point object",
+                "_name": "Get Pixel Color On Screen",
+                "_lineno": "315"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "image",
+                        "region",
+                        "color=red",
+                        "width=5"
+                    ]
+                },
+                "doc": "Draw a rectangle onto the image around the given region.\n\n:param image:   image to draw onto\n:param region:  coordinates for region or Region object\n:param color:   color of rectangle\n:param width:   line width of rectangle",
+                "_name": "Show Region In Image",
+                "_lineno": "279"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "region",
+                        "color=red",
+                        "width=5"
+                    ]
+                },
+                "doc": "Draw a rectangle around the given region on the current desktop.\n\n:param region:  coordinates for region or Region object\n:param color:   color of rectangle\n:param width:   line width of rectangle",
+                "_name": "Show Region On Screen",
+                "_lineno": "294"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "filename=None",
+                        "region=None"
+                    ]
+                },
+                "doc": "Take a screenshot of the current desktop.\n\n:param filename:    Save screenshot to filename\n:param region:      Region to crop screenshot to",
+                "_name": "Take Screenshot",
+                "_lineno": "167"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "template",
+                        "timeout=5",
+                        "**kwargs"
+                    ]
+                },
+                "doc": "Wait for template image to appear on current desktop.\nFor further argument descriptions, see ``find_template_in_image()``\n\n:param timeout: Time to wait for template (in seconds)",
+                "_name": "Wait Template On Screen",
+                "_lineno": "265"
+            }
+        ],
+        "_name": "Images",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:02:59Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Images.py",
+        "_lineno": "158"
+    }
+}

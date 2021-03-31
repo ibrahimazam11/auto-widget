@@ -1,0 +1,127 @@
+[
+  {
+    "keyword": "Analyze Document",
+    "arguments": "image_file: str = None,json_file: str = None,bucket_name: str = None",
+    "description": "Analyzes an input document for relationships between detected items :param image_file: filepath (or object name) of image file :param json_file: filepath to resulting json file :param bucket_name: if given then using image_file from the bucket :return: analysis response in json"
+  },
+  {
+    "keyword": "Create Bucket",
+    "arguments": "bucket_name: str = None",
+    "description": "Create S3 bucket with name :param bucket_name: name for the bucket :return: boolean indicating status of operation"
+  },
+  {
+    "keyword": "Create Queue",
+    "arguments": "queue_name: str = None",
+    "description": "Create queue with name :param queue_name: [description], defaults to None :return: create queue response as dict"
+  },
+  {
+    "keyword": "Delete Bucket",
+    "arguments": "bucket_name: str = None",
+    "description": "Delete S3 bucket with name :param bucket_name: name for the bucket :return: boolean indicating status of operation"
+  },
+  {
+    "keyword": "Delete Files",
+    "arguments": "bucket_name: str = None,files: list = None",
+    "description": "Delete files in the bucket :param bucket_name: name for the bucket :param files: list of files to delete :return: number of files deleted or False"
+  },
+  {
+    "keyword": "Delete Message",
+    "arguments": "receipt_handle: str = None",
+    "description": "Delete message in the queue :param receipt_handle: message handle to delete :return: delete message response as dict"
+  },
+  {
+    "keyword": "Delete Queue",
+    "arguments": "queue_name: str = None",
+    "description": "Delete queue with name :param queue_name: [description], defaults to None :return: delete queue response as dict"
+  },
+  {
+    "keyword": "Detect Document Text",
+    "arguments": "image_file: str = None,json_file: str = None,bucket_name: str = None",
+    "description": "Detects text in the input document. :param image_file: filepath (or object name) of image file :param json_file: filepath to resulting json file :param bucket_name: if given then using image_file from the bucket :return: analysis response in json"
+  },
+  {
+    "keyword": "Detect Entities",
+    "arguments": "text: str = None,lang=en",
+    "description": "Inspects text for named entities, and returns information about them :param text: A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters :param lang: language code of the text, defaults to \"en"
+  },
+  {
+    "keyword": "Detect Sentiment",
+    "arguments": "text: str = None,lang=en",
+    "description": "Inspects text and returns an inference of the prevailing sentiment :param text: A UTF-8 text string. Each string must contain fewer that 5,000 bytes of UTF-8 encoded characters :param lang: language code of the text, defaults to \"en"
+  },
+  {
+    "keyword": "Download Files",
+    "arguments": "bucket_name: str = None,files: list = None,target_directory: str = None",
+    "description": "Download files from bucket to local filesystem :param bucket_name: name for the bucket :param files: list of S3 object names :param target_directory: location for the downloaded files, default current directory :return: number of files downloaded"
+  },
+  {
+    "keyword": "Get Cells",
+    "arguments": "",
+    "description": "[summary] :return: [description]"
+  },
+  {
+    "keyword": "Get Tables",
+    "arguments": "",
+    "description": "[summary] :return: [description]"
+  },
+  {
+    "keyword": "Get Words",
+    "arguments": "",
+    "description": "[summary] :return: [description]"
+  },
+  {
+    "keyword": "Init Comprehend Client",
+    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,use_robocloud_vault: bool = False",
+    "description": "Initialize AWS Comprehend client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param use_robocloud_vault: use secret stored into Robocloud Vault"
+  },
+  {
+    "keyword": "Init S3 Client",
+    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,use_robocloud_vault: bool = False",
+    "description": "Initialize AWS S3 client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param use_robocloud_vault: use secret stored into Robocloud Vault"
+  },
+  {
+    "keyword": "Init Sqs Client",
+    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,queue_url: str = None,use_robocloud_vault: bool = False",
+    "description": "Initialize AWS SQS client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param queue_url: SQS queue url :param use_robocloud_vault: use secret stored into Robocloud Vault"
+  },
+  {
+    "keyword": "Init Textract Client",
+    "arguments": "aws_key_id: str = None,aws_key: str = None,region: str = None,use_robocloud_vault: bool = False",
+    "description": "Initialize AWS Textract client :param aws_key_id: access key ID :param aws_key: secret access key :param region: AWS region :param use_robocloud_vault: use secret stored into Robocloud Vault"
+  },
+  {
+    "keyword": "List Buckets",
+    "arguments": "",
+    "description": "List all buckets for this account :return: list of buckets"
+  },
+  {
+    "keyword": "List Files",
+    "arguments": "bucket_name",
+    "description": "List files in the bucket :param bucket_name: name for the bucket :return: list of files"
+  },
+  {
+    "keyword": "Receive Message",
+    "arguments": "",
+    "description": "Receive message from queue :return: message as dict"
+  },
+  {
+    "keyword": "Send Message",
+    "arguments": "message: str = None,message_attributes: dict = None",
+    "description": "Send message to the queue :param message: body of the message :param message_attributes: attributes of the message :return: send message response as dict"
+  },
+  {
+    "keyword": "Set Robocloud Vault",
+    "arguments": "vault_name",
+    "description": "Set Robocloud Vault name :param vault_name: Robocloud Vault name"
+  },
+  {
+    "keyword": "Upload File",
+    "arguments": "bucket_name: str = None,filename: str = None,object_name: str = None",
+    "description": "Upload single file into bucket If object_name is not given then basename of the file is used as object_name. :param bucket_name: name for the bucket :param filename: filepath for the file to be uploaded :param object_name: name of the object in the bucket, defaults to None :return: tuple of upload status and error"
+  },
+  {
+    "keyword": "Upload Files",
+    "arguments": "bucket_name: str = None,files: list = None",
+    "description": "Upload multiple files into bucket Giving files as list of filepaths: ['/path/to/file1.txt', '/path/to/file2.txt'] Giving files as list of dictionaries (including filepath and object name): [{'filepath':'/path/to/file1.txt', 'object_name': 'file1.txt'}, {'filepath': '/path/to/file2.txt', 'object_name': 'file2.txt'}] :param bucket_name: name for the bucket :param files: list of files (2 possible ways, see above) :return: number of files uploaded"
+  }
+]

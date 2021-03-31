@@ -1,0 +1,153 @@
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "global",
+        "namedargs": "yes",
+        "doc": "Library provides features for building form to request for user input.\n\nForm elements can be built with library keywords or form can be defined\nin a JSON file.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "label: str",
+                        "element_id: str",
+                        "options: str",
+                        "default: str = None"
+                    ]
+                },
+                "doc": "Add checkbox element\n\n:param label: check box element label\n:param element_id: check box element identifier\n:param options: values for the check box\n:param default: check box selected value, defaults to None\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add Checkbox    label=Select your colors\n    ...             element_id=colors\n    ...             options=green,red,blue,yellow\n    ...             default=blue",
+                "_name": "Add Checkbox",
+                "_lineno": "509"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "label: str",
+                        "element_id: str",
+                        "options: typing.Any",
+                        "default: str = None"
+                    ]
+                },
+                "doc": "Add dropdown element\n\n:param label: dropdown element label\n:param element_id: dropdown element id attribute\n:param options: values for the dropdown\n:param default: dropdown selected value, defaults to None\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add Dropdown  label=Select task type\n    ...           element_id=tasktype\n    ...           options=buy,sell,rent\n    ...           default=buy",
+                "_name": "Add Dropdown",
+                "_lineno": "429"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "label: str",
+                        "element_id: str",
+                        "name: str",
+                        "filetypes: str",
+                        "target_directory: str = None"
+                    ]
+                },
+                "doc": "Add text input element\n\n:param label: input element label\n:param element_id: hidden element id attribute\n:param name: input element name attribute\n:param filetypes: accepted filetypes for the file upload\n:param target_directory: where to save uploaded files to\n\nRead more of the filetypes in the library documentation.\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add File Input  label=Attachment\n    ...             element_id=attachment\n    ...             name=attachment\n    ...             filetypes=${EMPTY}         # Accept all files\n    ...             target_directory=${CURDIR}${/}output\n\n    Add File Input  label=Contract\n    ...             element_id=contract\n    ...             name=contract\n    ...             filetypes=application/pdf  # Accept only PDFs\n    ...             target_directory=${CURDIR}${/}output",
+                "_name": "Add File Input",
+                "_lineno": "382"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "name: str",
+                        "value: str"
+                    ]
+                },
+                "doc": "Add hidden input element\n\n:param name: input element name attribute\n:param value: input element value attribute\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    ${uuid}   Evaluate  str(uuid.uuid4())\n    Add Hidden Input    form-id   ${uuid}",
+                "_name": "Add Hidden Input",
+                "_lineno": "360"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "element_id: str",
+                        "options: str",
+                        "default: str = None"
+                    ]
+                },
+                "doc": "Add radio button element\n\n:param element_id: radio button element identifier\n:param options: values for the radio button\n:param default: radio button selected value, defaults to None\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add Radio Button   element_id=drone  buttons=Jim,Robert  default=Robert",
+                "_name": "Add Radio Buttons",
+                "_lineno": "481"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "name: str",
+                        "buttons: str"
+                    ]
+                },
+                "doc": "Add submit element\n\n:param name: element name attribute\n:param buttons: list of buttons\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add Submit    name=direction-to-go  buttons=left,right",
+                "_name": "Add Submit",
+                "_lineno": "462"
+            },
+            {
+                "arguments": {
+                    "arg": "value: str"
+                },
+                "doc": "Add text paragraph element\n\n:param value: text for the element\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add Text       ${form_guidance_text}",
+                "_name": "Add Text",
+                "_lineno": "571"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "label: str",
+                        "name: str"
+                    ]
+                },
+                "doc": "Add text input element\n\n:param label: input element label\n:param name: input element name attribute\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add Text Input   what is your firstname ?  fname",
+                "_name": "Add Text Input",
+                "_lineno": "343"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "name: str",
+                        "rows: int = 5",
+                        "cols: int = 40",
+                        "default: str = None"
+                    ]
+                },
+                "doc": "Add textarea element\n\n:param name: textarea element name\n:param rows: number of rows for the area, defaults to 5\n:param cols: numnber of columns for the area, defaults to 40\n:param default: prefilled text for the area, defaults to None\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form\n    Add Textarea       name=feedback  default=enter feedback here\n    Add Textarea       name=texts  rows=40   cols=80",
+                "_name": "Add Textarea",
+                "_lineno": "542"
+            },
+            {
+                "arguments": {
+                    "arg": "title: str"
+                },
+                "doc": "Add h3 element into form\n\n:param title: text for the element\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form     # default form title will be \"Requesting response\"\n    Add Title       User Confirmation Form",
+                "_name": "Add Title",
+                "_lineno": "327"
+            },
+            {
+                "arguments": {
+                    "arg": "title: str = None"
+                },
+                "doc": "Create new form\n\n:param title: form title, defaults to None\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form     # form title will be \"Requesting response\"\n    Create Form     title=User Confirmation Form",
+                "_name": "Create Form",
+                "_lineno": "305"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "formspec: str = None",
+                        "window_width: int = 600",
+                        "window_height: int = 1000"
+                    ]
+                },
+                "doc": "Start server and show form. Waits for user response.\n\n:param formspec: form json specification file, defaults to None\n:param window_width: window width in pixels, defaults to 600\n:param window_height: window height in pixels, defaults to 1000\n:return: form response\n\nExample.\n\n.. code-block:: robotframework\n\n    Create Form    ${CURDIR}/${/}myform.json\n    &{response}    Request Response",
+                "_name": "Request Response",
+                "_lineno": "590"
+            }
+        ],
+        "_name": "Dialogs",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "GLOBAL",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T10:22:29Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Dialogs.py",
+        "_lineno": "261"
+    }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "keyword": "Authorize",
+    "arguments": "consumer_key: str = None,consumer_secret: str = None,access_token: str = None,access_token_secret: str = None",
+    "description": "Authorize to Twitter API :param consumer_key: app consumer key :param consumer_secret: app consumer secret :param access_token: user access token :param access_token_secret: user access token secret"
+  },
+  {
+    "keyword": "Follow",
+    "arguments": "user: str = None",
+    "description": "Follow Twitter user :param user: screen name of the user :return: True if user was followed, False if not"
+  },
+  {
+    "keyword": "Get Me",
+    "arguments": "",
+    "description": "Get Twitter profile of authenticated user :return: user profile as dictionary or None"
+  },
+  {
+    "keyword": "Get User Profile",
+    "arguments": "username: str = None",
+    "description": "Get user's Twitter profile :param username: whose profile to get :return: profile as dictionary"
+  },
+  {
+    "keyword": "Get User Tweets",
+    "arguments": "username: str = None,count: int = 100",
+    "description": "Get user tweets :param username: whose tweets to get :param count: maximum number of tweets, defaults to 100 :return: list of user tweets"
+  },
+  {
+    "keyword": "Like",
+    "arguments": "tweet: Tweet = None",
+    "description": "Like a tweet :param tweet: as a class Tweet :return: True if Tweet was liked, False if not"
+  },
+  {
+    "keyword": "Text Search Tweets",
+    "arguments": "query: str = None,count: int = 100,geocode: str = None,lang: str = None,locale: str = None,result_type: str = mixed,until: str = None,since_id: str = None,max_id: str = None",
+    "description": "Search tweets defined by search query Results types: mixed : include both popular and real time results in the response recent : return only the most recent results in the response popular : return only the most popular results in the response :param query: search query string of 500 characters maximum, including operators :param count: maximum number of tweets, defaults to 100 :param geocode: tweets by users located within a given radius of the given latitude/longitude :param lang: language code of tweets :param locale: language of the query you are sending :param result_type: type of search results you would prefer to receive, default \"mixed\" :param until: tweets created before the given date :param since_id: Returns only statuses with an ID greater than :param max_id: only statuses with an ID less than :return: list of matching tweets"
+  },
+  {
+    "keyword": "Tweet",
+    "arguments": "content: str = None",
+    "description": "Make a tweet with content :param content: text for the status update"
+  },
+  {
+    "keyword": "Unfollow",
+    "arguments": "user: str = None",
+    "description": "Unfollow Twitter user :param user: screen name of the user :return: True if user was followed, False if not"
+  },
+  {
+    "keyword": "Unlike",
+    "arguments": "tweet: Tweet = None",
+    "description": "Unlike a tweet :param tweet: as a class Tweet :return: True if Tweet was unliked, False if not"
+  }
+]

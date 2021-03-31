@@ -1,0 +1,47 @@
+[
+  {
+    "keyword": "Authorize",
+    "arguments": "username: str,password: str,autodiscover: bool = True,access_type: str = DELEGATE,server: str = None,primary_smtp_address: str = None",
+    "description": "Connect to Exchange account :param username: account username :param password: account password :param autodiscover: use autodiscover or set it off :param accesstype: default \"DELEGATE\", other option \"IMPERSONATION\" :param server: required for configuration options :param primary_smtp_address: by default set to username, but can be set to be different than username"
+  },
+  {
+    "keyword": "Create Folder",
+    "arguments": "folder_name: str = None,parent_folder: str = None",
+    "description": "Create email folder :param folder_name: name for the new folder :param parent_folder: name for the parent folder, by default INBOX :return: True if operation was successful, False if not"
+  },
+  {
+    "keyword": "Delete Folder",
+    "arguments": "folder_name: str = None,parent_folder: str = None",
+    "description": "Delete email folder :param folder_name: current folder name :param parent_folder: name for the parent folder, by default INBOX :return: True if operation was successful, False if not"
+  },
+  {
+    "keyword": "Empty Folder",
+    "arguments": "folder_name: str = None,parent_folder: str = None,delete_sub_folders: bool = False",
+    "description": "Empty email folder of all items :param folder_name: current folder name :param parent_folder: name for the parent folder, by default INBOX :param delete_sub_folders: delete sub folders or not, by default False :return: True if operation was successful, False if not"
+  },
+  {
+    "keyword": "List Messages",
+    "arguments": "folder_name: str = None,count: int = 100",
+    "description": "List messages in the account inbox. Order by descending received time. :param count: number of messages to list"
+  },
+  {
+    "keyword": "Move Messages",
+    "arguments": "criterion: str = ,source: str = None,target: str = None,contains: bool = False",
+    "description": "Move message(s) from source folder to target folder Criterion examples: subject:my message subject body:something in body sender:sender@domain.com :param criterion: move messages matching this criterion :param source: source folder :param target: target folder :param contains: if matching should be done using contains matching and not equals matching, default False is means equals matching :return: boolean result of operation, True if 1+ items were moved else False"
+  },
+  {
+    "keyword": "Rename Folder",
+    "arguments": "oldname: str = None,newname: str = None,parent_folder: str = None",
+    "description": "Rename email folder :param oldname: current folder name :param newname: new name for the folder :param parent_folder: name for the parent folder, by default INBOX :return: True if operation was successful, False if not"
+  },
+  {
+    "keyword": "Send Message",
+    "arguments": "recipients: str,subject: str = ,body: str = ,attachments: str = None,html: bool = False,images: str = None,cc: str = None,bcc: str = None,save: bool = False",
+    "description": "Keyword for sending message through connected Exchange account. Email addresses can be prefixed with ex: to indicate Exchange account address. Recipients is required parameter. :param recipients: list of email addresses, defaults to [] :param subject: message subject, defaults to \"\" :param body: message body, defaults to \"\" :param attachments: list of filepaths to attach, defaults to [] :param html: if message content is in HTML, default False :param images: list of filepaths for inline use, defaults to [] :param cc: list of email addresses, defaults to [] :param bcc: list of email addresses, defaults to [] :param save: is sent message saved to Sent messages folder or not, defaults to False"
+  },
+  {
+    "keyword": "Wait For Message",
+    "arguments": "criterion: str = ,timeout: float = 5.0,interval: float = 1.0,contains: bool = False",
+    "description": "Wait for email matching criterion to arrive into INBOX. :param criterion: wait for message matching criterion :param timeout: total time in seconds to wait for email, defaults to 5.0 :param interval: time in seconds for new check, defaults to 1.0 :param contains: if matching should be done using contains matching and not equals matching, default False is means equals matching :return: list of messages"
+  }
+]

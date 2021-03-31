@@ -322,6 +322,16 @@ input#browser {
     position: relative;
 }
 
+#crypto:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#crypto {
+    display: none;
+    position: relative;
+}
+
 #to:checked~.hiddentext {
     display: block;
     opacity: 1;
@@ -338,6 +348,16 @@ input#to {
 }
 
 input#database {
+    display: none;
+    position: relative;
+}
+
+#dialog:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#dialog {
     display: none;
     position: relative;
 }
@@ -378,6 +398,16 @@ input#http {
 }
 
 input#images {
+    display: none;
+    position: relative;
+}
+
+#json:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#json {
     display: none;
     position: relative;
 }
@@ -522,6 +552,16 @@ input#decorator {
     position: relative;
 }
 
+#geometry:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#geometry {
+    display: none;
+    position: relative;
+}
+
 #helpers:checked~.hiddentext {
     display: block;
     opacity: 1;
@@ -548,6 +588,16 @@ input#locators {
 }
 
 input#notebook {
+    display: none;
+    position: relative;
+}
+
+#robocorp:checked~.hiddentext {
+    display: block;
+    opacity: 1;
+}
+
+input#robocorp {
     display: none;
     position: relative;
 }

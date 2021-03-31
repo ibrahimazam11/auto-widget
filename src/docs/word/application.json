@@ -1,67 +1,129 @@
-[
-  {
-    "keyword": "Close Document",
-    "arguments": "save_changes: bool = False",
-    "description": "Close the active document (if open)."
-  },
-  {
-    "keyword": "Create New Document",
-    "arguments": "",
-    "description": "Create new document for Word application"
-  },
-  {
-    "keyword": "Export To Pdf",
-    "arguments": "filename: str",
-    "description": "Export active document into PDF file. :param filename: PDF to export WORD into"
-  },
-  {
-    "keyword": "Get All Texts",
-    "arguments": "",
-    "description": "Get all texts from active document :return: texts"
-  },
-  {
-    "keyword": "Open Application",
-    "arguments": "visible: bool = False,display_alerts: bool = False",
-    "description": "Open the Word application. :param visible: show window after opening :param display_alerts: show alert popups"
-  },
-  {
-    "keyword": "Open File",
-    "arguments": "filename: str = None",
-    "description": "Open Word document with filename. :param filename: Word document filepath, defaults to None"
-  },
-  {
-    "keyword": "Quit Application",
-    "arguments": "save_changes: bool = False",
-    "description": "Quit the application."
-  },
-  {
-    "keyword": "Replace Text",
-    "arguments": "find: str,replace: str",
-    "description": "Replace text in active document :param find: text to replace :param replace: new text"
-  },
-  {
-    "keyword": "Save Document",
-    "arguments": "",
-    "description": "Save active document"
-  },
-  {
-    "keyword": "Save Document As",
-    "arguments": "filename: str,fileformat: str = None",
-    "description": "Save document with filename and optionally with given fileformat :param filename: where to save document :param fileformat: see @FILEFORMATS dictionary for possible format, defaults to None"
-  },
-  {
-    "keyword": "Set Footer",
-    "arguments": "text: str",
-    "description": "Set footer for the active document :param text: footer text to set"
-  },
-  {
-    "keyword": "Set Header",
-    "arguments": "text: str",
-    "description": "Set header for the active document :param text: header text to set"
-  },
-  {
-    "keyword": "Write Text",
-    "arguments": "text: str,newline: bool = True",
-    "description": "Writes given text at the end of the document :param text: string to write :param newline: write text to newline if True, default to True"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for manipulating Word application.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": "save_changes: bool = False"
+                },
+                "doc": "Close the active document (if open).",
+                "_name": "Close Document",
+                "_lineno": "50"
+            },
+            {
+                "arguments": "",
+                "doc": "Create new document for Word application",
+                "_name": "Create New Document",
+                "_lineno": "77"
+            },
+            {
+                "arguments": {
+                    "arg": "filename: str"
+                },
+                "doc": "Export active document into PDF file.\n\n:param filename: PDF to export WORD into",
+                "_name": "Export To Pdf",
+                "_lineno": "82"
+            },
+            {
+                "arguments": "",
+                "doc": "Get all texts from active document\n\n:return: texts",
+                "_name": "Get All Texts",
+                "_lineno": "166"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "visible: bool = False",
+                        "display_alerts: bool = False"
+                    ]
+                },
+                "doc": "Open the Word application.\n\n:param visible: show window after opening\n:param display_alerts: show alert popups",
+                "_name": "Open Application",
+                "_lineno": "33"
+            },
+            {
+                "arguments": {
+                    "arg": "filename: str = None"
+                },
+                "doc": "Open Word document with filename.\n\n:param filename: Word document filepath, defaults to None",
+                "_name": "Open File",
+                "_lineno": "62"
+            },
+            {
+                "arguments": {
+                    "arg": "save_changes: bool = False"
+                },
+                "doc": "Quit the application.",
+                "_name": "Quit Application",
+                "_lineno": "55"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "find: str",
+                        "replace: str"
+                    ]
+                },
+                "doc": "Replace text in active document\n\n:param find: text to replace\n:param replace: new text",
+                "_name": "Replace Text",
+                "_lineno": "104"
+            },
+            {
+                "arguments": "",
+                "doc": "Save active document",
+                "_name": "Save Document",
+                "_lineno": "130"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "filename: str",
+                        "fileformat: str = None"
+                    ]
+                },
+                "doc": "Save document with filename and optionally with given fileformat\n\n:param filename: where to save document\n:param fileformat: see @FILEFORMATS dictionary for possible format,\n    defaults to None",
+                "_name": "Save Document As",
+                "_lineno": "139"
+            },
+            {
+                "arguments": {
+                    "arg": "text: str"
+                },
+                "doc": "Set footer for the active document\n\n:param text: footer text to set",
+                "_name": "Set Footer",
+                "_lineno": "121"
+            },
+            {
+                "arguments": {
+                    "arg": "text: str"
+                },
+                "doc": "Set header for the active document\n\n:param text: header text to set",
+                "_name": "Set Header",
+                "_lineno": "112"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "text: str",
+                        "newline: bool = True"
+                    ]
+                },
+                "doc": "Writes given text at the end of the document\n\n:param text: string to write\n:param newline: write text to newline if True, default to True",
+                "_name": "Write Text",
+                "_lineno": "92"
+            }
+        ],
+        "_name": "Application",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T12:05:47Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Word\\Application.py",
+        "_lineno": "20"
+    }
+}

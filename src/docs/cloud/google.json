@@ -1,172 +1,573 @@
-[
-  {
-    "keyword": "Analyze Sentiment",
-    "arguments": "text_file: str,file_type: str = text,json_file: str = None,lang=None",
-    "description": "Analyze sentiment in a text file :param text_file: source text file :param json_file: json target to save result, defaults to None :param lang: language code of the source, defaults to None :return: analysis response"
-  },
-  {
-    "keyword": "Annotate Image",
-    "arguments": "image_uri: str,json_file: str = None",
-    "description": "Annotate image :param image_file: source image file :param json_file: json target to save result, defaults to None :return: detection response"
-  },
-  {
-    "keyword": "Annotate Video",
-    "arguments": "video_uri: str = None,video_file: str = None,json_file: str = None,features: list = None",
-    "description": "Annotate video Possible values for features: FEATURE_UNSPECIFIED, Unspecified. LABEL_DETECTION, Label detection. Detect objects, such as dog or flower. SHOT_CHANGE_DETECTION, Shot change detection. EXPLICIT_CONTENT_DETECTION, Explicit content detection. SPEECH_TRANSCRIPTION, Speech transcription. TEXT_DETECTION, OCR text detection and tracking. OBJECT_TRACKING, Object detection and tracking. LOGO_RECOGNITION, Logo detection, tracking, and recognition. If video_uri is given then that is used even if video_file is None. :param video_uri: Google Cloud Storage URI :param video_file: filepath to video :param json_file: json target to save result, defaults to None :param features: list of annotation features to detect, defaults to [\"LABEL_DETECTION\", \"SHOT_CHANGE_DETECTION\"] :return: annotate result"
-  },
-  {
-    "keyword": "Classify Text",
-    "arguments": "text_file,json_file,lang=None",
-    "description": "Classify text :param text_file: source text file :param json_file: json target to save result, defaults to None :param lang: language code of the source, defaults to None :return: classify response"
-  },
-  {
-    "keyword": "Clear Values",
-    "arguments": "sheet_id: str,sheet_range: str",
-    "description": "Clear cell values for range of cells within a sheet :param sheet_id: target sheet :param sheet_range: target sheet range"
-  },
-  {
-    "keyword": "Create Bucket",
-    "arguments": "bucket_name: str",
-    "description": "Create Google Cloud Storage bucket :param bucket_name: name as string :return: bucket"
-  },
-  {
-    "keyword": "Create Sheet",
-    "arguments": "title: str",
-    "description": "Create empty sheet with a title :param title: name as string :return: created sheet_id"
-  },
-  {
-    "keyword": "Delete Bucket",
-    "arguments": "bucket_name: str",
-    "description": "Delete Google Cloud Storage bucket Bucket needs to be empty before it can be deleted. :param bucket_name: name as string"
-  },
-  {
-    "keyword": "Delete Files",
-    "arguments": "bucket_name: str,files: typing.Any",
-    "description": "Delete files in the bucket Files need to be object name in the bucket. :param bucket_name: name as string :param files: single file, list of files or comma separated list of files :return: list of files which could not be deleted, or True if all were deleted"
-  },
-  {
-    "keyword": "Detect Document",
-    "arguments": "image_file: str,json_file: str = None",
-    "description": "Detect document :param image_file: source image file :param json_file: json target to save result, defaults to None :return: detection response"
-  },
-  {
-    "keyword": "Detect Labels",
-    "arguments": "image_file: str,json_file: str = None",
-    "description": "Detect labels in the image :param image_file: source image file :param json_file: json target to save result, defaults to None :return: detection response"
-  },
-  {
-    "keyword": "Detect Text",
-    "arguments": "image_file: str,json_file: str = None",
-    "description": "Detect text in the image :param image_file: source image file :param json_file: json target to save result, defaults to None :return: detection response"
-  },
-  {
-    "keyword": "Download Files",
-    "arguments": "bucket_name: str,files: typing.Any",
-    "description": "Download files from a bucket Example files: files = {\"mytestimg\": \"image1.png\", \"mydoc\": \"google.pdf :param bucket_name: name as string :param files: list of object names or dictionary of object names and target files :return: list of files which could not be downloaded, or True if all were downloaded"
-  },
-  {
-    "keyword": "Face Detection",
-    "arguments": "image_uri: str,json_file: str = None",
-    "description": "Detect faces :param image_uri: Google Cloud Storage URI :param json_file: json target to save result, defaults to None :return: detection response"
-  },
-  {
-    "keyword": "Get Bucket",
-    "arguments": "bucket_name: str",
-    "description": "Get Google Cloud Storage bucket :param bucket_name: name as string :return: bucket"
-  },
-  {
-    "keyword": "Get Values",
-    "arguments": "sheet_id: str,sheet_range: str,value_render_option: str = UNFORMATTED_VALUE,datetime_render_option: str = FORMATTED_STRING",
-    "description": "Get values from the range in the sheet :param sheet_id: target sheet :param sheet_range: target sheet range :param value_render_option: how values should be represented in the output defaults to \"UNFORMATTED_VALUE\" :param datetime_render_option: ow dates, times, and durations should be represented in the outpu, defaults to \"FORMATTED_STRING"
-  },
-  {
-    "keyword": "Init Natural Language Client",
-    "arguments": "service_credentials_file: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Cloud Natural Language client :param service_credentials_file: filepath to credentials JSON :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Sheets Client",
-    "arguments": "service_credentials_file: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Sheets client :param service_credentials_file: filepath to credentials JSON :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Speech To Text Client",
-    "arguments": "service_credentials_file: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Cloud Speech to Text client :param service_credentials_file: filepath to credentials JSON :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Storage Client",
-    "arguments": "service_credentials_file: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Cloud Storage client :param service_credentials_file: filepath to credentials JSON :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Text To Speech Client",
-    "arguments": "service_credentials_file: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Cloud Text to Speech client :param service_credentials_file: filepath to credentials JSON :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Translation Client",
-    "arguments": "service_credentials_file: str = None,project_identifier: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Cloud Translation client :param service_credentials_file: filepath to credentials JSON :param project_identifier: identifier for Translation project :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Video Intelligence Client",
-    "arguments": "service_credentials_file: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Cloud Video Intelligence client :param service_credentials_file: filepath to credentials JSON :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Init Vision Client",
-    "arguments": "service_credentials_file: str = None,use_robocloud_vault: bool = False",
-    "description": "Initialize Google Cloud Vision client :param service_credentials_file: filepath to credentials JSON :param use_robocloud_vault: use json stored into Robocloud Vault"
-  },
-  {
-    "keyword": "Insert Values",
-    "arguments": "sheet_id: str,sheet_range: str,values: list,major_dimension: str = COLUMNS,value_input_option: str = USER_ENTERED",
-    "description": "Insert values into sheet cells :param sheet_id: target sheet :param sheet_range: target sheet range :param values: list of values to insert into sheet :param major_dimension: major dimension of the values, default COLUMNS :param value_input_option: controls whether input strings are parsed or not, default USER_ENTERED"
-  },
-  {
-    "keyword": "List Buckets",
-    "arguments": "",
-    "description": "List Google Cloud Storage buckets :return: list of buckets"
-  },
-  {
-    "keyword": "List Files",
-    "arguments": "bucket_name: str",
-    "description": "List files in the bucket :param bucket_name: name as string :return: list of object names in the bucket"
-  },
-  {
-    "keyword": "List Supported Voices",
-    "arguments": "language_code: str = None",
-    "description": "List supported voices for the speech :param language_code: voice languages to list, defaults to None (all) :return: list of supported voices"
-  },
-  {
-    "keyword": "Recognize",
-    "arguments": "audio_file_uri,encoding: str = FLAC,language_code: str = en_US,audio_channel_count=2",
-    "description": "Recognize text in the audio file :param audio_file_uri: Google Cloud Storage URI :return: recognized texts"
-  },
-  {
-    "keyword": "Set Robocloud Vault",
-    "arguments": "vault_name,vault_secret_key",
-    "description": "Set Robocloud Vault name and secret key name :param vault_name: Robocloud Vault name :param vault_secret_key: Rococloud Vault secret key name"
-  },
-  {
-    "keyword": "Synthesize Speech",
-    "arguments": "text,language=en-US,name=en-US-Standard-B,gender=MALE,encoding=MP3,target_file=synthesized.mp3",
-    "description": "Synthesize speech synchronously :param text: input text to synthesize :param language: voice language, defaults to \"en-US\" :param name: voice name, defaults to \"en-US-Standard-B\" :param gender: voice gender, defaults to \"MALE\" :param encoding: result encoding type, defaults to \"MP3\" :param target_file: save synthesized output to file, defaults to \"synthesized.mp3\" :return: synthesized output in bytes"
-  },
-  {
-    "keyword": "Translate",
-    "arguments": "text: typing.Any,source_language: str = None,target_language: str = None",
-    "description": "Translate text :param text: text to translate :param source_language: language code, defaults to None :param target_language: language code, defaults to None :return: translated text"
-  },
-  {
-    "keyword": "Upload File",
-    "arguments": "bucket_name: str,filename: str,target_name: str",
-    "description": "Upload a file into a bucket :param bucket_name: name as string :param filename: filepath to upload file :param target_name: target object name"
-  },
-  {
-    "keyword": "Upload Files",
-    "arguments": "bucket_name: str,files: dict",
-    "description": "Upload files into a bucket Example files: files = {\"mytestimg\": \"image1.png\", \"mydoc\": \"google.pdf\"} :param bucket_name: name as string :param files: dictionary of object names and filepaths"
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "`Google` is a library for operating with Google API endpoints.\n\nUsage requires the following steps:\n\n- Create a GCP project\n- Create a service account key file (JSON) and save it to a place the robot\n  can use it\n- Enable APIs\n- Install rpaframework[google]\n\n**Google authentication**\n\nAuthentication for Google is set with `service credentials JSON file` which can be given to the library\nin three different ways or with `credentials.json`, which is used for OAuth authentication.\n\nMethods when using service credentials:\n\n- Method 1 as environment variables, ``GOOGLE_APPLICATION_CREDENTIALS`` with path to JSON file.\n- Method 2 as keyword parameter to ``Init Storage Client`` for example.\n- Method 3 as Robocloud vault secret. The vault name and secret key name needs to be given in library init\n  or with keyword ``Set Robocloud Vault``. Secret value should contain JSON file contents.\n\nMethod 1. service credentials using environment variable\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Google\n\n    *** Tasks ***\n    Init Google services\n        # NO parameters for Vision Client, expecting to get JSON\n        # with GOOGLE_APPLICATION_CREDENTIALS environment variable\n        Init Vision Client\n\nMethod 2. service credentials with keyword parameter\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Google\n\n    *** Tasks ***\n    Init Google services\n        Init Speech To Text Client  /path/to/service_credentials.json\n\nMethod 3. setting Robocloud Vault in the library init\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Google\n    ...       robocloud_vault_name=googlecloud\n    ...       robocloud_vault_secret_key=servicecreds\n\n    *** Tasks ***\n    Init Google services\n        Init Storage Client   use_robocloud_vault=${TRUE}\n\nMethod 3. setting Robocloud Vault with keyword\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Google\n\n    *** Tasks ***\n    Init Google services\n        Set Robocloud Vault   vault_name=googlecloud  vault_secret_key=servicecreds\n        Init Storage Client   use_robocloud_vault=${TRUE}\n\nMethod when using OAuth credentials.json:\n\nThe Google Apps Script and Google Drive services are authenticated using this method.\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Google\n\n    *** Variables ***\n    @{SCRIPT_SCOPES}     forms   spreadsheets\n\n    *** Tasks ***\n    Init Google OAuth services\n        Init Apps Script Client   /path/to/credentials.json   ${SCRIPT_SCOPES}\n\n**Creating and using OAuth token file**\n\nThe token file can be created using `credentials.json` by running command:\n\n``rpa-google-oauth --service drive`` or\n``rpa-google-oauth --scopes drive.appdata,drive.file,drive.install``\n\nThis will start web based authentication process, which outputs the token at the end.\nToken could be stored into ``Robocorp Vault`` where it needs to be in variable ``google-oauth``.\n\nExample Vault content.\n\n.. code-block:: json\n\n    \"googlecloud\": {\n        \"oauth-token\": \"gANfd123321aabeedYsc\"\n    }\n\nUsing the Vault.\n\n.. code-block:: robotframework\n\n    *** Keywords ***\n    Set up Google Drive authentication\n        Set Robocloud Vault    vault_name=googlecloud\n        Init Drive Client    use_robocloud_vault=True\n\n\n**Requirements**\n\nDue to number of dependencies related to Google Cloud services this library has been set as\nan optional package for ``rpaframework``.\n\nThis can be installed by opting in to the `google` dependency:\n\n``pip install rpaframework[google]``\n\n**Examples**\n\n**Robot Framework**\n\n.. code-block:: robotframework\n\n    *** Settings ***\n    Library   Autosphere.Cloud.Google\n\n    *** Variables ***\n    ${SERVICE CREDENTIALS}    ${/}path${/}to${/}service_credentials.json\n    ${BUCKET_NAME}            testbucket12213123123\n\n    *** Tasks ***\n    Upload a file into a new storage bucket\n        [Setup]   Init Storage Client   ${SERVICE CREDENTIALS}\n        Create Bucket    ${BUCKET_NAME}\n        Upload File      ${BUCKET_NAME}   ${/}path${/}to${/}file.pdf  myfile.pdf\n        @{files}         List Files   ${BUCKET_NAME}\n        FOR   ${file}  IN   @{files}\n            Log  ${file}\n        END\n\n**Python**\n\n.. code-block:: python\n\n    from Autosphere.Cloud.Google import Google\n\n    library = Google\n    service_credentials = '/path/to/service_credentials.json'\n\n    library.init_vision_client(service_credentials)\n    library.init_text_to_speech(service_credentials)\n\n    response = library.detect_text('imagefile.png', 'result.json')\n    library.synthesize_speech('I want this said aloud', target_file='said.mp3')",
+      "init": {
+         "arguments": {
+            "arg": [
+               "robocloud_vault_name: str = None",
+               "robocloud_vault_secret_key: str = None"
+            ]
+         },
+         "doc": "Initialize self.  See help(type(self)) for accurate signature.",
+         "_lineno": "1906"
+      },
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "text_file: str",
+                  "file_type: str = text",
+                  "json_file: str = None",
+                  "lang=None"
+               ]
+            },
+            "doc": "Analyze sentiment in a text file\n\n:param text_file: source text file\n:param json_file: json target to save result, defaults to None\n:param lang: language code of the source, defaults to None\n:return: analysis response",
+            "_name": "Analyze Sentiment",
+            "_lineno": "379"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_uri: str",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Annotate image\n\n:param image_file: source image file\n:param json_file: json target to save result, defaults to None\n:return: detection response",
+            "_name": "Annotate Image",
+            "_lineno": "320"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "video_uri: str = None",
+                  "video_file: str = None",
+                  "json_file: str = None",
+                  "features: list = None"
+               ]
+            },
+            "doc": "Annotate video\n\nPossible values for features:\n\n- FEATURE_UNSPECIFIED, Unspecified.\n- LABEL_DETECTION, Label detection. Detect objects, such as dog or flower.\n- SHOT_CHANGE_DETECTION, Shot change detection.\n- EXPLICIT_CONTENT_DETECTION, Explicit content detection.\n- SPEECH_TRANSCRIPTION, Speech transcription.\n- TEXT_DETECTION, OCR text detection and tracking.\n- OBJECT_TRACKING, Object detection and tracking.\n- LOGO_RECOGNITION, Logo detection, tracking, and recognition.\n\nIf `video_uri` is given then that is used even if `video_file` is None.\n\n:param video_uri: Google Cloud Storage URI\n:param video_file: filepath to video\n:param json_file: json target to save result, defaults to None\n:param features: list of annotation features to detect,\n    defaults to [\"LABEL_DETECTION\", \"SHOT_CHANGE_DETECTION\"]\n:return: annotate result",
+            "_name": "Annotate Video",
+            "_lineno": "470"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text_file",
+                  "json_file",
+                  "lang=None"
+               ]
+            },
+            "doc": "Classify text\n\n:param text_file: source text file\n:param json_file: json target to save result, defaults to None\n:param lang: language code of the source, defaults to None\n:return: classify response",
+            "_name": "Classify Text",
+            "_lineno": "410"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "sheet_id: str",
+                  "sheet_range: str"
+               ]
+            },
+            "doc": "Clear cell values for range of cells within a sheet\n\n:param sheet_id: target sheet\n:param sheet_range: target sheet range",
+            "_name": "Clear Values",
+            "_lineno": "1093"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str"
+               ]
+            },
+            "doc": "Create Google Cloud Storage bucket\n\n:param bucket_name: name as string\n:return: bucket",
+            "_name": "Create Bucket",
+            "_lineno": "783"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "title: str"
+               ]
+            },
+            "doc": "Create empty sheet with a title\n\n:param title: name as string\n:return: created `sheet_id`",
+            "_name": "Create Sheet",
+            "_lineno": "1009"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str"
+               ]
+            },
+            "doc": "Delete Google Cloud Storage bucket\n\nBucket needs to be empty before it can be deleted.\n\n:param bucket_name: name as string",
+            "_name": "Delete Bucket",
+            "_lineno": "794"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str",
+                  "files: typing.Any"
+               ]
+            },
+            "doc": "Delete files in the bucket\n\nFiles need to be object name in the bucket.\n\n:param bucket_name: name as string\n:param files: single file, list of files or\n    comma separated list of files\n:return: list of files which could not be deleted,\n    or True if all were deleted",
+            "_name": "Delete Files",
+            "_lineno": "831"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect document\n\n:param image_file: source image file\n:param json_file: json target to save result, defaults to None\n:return: detection response",
+            "_name": "Detect Document",
+            "_lineno": "306"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect labels in the image\n\n:param image_file: source image file\n:param json_file: json target to save result, defaults to None\n:return: detection response",
+            "_name": "Detect Labels",
+            "_lineno": "278"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_file: str",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect text in the image\n\n:param image_file: source image file\n:param json_file: json target to save result, defaults to None\n:return: detection response",
+            "_name": "Detect Text",
+            "_lineno": "292"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str",
+                  "files: typing.Any"
+               ]
+            },
+            "doc": "Download files from a bucket\n\nExample `files`:\nfiles = {\"mytestimg\": \"image1.png\", \"mydoc\": \"google.pdf\n\n:param bucket_name: name as string\n:param files: list of object names or dictionary of\n    object names and target files\n:return: list of files which could not be downloaded, or\n    True if all were downloaded",
+            "_name": "Download Files",
+            "_lineno": "907"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "folder: str = None"
+               ]
+            },
+            "doc": "Create new directory to Google Drive\n\n:param folder: name for the new directory\n:raises GoogleDriveError: if folder name is not given\n:return: created file id",
+            "_name": "Drive Create Directory",
+            "_lineno": "1661"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "file_id: str = None",
+                  "file_dict: dict = None",
+                  "query: str = None",
+                  "multiple_ok: bool = False"
+               ]
+            },
+            "doc": "Delete file specified by id, file dictionary or query string\n\nNote. Be extra careful when calling this keyword!\n\n:param file_id: drive file id\n:param file_dict: file dictionary returned by `Drive Search Files`\n:param query: drive query string to find target file, needs to match 1 file\n unless parameter `multiple_ok` is set to `True`\n:param multiple_ok: set to `True` if it is ok to perform delete\n on more than 1 file\n:return: how many files where deleted\n\nExample:\n\n.. code-block:: robotframework\n\n    ${folder_id}=  Drive Get Folder Id   datafolder\n    ${deleted}=    Drive Delete File   query=name contains '.json' and '${folder_id}' in parents\n    ...            multiple_ok=True",
+            "_name": "Drive Delete File",
+            "_lineno": "1466"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "file_dict: dict = None",
+                  "query: str = None",
+                  "limit: int = None",
+                  "timeout: float = None"
+               ]
+            },
+            "doc": "Download files specified by file dictionary or query string\n\nParameters `start`, `limit` and `timeout` are used only when\ndownloading files defined by `query` parameter.\n\n:param file_dict: file dictionary returned by `Drive Search Files`\n:param query: drive query string to find target files, defaults to None\n:param start: start index from which to start download files\n:param limit: maximum amount of files that are downloaded, defaults to None\n:param timeout: maximum allowed time in seconds for download process\n:return: list of downloaded files\n\nExample:\n\n.. code-block:: robotframework\n\n    ${files}=    Drive Search Files    query=name contains '.json'\n    FOR    ${f}    IN    @{files}\n        Run Keyword If  ${f}[size] < 2000  Drive Download Files  file_dict=${f}\n    END\n\n    ${folder_id}=   Drive Get Folder Id   datafolder\n    Drive Download Files  query=name contains '.json' and '${folder_id}' in parents  recurse=True",
+            "_name": "Drive Download Files",
+            "_lineno": "1332"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "file_id: str = None",
+                  "file_dict: dict = None",
+                  "target_file: str = None",
+                  "mimetype: str = application/pdf"
+               ]
+            },
+            "doc": "Export Google Drive file using Drive export links\n\n:param file_id: drive file id\n:param file_dict: file dictionary returned by `Drive Search Files`\n:param target_file: name for the exported file\n:param mimetype: export mimetype, defaults to \"application/pdf\"\n\nExample:\n\n.. code-block:: robotframework\n\n    ${files}=  Drive Search Files  query=name contains 'my example worksheet'\n    Drive Export File  file_dict=${files}[0]",
+            "_name": "Drive Export File",
+            "_lineno": "1685"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "folder: str = None"
+               ]
+            },
+            "doc": "Get file id for the folder\n\n:param folder: name of the folder to identify, by default returns drive's\n `root` folder id\n:return: file id of the folder\n\nExample:\n\n.. code-block:: robotframework\n\n    ${root_id}=    Drive Get Folder Id   # returns Drive root folder id\n    ${folder_id}=  Drive Get Folder Id  subdir",
+            "_name": "Drive Get Folder Id",
+            "_lineno": "1502"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "file_id: str = None",
+                  "file_dict: dict = None",
+                  "query: str = None",
+                  "folder: str = None",
+                  "folder_id: str = None",
+                  "multiple_ok: bool = False"
+               ]
+            },
+            "doc": "Move file specified by id, file dictionary or query string into target folder\n\n:param file_id: drive file id\n:param file_dict: file dictionary returned by `Drive Search Files`\n:param query: drive query string to find target file, needs to match 1 file\n:param folder: name of the folder to move file into, is by default drive's\n `root` folder id\n:param folder_id: id of the folder to move file into, if set the `folder`\n parameter is ignored\n:param multiple_ok: if `True` then moving more than 1 file\n:return: list of file ids\n:raises GoogleDriveError: if there are no files to move or\n target folder can't be found\n\nExample:\n\n.. code-block:: robotframework\n\n    ${source_id}=  Drive Get Folder Id  sourcefolder\n    ${query}=      Set Variable  name contains '.json' and '${sourceid}' in parents\n    ${files}=      Drive Move File  query=${query}  folder=target_folder  multiple_ok=True",
+            "_name": "Drive Move File",
+            "_lineno": "1533"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "query: str = None",
+                  "recurse: bool = False",
+                  "folder_name: str = None"
+               ]
+            },
+            "doc": "Search Google Drive for files matching query string\n\n:param query: search string, defaults to None which means that all files\n and folders are returned\n:param recurse: set to `True` if search should recursive\n:param folder_name: search files in this directory\n:raises GoogleDriveError: if there is a request error\n:return: list of files\n\nExample:\n\n.. code-block:: robotframework\n\n    ${files}=  Drive Search Files   query=name contains 'hello'\n    ${files}=  Drive Search Files   query=modifiedTime > '2020-06-04T12:00:00'\n    ${files}=  Drive Search Files   query=mimeType contains 'image/' or mimeType contains 'video/'\n    ${files}=  Drive Search Files   query=name contains '.yaml'  recurse=True\n    ${files}=  Drive Search Files   query=name contains '.yaml'  folder_name=datadirectory",
+            "_name": "Drive Search Files",
+            "_lineno": "1593"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "file_id: str = None",
+                  "file_dict: dict = None",
+                  "query: str = None",
+                  "action: Update { trash | untrash | star | unstar } = Update.star",
+                  "multiple_ok: bool = False"
+               ]
+            },
+            "doc": "Update file specified by id, file dictionary or query string\n\nPossible actions:\n- star\n- unstar\n- trash\n- untrash\n\n:param file_id: drive file id\n:param file_dict: file dictionary returned by `Drive Search Files`\n:param query: drive query string to find target file, needs to match 1 file\n:param action: update action, default star file\n:param multiple_ok: set to `True` if it is ok to perform update\n on more than 1 file\n:return: number of updated files\n\nExample:\n\n.. code-block:: robotframework\n\n    ${folder_id}=  Drive Get Folder Id   datafolder\n    ${updated}=    Drive Update File   query=name contains '.json' and '${folder_id}' in parents\n    ...            action=star\n    ...            multiple_ok=True",
+            "_name": "Drive Update File",
+            "_lineno": "1391"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "filename: str = None",
+                  "folder: str = None",
+                  "overwrite: bool = False",
+                  "make_dir: bool = False"
+               ]
+            },
+            "doc": "Upload files into Drive\n\n:param filename: name of the file to upload\n:param folder: target folder for upload\n:param overwrite: set to `True` if already existing file should be overwritten\n:param make_dir: set to `True` if folder should be created if it does not exist\n:raises GoogleDriveError: if target_folder does not exist or\n trying to upload directory\n:return: uploaded file id\n\nExample:\n\n.. code-block:: robotframework\n\n    ${file1_id}=  Drive Upload File   data.json  # Upload file to drive root\n    ${file2_id}=  Drive Upload File   newdata.json  new_folder  make_dir=True\n    ${file3_id}=  Drive Upload File   data.json  overwrite=True",
+            "_name": "Drive Upload File",
+            "_lineno": "1243"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "image_uri: str",
+                  "json_file: str = None"
+               ]
+            },
+            "doc": "Detect faces\n\n:param image_uri: Google Cloud Storage URI\n:param json_file: json target to save result, defaults to None\n:return: detection response",
+            "_name": "Face Detection",
+            "_lineno": "335"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str"
+               ]
+            },
+            "doc": "Get Google Cloud Storage bucket\n\n:param bucket_name: name as string\n:return: bucket",
+            "_name": "Get Bucket",
+            "_lineno": "808"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "sheet_id: str",
+                  "sheet_range: str",
+                  "value_render_option: str = UNFORMATTED_VALUE",
+                  "datetime_render_option: str = FORMATTED_STRING"
+               ]
+            },
+            "doc": "Get values from the range in the sheet\n\n:param sheet_id: target sheet\n:param sheet_range: target sheet range\n:param value_render_option: how values should be represented\n                            in the output defaults to \"UNFORMATTED_VALUE\"\n:param datetime_render_option: how dates, times, and durations should be\n                               represented in the output, defaults to \"FORMATTED_STRING\"",
+            "_name": "Get Values",
+            "_lineno": "1063"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "credentials_file: str = credentials.json",
+                  "token_file: str = oauth.token",
+                  "use_robocloud_vault: bool = False",
+                  "scopes: list = None",
+                  "save_token: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Apps Script client\n\n:param credentials_file: filepath to credentials JSON\n:param token_file: filepath to OAuth token file\n:param use_robocloud_vault: if `True` the token is read from Robocloud\n:param scopes: authenticated scopes, for example. ['forms', 'spreadsheets']\n:param save_token: set to `True` if token should be saved to local file",
+            "_name": "Init Apps Script Client",
+            "_lineno": "1133"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "credentials_file: str = credentials.json",
+                  "token_file: str = oauth.token",
+                  "use_robocloud_vault: bool = False",
+                  "scopes: list = None",
+                  "save_token: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Drive client\n\n:param credentials_file: filepath to credentials JSON\n:param token_file: filepath to OAuth token file\n:param use_robocloud_vault: if `True` the token is read from Robocloud\n:param scopes: authenticated scopes, for example. ['forms', 'spreadsheets']\n:param save_token: set to `True` if token should be saved to local file",
+            "_name": "Init Drive Client",
+            "_lineno": "1215"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Cloud Natural Language client\n\n:param service_credentials_file: filepath to credentials JSON\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Natural Language Client",
+            "_lineno": "363"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Sheets client\n\n:param service_credentials_file: filepath to credentials JSON\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Sheets Client",
+            "_lineno": "972"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Cloud Speech to Text client\n\n:param service_credentials_file: filepath to credentials JSON\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Speech To Text Client",
+            "_lineno": "697"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Cloud Storage client\n\n:param service_credentials_file: filepath to credentials JSON\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Storage Client",
+            "_lineno": "765"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Cloud Text to Speech client\n\n:param service_credentials_file: filepath to credentials JSON\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Text To Speech Client",
+            "_lineno": "593"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "project_identifier: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Cloud Translation client\n\n:param service_credentials_file: filepath to credentials JSON\n:param project_identifier: identifier for Translation project\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Translation Client",
+            "_lineno": "532"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Cloud Video Intelligence client\n\n:param service_credentials_file: filepath to credentials JSON\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Video Intelligence Client",
+            "_lineno": "452"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "service_credentials_file: str = None",
+                  "use_robocloud_vault: bool = False"
+               ]
+            },
+            "doc": "Initialize Google Cloud Vision client\n\n:param service_credentials_file: filepath to credentials JSON\n:param use_robocloud_vault: use json stored into `Robocloud Vault`",
+            "_name": "Init Vision Client",
+            "_lineno": "252"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "sheet_id: str",
+                  "sheet_range: str",
+                  "values: list",
+                  "major_dimension: str = COLUMNS",
+                  "value_input_option: str = USER_ENTERED"
+               ]
+            },
+            "doc": "Insert values into sheet cells\n\n:param sheet_id: target sheet\n:param sheet_range: target sheet range\n:param values: list of values to insert into sheet\n:param major_dimension: major dimension of the values, default `COLUMNS`\n:param value_input_option: controls whether input strings are parsed or not,\n                           default `USER_ENTERED`",
+            "_name": "Insert Values",
+            "_lineno": "1026"
+         },
+         {
+            "doc": "List Google Cloud Storage buckets\n\n:return: list of buckets",
+            "_name": "List Buckets",
+            "_lineno": "821"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str"
+               ]
+            },
+            "doc": "List files in the bucket\n\n:param bucket_name: name as string\n:return: list of object names in the bucket",
+            "_name": "List Files",
+            "_lineno": "858"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "language_code: str = None"
+               ]
+            },
+            "doc": "List supported voices for the speech\n\n:param language_code: voice languages to list, defaults to None (all)\n:return: list of supported voices",
+            "_name": "List Supported Voices",
+            "_lineno": "609"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "audio_file_uri",
+                  "encoding: str = FLAC",
+                  "language_code: str = en_US",
+                  "audio_channel_count=2"
+               ]
+            },
+            "doc": "Recognize text in the audio file\n\n:param audio_file_uri: Google Cloud Storage URI\n:return: recognized texts",
+            "_name": "Recognize",
+            "_lineno": "715"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "script_id: str",
+                  "function_name: str",
+                  "parameters: dict"
+               ]
+            },
+            "doc": "Run the Google Apps Script\n\n:param script_id: Google Script identifier\n:param function_name: name of the script function\n:param parameters: script function parameters as a dictionary\n:raises AssertionError: thrown when Google Script returns errors\n\nExample:\n\n.. code-block:: robotframework\n\n    &{params}=    Create Dictionary  formid=aaad4232  formvalues=1,2,3\n    ${response}=  Run Script    abc21397283712da  submit_form   ${params}\n    Log Many   ${response}",
+            "_name": "Run Script",
+            "_lineno": "1157"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "scopes: list = None"
+               ]
+            },
+            "doc": "Set global Google authentication scopes\n\nUseful when using numerous services with different scopes\n\n:param scopes: list of authentication scopes",
+            "_name": "Set Global Scopes",
+            "_lineno": "190"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "vault_name: str = None",
+                  "vault_secret_key: str = None"
+               ]
+            },
+            "doc": "Set Robocloud Vault name and secret key name\n\n:param vault_name: Robocloud Vault name\n:param vault_secret_key: Rococloud Vault secret key name",
+            "_name": "Set Robocloud Vault",
+            "_lineno": "179"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text",
+                  "language=en-US",
+                  "name=en-US-Standard-B",
+                  "gender=MALE",
+                  "encoding=MP3",
+                  "target_file=synthesized.mp3"
+               ]
+            },
+            "doc": "Synthesize speech synchronously\n\n:param text: input text to synthesize\n:param language: voice language, defaults to \"en-US\"\n:param name: voice name, defaults to \"en-US-Standard-B\"\n:param gender: voice gender, defaults to \"MALE\"\n:param encoding: result encoding type, defaults to \"MP3\"\n:param target_file: save synthesized output to file,\n    defaults to \"synthesized.mp3\"\n:return: synthesized output in bytes",
+            "_name": "Synthesize Speech",
+            "_lineno": "623"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "text: typing.Any",
+                  "source_language: str = None",
+                  "target_language: str = None"
+               ]
+            },
+            "doc": "Translate text\n\n:param text: text to translate\n:param source_language: language code, defaults to None\n:param target_language: language code, defaults to None\n:return: translated text",
+            "_name": "Translate",
+            "_lineno": "553"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str",
+                  "filename: str",
+                  "target_name: str"
+               ]
+            },
+            "doc": "Upload a file into a bucket\n\n:param bucket_name: name as string\n:param filename: filepath to upload file\n:param target_name: target object name",
+            "_name": "Upload File",
+            "_lineno": "871"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "bucket_name: str",
+                  "files: dict"
+               ]
+            },
+            "doc": "Upload files into a bucket\n\nExample `files`:\nfiles = {\"mytestimg\": \"image1.png\", \"mydoc\": \"google.pdf\"}\n\n:param bucket_name: name as string\n:param files: dictionary of object names and filepaths",
+            "_name": "Upload Files",
+            "_lineno": "888"
+         }
+      ],
+      "_name": "Google",
+      "_type": "LIBRARY",
+      "_format": "REST",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-31T06:13:44Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Cloud\\Google.py",
+      "_lineno": "1728"
+   }
+}

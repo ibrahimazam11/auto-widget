@@ -1,7 +1,33 @@
-[
-  {
-    "keyword": "Slack Message Using Webhook",
-    "arguments": "webhook_url: str,channel: str,sender: str,text: str,icon_emoji: str = None",
-    "description": "Send message to Slack channel using webhook. :param webhook_url: needs to be configured for the Slack server :param channel: channel needs to exist in the Slack server :param sender: shown in the message post as sender :param text: text for the message post :param icon_emoji: icon for the message post, defaults to None"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Autosphere Framework library for Slack operations.",
+        "kw": [
+            {
+            "arguments": {
+                "arg": [
+                    "webhook_url: str",
+                    "channel: str",
+                    "sender: str",
+                    "text: str",
+                    "icon_emoji: str = None"
+                ]
+            },
+            "doc": "Send message to Slack channel using webhook.\n\n:param webhook_url: needs to be configured for the Slack server\n:param channel: channel needs to exist in the Slack server\n:param sender: shown in the message post as sender\n:param text: text for the message post\n:param icon_emoji: icon for the message post, defaults to None",
+            "_name": "Slack Message Using Webhook",
+            "_lineno": "12"
+            }
+        ],
+        "_name": "Slack",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:06:26Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Slack.py",
+        "_lineno": "6"
+    }
+}

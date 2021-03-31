@@ -1,0 +1,67 @@
+[
+  {
+    "keyword": "Clear Work Item",
+    "arguments": "",
+    "description": "Remove all data in the current work item."
+  },
+  {
+    "keyword": "Delete Work Item Variables",
+    "arguments": "*names,force=True",
+    "description": "Delete variable(s) from the current work item. :param names: names of variables to remove :param force: ignore variables that don't exist in work item"
+  },
+  {
+    "keyword": "Get Work Item Payload",
+    "arguments": "",
+    "description": "Get the full JSON payload for a work item. NOTE: Most use cases should prefer higher-level keywords."
+  },
+  {
+    "keyword": "Get Work Item Variable",
+    "arguments": "name,default=<object object at 0x04AE9930>",
+    "description": "Return a single variable value from the work item, or default value if defined and key does not exist. If key does not exist and default is not defined, raises KeyError. :param key: Name of variable :param default: Default value if key does not exist"
+  },
+  {
+    "keyword": "Get Work Item Variables",
+    "arguments": "",
+    "description": "Read all variables from the current work item and return their names and values as a dictionary."
+  },
+  {
+    "keyword": "List Work Item Variables",
+    "arguments": "",
+    "description": "List the variable names for the current work item."
+  },
+  {
+    "keyword": "Load Work Item",
+    "arguments": "workspace_id,item_id",
+    "description": "Load work item for reading/writing. :param workspace_id: Workspace ID which contains item :param item_id: Workitem ID to load"
+  },
+  {
+    "keyword": "Load Work Item From Environment",
+    "arguments": "",
+    "description": "Load current work item defined by the runtime environment. The corresponding environment variables are: * RC_WORKSPACE_ID * RC_WORKITEM_ID"
+  },
+  {
+    "keyword": "Save Work Item",
+    "arguments": "",
+    "description": "Save the current data in the work item. If not saved, all changes are discarded when the library goes out of scope."
+  },
+  {
+    "keyword": "Set Task Variables From Work Item",
+    "arguments": "",
+    "description": "Convert all variables in the current work item to Robot Framework task variables."
+  },
+  {
+    "keyword": "Set Work Item Payload",
+    "arguments": "payload",
+    "description": "Set the full JSON payload for a work item. NOTE: Most use cases should prefer higher-level keywords. :param payload: Content of payload, must be JSON-serializable"
+  },
+  {
+    "keyword": "Set Work Item Variable",
+    "arguments": "name,value",
+    "description": "Set a single variable value in the current work item. :param key: Name of variable :param value: Value of variable"
+  },
+  {
+    "keyword": "Set Work Item Variables",
+    "arguments": "**kwargs",
+    "description": "Set multiple variables in the current work item. :param kwargs: Pairs of variable names and values"
+  }
+]

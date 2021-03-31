@@ -1,0 +1,32 @@
+[
+  {
+    "keyword": "Notify Email",
+    "arguments": "message: str = None,to: str = None,username: str = None,password: str = None,**kwargs: dict",
+    "description": "Notify using email service :param message: notification message :param to: target of email message :param username: email service username :param password: email service password :return: True is notification was success, False if not"
+  },
+  {
+    "keyword": "Notify Gmail",
+    "arguments": "message: str = None,to: str = None,username: str = None,password: str = None,**kwargs: dict",
+    "description": "Notify using Gmail service :param message: notification message :param to: target of email message :param username: GMail service username :param password: GMail service password :return: True is notification was success, False if not"
+  },
+  {
+    "keyword": "Notify Pushover",
+    "arguments": "message: str = None,user: str = None,token: str = None,**kwargs: dict",
+    "description": "Notify using Pushover service :param message: notification message :param user: target user for the notification :param token: service token :return: True is notification was success, False if not"
+  },
+  {
+    "keyword": "Notify Slack",
+    "arguments": "message: str = None,channel: str = None,webhook_url: str = None,**kwargs: dict",
+    "description": "Notify using Slack service :param message: notification message :param channel: target channel for the notification :param webhook_url: Slack webhook url :return: True is notification was success, False if not"
+  },
+  {
+    "keyword": "Notify Telegram",
+    "arguments": "message: str = None,chat_id: str = None,token: str = None,**kwargs: dict",
+    "description": "Notify using Telegram service :param message: notification message :param chat_id: target chat id for the notification :param token: service token :return: True is notification was success, False if not"
+  },
+  {
+    "keyword": "Notify Twilio",
+    "arguments": "message: str = None,number_from: str = None,number_to: str = None,account_sid: str = None,token: str = None,**kwargs: dict",
+    "description": "Notify using Twilio service :param message: notification message :param number_from: number where the message comes from :param number_to: number where the messages goes to :param account_sid: Twilio account SID :param token: Twilio account token :return: True is notification was success, False if not"
+  }
+]

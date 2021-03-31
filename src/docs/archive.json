@@ -1,37 +1,100 @@
-[
-  {
-    "keyword": "Add To Archive",
-    "arguments": "files: typing.Any,archive_name: str,folder: str = None",
-    "description": "Add file(s) to the archive This keyword adds file or list of files into existing archive. Files can be added to archive structure with relative path using argument folder. :param files: name of the file, or list of files, to add :param archive_name: filename of the archive :param folder: name of the folder for added file (relative path in the archive) Example: .. code-block:: robotframework Add To Archive extrafile.txt myfiles.zip Add To Archive stat.png archive.tar.gz images @{files} Create List filename1.txt filename2.txt Add To Archive ${files} files.tar"
-  },
-  {
-    "keyword": "Archive Folder With Tar",
-    "arguments": "folder: str,archive_name: str,recursive: bool = False,include: str = None,exclude: str = None",
-    "description": "Create a tar/tar.gz archive of a folder This keyword creates an TAR or TAR.GZ archive of a local folder. Type of archive is determined by the file extension. By default subdirectories are not included, but they can included using recursive argument. To include only certain files, like TXT files, the argument include can be used. Similarly to exclude certain file, like dotfiles, the argument exclude can be used. :param folder: name of the folder to archive :param archive_name: filename of the archive :param recursive: should sub directories be included, defaults is False :param include: define file pattern to include in the package, defaults to None (means all files) :param exclude: define file pattern to exclude from the package, defaults is None Example: .. code-block:: robotframework Archive Folder With TAR ${CURDIR}${/}documents documents.tar Archive Folder With TAR ${CURDIR}${/}tasks tasks.tar.gz include=*.robot Archive Folder With TAR ${CURDIR}${/}tasks tasks.tar exclude=/.* Archive Folder With TAR ${CURDIR}${/}documents documents.tar recursive=True"
-  },
-  {
-    "keyword": "Archive Folder With Zip",
-    "arguments": "folder: str,archive_name: str,recursive: bool = False,include: str = None,exclude: str = None,compression: str = stored",
-    "description": "Create a zip archive of a folder This keyword creates an ZIP archive of a local folder. By default subdirectories are not included, but they can included using recursive argument. To include only certain files, like TXT files, the argument include can be used. Similarly to exclude certain file, like dotfiles, the argument exclude can be used. Compression methods: stored, default deflated bzip2 lzma :param folder: name of the folder to archive :param archive_name: filename of the archive :param recursive: should sub directories be included, defaults is False :param include: define file pattern to include in the package, defaults to None (means all files) :param exclude: define file pattern to exclude from the package, defaults is None :param compression: type of package compression method, defaults to \"stored\" Example: .. code-block:: robotframework Archive Folder With Zip ${CURDIR}${/}documents mydocs.zip Archive Folder With Zip ${CURDIR}${/}tasks robottasks.zip include=*.robot Archive Folder With Zip ${CURDIR}${/}tasks no_dotfiles.zip exclude=/.* Archive Folder With Zip ${CURDIR}${/}documents documents.zip recursive=True Archive Folder With Zip ${CURDIR} packagelzma.zip compression=lzma Archive Folder With Zip ${CURDIR} bzipped.zip compression=bzip2"
-  },
-  {
-    "keyword": "Extract Archive",
-    "arguments": "archive_name: str,path: str = None,members: typing.Any = None",
-    "description": "Extract files from archive into local directory This keyword supports extracting files from zip, tar and tar.gz archives. By default file is extracted into current working directory, but path argument can be set to define extraction path. :param archive_name: filename of the archive :param path: filepath to extract file into, default is current working directory :param members: list of files to extract from, default is None (all files in archive are extracted) Example: .. code-block:: robotframework Extract Archive myfiles.zip ${CURDIR}${/}extracted @{files} Create List filename1.txt filename2.txt Extract Archive archive.tar C:${/}myfiles${/} ${files}"
-  },
-  {
-    "keyword": "Extract File From Archive",
-    "arguments": "filename: str,archive_name: str,path: str = None",
-    "description": "Extract a file from archive into local directory This keyword supports extracting a file from zip, tar and tar.gz archives. By default file is extracted into current working directory, but path argument can be set to define extraction path. :param filename: name of the file to extract :param archive_name: filename of the archive :param path: filepath to extract file into, default is current working directory Example: .. code-block:: robotframework Extract File From Archive extrafile.txt myfiles.zip Extract File From Archive background.png images.tar.gz ${CURDIR}${/}extracted"
-  },
-  {
-    "keyword": "Get Archive Info",
-    "arguments": "archive_name: str",
-    "description": "Get information about the archive Returns following file attributes in a dictionary: filename filemode size mtime last modification time in format %d.%m.%Y %H:%M:%S :param archive_name: filename of the archive Example: .. code-block:: robotframework &{archiveinfo} Get Archive Info myfiles.zip"
-  },
-  {
-    "keyword": "List Archive",
-    "arguments": "archive_name: str",
-    "description": "List files in an archive Returns list of file, where each file in a list is a dictionary with following attributes: name size mtime last modification time in format %d.%m.%Y %H:%M:%S :param archive_name: filename of the archive Example: .. code-block:: robotframework @{files} List Archive myfiles.zip FOR ${file} IN ${files} Log ${file}[filename] Log ${file}[size] Log ${file}[mtime] END"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for handling TAR and ZIP archives.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "files: typing.Any",
+                        "archive_name: str",
+                        "folder: str = None"
+                    ]
+                },
+                "doc": "Add file(s) to the archive\n\nThis keyword adds file or list of files into existing archive. Files\ncan be added to archive structure with relative path using argument `folder`.\n\n:param files: name of the file, or list of files, to add\n:param archive_name: filename of the archive\n:param folder: name of the folder for added file (relative path in the archive)\n\nExample:\n\n.. code-block:: robotframework\n\n    Add To Archive  extrafile.txt  myfiles.zip\n    Add To Archive  stat.png       archive.tar.gz  images\n    @{files}        Create List    filename1.txt   filename2.txt\n    Add To Archive  ${files}       files.tar",
+                "_name": "Add To Archive",
+                "_lineno": "159"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "folder: str",
+                        "archive_name: str",
+                        "recursive: bool = False",
+                        "include: str = None",
+                        "exclude: str = None"
+                    ]
+                },
+                "doc": "Create a tar/tar.gz archive of a folder\n\nThis keyword creates an TAR or TAR.GZ archive of a local folder. Type of archive\nis determined by the file extension. By default subdirectories are not\nincluded, but they can included using `recursive` argument.\n\nTo include only certain files, like TXT files, the argument `include` can be used.\nSimilarly to exclude certain file, like dotfiles, the argument `exclude` can be used.\n\n:param folder: name of the folder to archive\n:param archive_name: filename of the archive\n:param recursive: should sub directories be included, defaults is False\n:param include: define file pattern to include in the package, defaults to None (means all files)\n:param exclude: define file pattern to exclude from the package, defaults is None\n\nExample:\n\n.. code-block:: robotframework\n\n    Archive Folder With TAR  ${CURDIR}${/}documents  documents.tar\n    Archive Folder With TAR  ${CURDIR}${/}tasks      tasks.tar.gz   include=*.robot\n    Archive Folder With TAR  ${CURDIR}${/}tasks      tasks.tar      exclude=/.*\n    Archive Folder With TAR  ${CURDIR}${/}documents  documents.tar  recursive=True",
+                "_name": "Archive Folder With Tar",
+                "_lineno": "117"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "folder: str",
+                        "archive_name: str",
+                        "recursive: bool = False",
+                        "include: str = None",
+                        "exclude: str = None",
+                        "compression: str = stored"
+                    ]
+                },
+                "doc": "Create a zip archive of a folder\n\nThis keyword creates an ZIP archive of a local folder. By default subdirectories are not\nincluded, but they can included using `recursive` argument.\n\nTo include only certain files, like TXT files, the argument `include` can be used.\nSimilarly to exclude certain file, like dotfiles, the argument `exclude` can be used.\n\nCompression methods:\n    - stored, default\n    - deflated\n    - bzip2\n    - lzma\n\n:param folder: name of the folder to archive\n:param archive_name: filename of the archive\n:param recursive: should sub directories be included, defaults is False\n:param include: define file pattern to include in the package, defaults to None (means all files)\n:param exclude: define file pattern to exclude from the package, defaults is None\n:param compression: type of package compression method, defaults to \"stored\"\n\nExample:\n\n.. code-block:: robotframework\n\n    Archive Folder With Zip  ${CURDIR}${/}documents  mydocs.zip\n    Archive Folder With Zip  ${CURDIR}${/}tasks      robottasks.zip   include=*.robot\n    Archive Folder With Zip  ${CURDIR}${/}tasks      no_dotfiles.zip  exclude=/.*\n    Archive Folder With Zip  ${CURDIR}${/}documents  documents.zip    recursive=True\n    Archive Folder With Zip  ${CURDIR}               packagelzma.zip  compression=lzma\n    Archive Folder With Zip  ${CURDIR}               bzipped.zip      compression=bzip2",
+                "_name": "Archive Folder With Zip",
+                "_lineno": "51"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "archive_name: str",
+                        "path: str = None",
+                        "members: typing.Any = None"
+                    ]
+                },
+                "doc": "Extract files from archive into local directory\n\nThis keyword supports extracting files from zip, tar and tar.gz archives.\n\nBy default file is extracted into current working directory, but `path` argument\ncan be set to define extraction path.\n\n:param archive_name: filename of the archive\n:param path: filepath to extract file into, default is current working directory\n:param members: list of files to extract from, default is None (all files in archive are extracted)\n\nExample:\n\n.. code-block:: robotframework\n\n    Extract Archive    myfiles.zip   ${CURDIR}${/}extracted\n    @{files}           Create List   filename1.txt    filename2.txt\n    Extract Archive    archive.tar   C:${/}myfiles${/}  ${files}",
+                "_name": "Extract Archive",
+                "_lineno": "301"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "filename: str",
+                        "archive_name: str",
+                        "path: str = None"
+                    ]
+                },
+                "doc": "Extract a file from archive into local directory\n\nThis keyword supports extracting a file from zip, tar and tar.gz archives.\n\nBy default file is extracted into current working directory, but `path` argument can be set\nto define extraction path.\n\n:param filename: name of the file to extract\n:param archive_name: filename of the archive\n:param path: filepath to extract file into, default is current working directory\n\nExample:\n\n.. code-block:: robotframework\n\n    Extract File From Archive    extrafile.txt   myfiles.zip\n    Extract File From Archive    background.png  images.tar.gz  ${CURDIR}${/}extracted",
+                "_name": "Extract File From Archive",
+                "_lineno": "342"
+            },
+            {
+                "arguments": {
+                    "arg": "archive_name: str"
+                },
+                "doc": "Get information about the archive\n\nReturns following file attributes in a dictionary:\n\n    - filename\n    - filemode\n    - size\n    - mtime\n    - last modification time in format `%d.%m.%Y %H:%M:%S`\n\n:param archive_name: filename of the archive\n\nExample:\n\n.. code-block:: robotframework\n\n    &{archiveinfo}   Get Archive Info    myfiles.zip",
+                "_name": "Get Archive Info",
+                "_lineno": "259"
+            },
+            {
+                "arguments": {
+                    "arg": "archive_name: str"
+                },
+                "doc": "List files in an archive\n\nReturns list of file, where each file in a list is a dictionary\nwith following attributes:\n\n    - name\n    - size\n    - mtime\n    - last modification time in format `%d.%m.%Y %H:%M:%S`\n\n:param archive_name: filename of the archive\n\nExample:\n\n.. code-block:: robotframework\n\n    @{files}   List Archive    myfiles.zip\n    FOR  ${file}  IN   ${files}\n        Log  ${file}\\[filename]\n        Log  ${file}\\[size]\n        Log  ${file}\\[mtime]\n    END",
+                "_name": "List Archive",
+                "_lineno": "207"
+            }
+        ],
+        "_name": "Archive",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T10:59:41Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Archive.py",
+        "_lineno": "45"
+    }
+}

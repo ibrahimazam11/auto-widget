@@ -1,42 +1,119 @@
-[
-  {
-    "keyword": "Jump To Task",
-    "arguments": "name",
-    "description": "Jump directly to given task, skipping the rest of the task execution. If run inside a teardown, also skips the rest of the teardown sequence."
-  },
-  {
-    "keyword": "Jump To Task If",
-    "arguments": "condition,name,default=None",
-    "description": "Jump directly to given task according to the condition."
-  },
-  {
-    "keyword": "Jump To Task If Keyword Fails",
-    "arguments": "task,keyword,*args",
-    "description": "Executes given keyword and jumps to given task if it fails."
-  },
-  {
-    "keyword": "Jump To Task If Keyword Succeeds",
-    "arguments": "task,keyword,*args",
-    "description": "Executes given keyword and jumps to given task if it succeeds."
-  },
-  {
-    "keyword": "Set Next Task",
-    "arguments": "name",
-    "description": "Set the next task to be executed. Should be a task in the same suite. :param name: Name of next task"
-  },
-  {
-    "keyword": "Set Next Task If",
-    "arguments": "condition,name,default=None",
-    "description": "Set the next task according to the condition. If no default is given, does not modify execution order. :param condition: Condition expression to evaluate :param name: Name of next task, if successful :param default: Name of next task, if unsuccessful"
-  },
-  {
-    "keyword": "Set Next Task If Keyword Fails",
-    "arguments": "task,keyword,*args",
-    "description": "Executes given keyword and sets the next task if it fails."
-  },
-  {
-    "keyword": "Set Next Task If Keyword Succeeds",
-    "arguments": "task,keyword,*args",
-    "description": "Executes given keyword and sets the next task if it succeeds."
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "global",
+        "namedargs": "yes",
+        "doc": "`Tasks` is a Robot Framework library for controlling\ntask execution inside a suite. It allows changing the next scheduled task\nor jumping immediately to other tasks by using the keywords it provides.\n\nIf ``Graphviz`` is available, it will also create a directed graph\nto visualize connected tasks, which is visible in the suite documentation\nfield of the test log.\n\n:param execution_limit: Maximum number of tasks to run in suite,\n                        used to prevent infinite loops\n:param schema:          Path to optional schema file\n:param graph:           Render execution result as graph using graphviz\n:param graph_inline:    Inline graph into log, instead of saving as file",
+        "init": {
+            "arguments": {
+                "arg": [
+                    "execution_limit=1024",
+                    "schema=None",
+                    "graph=True",
+                    "graph_inline=True"
+                ]
+            },
+            "doc": "Initialize self.  See help(type(self)) for accurate signature.",
+            "_lineno": "352"
+        },
+        "kw": [
+            {
+                "arguments": {
+                    "arg": "name"
+                },
+                "doc": "Jump directly to given task, skipping the rest of the task\nexecution. If run inside a teardown, also skips the rest of the\nteardown sequence.",
+                "_name": "Jump To Task",
+                "_lineno": "554"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "condition",
+                        "name",
+                        "default=None"
+                    ]
+                },
+                "doc": "Jump directly to given task according to the condition.",
+                "_name": "Jump To Task If",
+                "_lineno": "562"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "task",
+                        "keyword",
+                        "*args"
+                    ]
+                },
+                "doc": "Executes given keyword and jumps to given task if it fails.",
+                "_name": "Jump To Task If Keyword Fails",
+                "_lineno": "580"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "task",
+                        "keyword",
+                        "*args"
+                    ]
+                },
+                "doc": "Executes given keyword and jumps to given task if it succeeds.",
+                "_name": "Jump To Task If Keyword Succeeds",
+                "_lineno": "586"
+            },
+            {
+                "arguments": {
+                    "arg": "name"
+                },
+                "doc": "Set the next task to be executed.\nShould be a task in the same suite.\n\n:param name: Name of next task",
+                "_name": "Set Next Task",
+                "_lineno": "513"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "condition",
+                        "name",
+                        "default=None"
+                    ]
+                },
+                "doc": "Set the next task according to the condition.\nIf no default is given, does not modify execution order.\n\n:param condition: Condition expression to evaluate\n:param name:      Name of next task, if successful\n:param default:   Name of next task, if unsuccessful",
+                "_name": "Set Next Task If",
+                "_lineno": "534"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "task",
+                        "keyword",
+                        "*args"
+                    ]
+                },
+                "doc": "Executes given keyword and sets the next task if it fails.",
+                "_name": "Set Next Task If Keyword Fails",
+                "_lineno": "568"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "task",
+                        "keyword",
+                        "*args"
+                    ]
+                },
+                "doc": "Executes given keyword and sets the next task if it succeeds.",
+                "_name": "Set Next Task If Keyword Succeeds",
+                "_lineno": "574"
+            }
+        ],
+        "_name": "Tasks",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "GLOBAL",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:06:49Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Tasks.py",
+        "_lineno": "331"
+    }
+}

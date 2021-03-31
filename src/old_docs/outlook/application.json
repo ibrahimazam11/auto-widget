@@ -1,0 +1,27 @@
+[
+  {
+    "keyword": "Close Document",
+    "arguments": "save_changes: bool = False",
+    "description": "Close the active document (if open)."
+  },
+  {
+    "keyword": "Open Application",
+    "arguments": "visible: bool = False,display_alerts: bool = False",
+    "description": "Open the Outlook application. :param visible: show window after opening :param display_alerts: show alert popups"
+  },
+  {
+    "keyword": "Quit Application",
+    "arguments": "save_changes: bool = False",
+    "description": "Quit the application."
+  },
+  {
+    "keyword": "Send Message",
+    "arguments": "recipients: typing.Any,subject: str,body: str,html_body: bool = False,attachments: typing.Any = None",
+    "description": "Send message with Outlook :param recipients: list of addresses :param subject: email subject :param body: email body :param html_body: True if body contains HTML, defaults to False :param attachments: list of filepaths to include in the email, defaults to [] :return: True if there were no errors"
+  },
+  {
+    "keyword": "Wait For Message",
+    "arguments": "criterion: str = None,timeout: float = 5.0,interval: float = 1.0",
+    "description": "Wait for email matching criterion to arrive into mailbox. Possible wait criterias are: SUBJECT, SENDER and BODY Examples: wait_for_message('SUBJECT:rpa task calling', timeout=300, interval=10) :param criterion: message filter to wait for, defaults to \"\" :param timeout: total time in seconds to wait for email, defaults to 5.0 :param interval: time in seconds for new check, defaults to 1.0 :return: list of messages or False"
+  }
+]

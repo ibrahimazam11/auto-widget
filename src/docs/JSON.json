@@ -1,0 +1,112 @@
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "global",
+        "namedargs": "yes",
+        "doc": "`JSON` is a library for manipulating `JSON`_ files and strings.\n\nJSON is a common data interchange format inspired by a subset of\nthe Javascript programming language, but these days is a de facto\nstandard in modern web APIs and is language agnostic.\n\n.. _JSON: http://json.org/\n\n**Serialization**\n\nThe term `serialization` refers to the process of converting\nRobot Framework or Python types to JSON or the other way around.\n\nBasic types can be easily converted between the domains,\nand the mapping is as follows:\n\n============= =======\nJSON          Python\n============= =======\nobject        dict\narray         list\nstring        str\nnumber (int)  int\nnumber (real) float\ntrue          True\nfalse         False\nnull          None\n============= =======\n\n**About JSONPath**\n\nReading and writing values from/to JSON serializable objects is done\nusing `JSONPath`_. It's a syntax designed to quickly and easily refer to\nspecific elements in a JSON structure.\n\nCompared to Python's normal dictionary access, JSONPath expressions can\ntarget multiple elements through features such as conditionals and wildcards,\nwhich can simplify many JSON-related operations. It's analogous to XPath\nfor XML structures.\n\n.. _JSONPath: http://goessner.net/articles/JsonPath/\n\n**Syntax example**\n\nFor this example consider the following structure:\n\n.. code-block:: json\n\n   {\n     \"clients\": [\n       {\n         \"name\": \"Johnny Example\",\n         \"email\": \"john@example.com\",\n         \"orders\": [\n             {\"address\": \"Streetroad 123\", \"price\": 103.20},\n             {\"address\": \"Streetroad 123\", \"price\": 98.99}\n         ]\n       },\n       {\n         \"name\": \"Jane Example\",\n         \"email\": \"jane@example.com\",\n         \"orders\": [\n             {\"address\": \"Waypath 321\", \"price\": 22.00},\n             {\"address\": \"Streetroad 123\", \"price\": 2330.01}\n         ]\n       }\n     ]\n   }\n\nIn the simplest case JSONPath can replace nested access:\n\n.. code-block:: robotframework\n\n   # First order of first client, with direct dictionary access\n   ${value}=    Set variable    ${json}[\"clients\"][0][\"orders\"][0]\n\n   # JSONPath access\n   ${value}=    Get value from JSON    ${json}    $.clients[0].orders[0]\n\nBut the power comes from complicated expressions:\n\n.. code-block:: robotframework\n\n   # Find delivery addresses for all orders\n   ${prices}=        Get values from JSON    $..address\n\n   # Find orders that cost over 100\n   ${expensives}=    Get values from JSON    $..orders[?(@.price>100)]\n\n\n**Supported Expressions**\n\nThe supported syntax elements are:\n\n======== ===========\nElement  Description\n======== ===========\n$        Root object/element\n@        Current object/element\n\\. or [] Child operator\n\\.\\.     Recursive descent\n\\*       Wilcard, any element\n[n]      Array index\n[a:b:c]  Array slice (start, end, step)\n[a,b]    Union of indices or names\n?()      Apply a filter expression\n()       Script expression\n======== ===========\n\nThere are a multitude of different script expressions\nin addition to the elements listed above, which can\nbe seen in the `aforementioned article`__.\n\nFor further library usage examples, see the individual keywords.\n\n__ JSONPath_",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "doc: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]",
+                        "expr: str",
+                        "value: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]"
+                    ]
+                },
+                "doc": "Add items into a JSON serializable object and return the result.\n\nIf the target is a list, the values are appended to the end.\nIf the target is a dict, the keys are either added or updated.\n\n:param doc: JSON serializable object\n:param expr: JSONPath expression\n:param value: values to either append or update\n\nExample:\n\n.. code:: robotframework\n\n   # Change the name value for all people\n   &{before}=    Convert string to JSON   {\"People\": [{\"Name\": \"Mark\"}, {\"Name\": \"Jane\"}]}\n   &{after}=     Add to JSON    ${json}   $.People.name    JohnMalkovich",
+                "_name": "Add to JSON",
+                "_lineno": "222"
+            },
+            {
+                "arguments": {
+                    "arg": "doc: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]"
+                },
+                "doc": "Convert a JSON serializable object to a string and return it.\n\n:param doc: JSON serializable object\n\nExample:\n\n.. code:: robotframework\n\n   ${obj}=    Create dictionary    Key=Value\n   ${json}=   Convert JSON to string    ${obj}\n   Should be equal    ${json}     {\"Key\": \"Value\"}",
+                "_name": "Convert JSON to String",
+                "_lineno": "188"
+            },
+            {
+                "arguments": {
+                    "arg": "doc: str"
+                },
+                "doc": "Convert a string to a JSON serializable object and return it.\n\n:param doc: JSON string\n\nExample:\n\n.. code:: robotframework\n\n   ${json}=    Set variable    {\"Key\": \"Value\"}\n   &{obj}=     Convert string to JSON    ${json}\n   Should be equal    ${obj.Key}    Value",
+                "_name": "Convert String to JSON",
+                "_lineno": "205"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "doc: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]",
+                        "expr: str"
+                    ]
+                },
+                "doc": "Delete values from a JSON serializable object and return the result.\nWill delete all values that match the expression.\n\n:param doc: JSON serializable object or string\n:param expr: JSONPath expression\n\nExample:\n\n.. code:: robotframework\n\n   # Delete all people\n   &{before}=    Convert string to JSON   {\"People\": [{\"Name\": \"Mark\"}, {\"Name\": \"Jane\"}]}\n   &{after}=     Delete from JSON    ${json}   $.People[*]",
+                "_name": "Delete from JSON",
+                "_lineno": "329"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "doc: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]",
+                        "expr: str",
+                        "default: typing.Any = None"
+                    ]
+                },
+                "doc": "Get a single value from a JSON serializable object that matches the given expression.\n\nRaises a ValueError if there is more than one match.\nReturns the given default argument (or None) if there\nwere no matches.\n\n:param doc: JSON serializable object or string\n:param expr: jsonpath expression\n\nExample:\n\n.. code:: robotframework\n\n   # Get the name value for the first person\n   &{people}=    Convert string to JSON   {\"People\": [{\"Name\": \"Mark\"}, {\"Name\": \"Jane\"}]}\n   ${first}=     Get value from JSON      ${people}   $.People[0].name",
+                "_name": "Get value from JSON",
+                "_lineno": "250"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "doc: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]",
+                        "expr: str"
+                    ]
+                },
+                "doc": "Get all values from a JSON serializable object that match the given expression.\n\n:param doc: JSON serializable object or string\n:param expr: JSONPath expression\n\nExample:\n\n.. code:: robotframework\n\n   # Get all the names for all people\n   &{people}=    Convert string to JSON   {\"People\": [{\"Name\": \"Mark\"}, {\"Name\": \"Jane\"}]}\n   @{names}=     Get values from JSON     ${people}   $.People[*].name",
+                "_name": "Get values from JSON",
+                "_lineno": "283"
+            },
+            {
+                "arguments": {
+                    "arg": "filename: str"
+                },
+                "doc": "Load JSON data from a file, and return it as JSON serializable object.\nDepending on the input file the object can be either a dictionary,\na list, or a scalar value.\n\n:param filename: path to input file\n\nExample:\n\n.. code:: robotframework\n\n   &{auth}=    Load JSON from file    auth.json\n   Log   Current auth token: ${auth.token}",
+                "_name": "Load JSON from file",
+                "_lineno": "142"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "doc: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]",
+                        "filename: str"
+                    ]
+                },
+                "doc": "Save a JSON serializable object or a string containg\na JSON value into a file.\n\n:param doc: JSON serializable object or string\n:param filename: path to output file\n\nExample:\n\n.. code:: robotframework\n\n   # Save dictionary to file\n   ${john}=    Create dictionary    name=John    mail=john@example.com\n   Save JSON to file    ${john}    john.json\n\n   # Save string to file\n   ${mark}=    Set variable    {\"name\": \"Mark\", \"mail\": \"mark@example.com\"}\n   Save JSON to file    ${mark}    mark.json",
+                "_name": "Save JSON to file",
+                "_lineno": "162"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "doc: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]",
+                        "expr: str",
+                        "value: typing.Union[str, int, float, bool, NoneType, typing.Dict[str, typing.Any], typing.List[typing.Any]]"
+                    ]
+                },
+                "doc": "Update existing values in a JSON serializable object and return the result.\nWill change all values that match the expression.\n\n:param doc: JSON or string\n:param expr: JSONPath expression\n:param value: New value for the matching item(s)\n\nExample:\n\n.. code:: robotframework\n\n   # Change the name key for all people\n   &{before}=    Convert string to JSON   {\"People\": [{\"Name\": \"Mark\"}, {\"Name\": \"Jane\"}]}\n   &{after}=     Update value to JSON     ${json}   $.People[*].name    JohnMalkovich",
+                "_name": "Update value to JSON",
+                "_lineno": "302"
+            }
+        ],
+        "_name": "JSON",
+        "_type": "LIBRARY",
+        "_format": "REST",
+        "_scope": "GLOBAL",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T10:21:39Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\JSON.py",
+        "_lineno": "14"
+    }
+}

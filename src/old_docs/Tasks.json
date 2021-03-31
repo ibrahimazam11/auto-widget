@@ -1,0 +1,42 @@
+[
+  {
+    "keyword": "Jump To Task",
+    "arguments": "name",
+    "description": "Jump directly to given task, skipping the rest of the task execution. If run inside a teardown, also skips the rest of the teardown sequence."
+  },
+  {
+    "keyword": "Jump To Task If",
+    "arguments": "condition,name,default=None",
+    "description": "Jump directly to given task according to the condition."
+  },
+  {
+    "keyword": "Jump To Task If Keyword Fails",
+    "arguments": "task,keyword,*args",
+    "description": "Executes given keyword and jumps to given task if it fails."
+  },
+  {
+    "keyword": "Jump To Task If Keyword Succeeds",
+    "arguments": "task,keyword,*args",
+    "description": "Executes given keyword and jumps to given task if it succeeds."
+  },
+  {
+    "keyword": "Set Next Task",
+    "arguments": "name",
+    "description": "Set the next task to be executed. Should be a task in the same suite. :param name: Name of next task"
+  },
+  {
+    "keyword": "Set Next Task If",
+    "arguments": "condition,name,default=None",
+    "description": "Set the next task according to the condition. If no default is given, does not modify execution order. :param condition: Condition expression to evaluate :param name: Name of next task, if successful :param default: Name of next task, if unsuccessful"
+  },
+  {
+    "keyword": "Set Next Task If Keyword Fails",
+    "arguments": "task,keyword,*args",
+    "description": "Executes given keyword and sets the next task if it fails."
+  },
+  {
+    "keyword": "Set Next Task If Keyword Succeeds",
+    "arguments": "task,keyword,*args",
+    "description": "Executes given keyword and sets the next task if it succeeds."
+  }
+]

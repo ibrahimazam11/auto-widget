@@ -1,0 +1,217 @@
+[
+  {
+    "keyword": "Absolute Path",
+    "arguments": "path",
+    "description": "Returns the absolute path to a file, and resolves symlinks. :param path: path that will be resolved :return: absolute path to file"
+  },
+  {
+    "keyword": "Append To Binary File",
+    "arguments": "path,content",
+    "description": "Appends binary content to the given file. :param path: path to file to append to :param content: content to append"
+  },
+  {
+    "keyword": "Append To File",
+    "arguments": "path,content,encoding=utf-8",
+    "description": "Appends text to the given file. :param path: path to file to append to :param content: content to append :param encoding: character encoding of appended content"
+  },
+  {
+    "keyword": "Change File Extension",
+    "arguments": "path,extension",
+    "description": "Replaces file extension for file at given path. :param path: path to file to rename :param extension: new extension, e.g. .xlsx"
+  },
+  {
+    "keyword": "Copy Directory",
+    "arguments": "source,destination",
+    "description": "Copy directory from source path to destination path. :param source: path to source directory :param destination: path to copy destination"
+  },
+  {
+    "keyword": "Copy File",
+    "arguments": "source,destination",
+    "description": "Copy a file from source path to destination path. :param source: path to source file :param destination: path to copy destination"
+  },
+  {
+    "keyword": "Copy Files",
+    "arguments": "sources,destination",
+    "description": "Copy multiple files to destination folder. :param sources: list of source files :param destination: path to destination folder"
+  },
+  {
+    "keyword": "Create Binary File",
+    "arguments": "path,content=None,overwrite=False",
+    "description": "Creates a new binary file, and writes content if any is given. :param path: path to file to write :param content: content to write to file (optional) :param overwrite: replace destination file if it already exists"
+  },
+  {
+    "keyword": "Create Directory",
+    "arguments": "path,parents=False,exist_ok=True",
+    "description": "Creates a directory and (optionally) non-existing parent directories. :param path: path to new directory :param parents: create missing parent directories :param exist_ok: continue without errors if directory already exists"
+  },
+  {
+    "keyword": "Create File",
+    "arguments": "path,content=None,encoding=utf-8,overwrite=False",
+    "description": "Creates a new text file, and writes content if any is given. :param path: path to file to write :param content: content to write to file (optional) :param encoding: character encoding of written content :param overwrite: replace destination file if it already exists"
+  },
+  {
+    "keyword": "Does Directory Exist",
+    "arguments": "path",
+    "description": "Returns True if the given directory exists, False if not. :param path: path to inspected directory"
+  },
+  {
+    "keyword": "Does Directory Not Exist",
+    "arguments": "path",
+    "description": "Returns True if the directory does not exist, False if it does. :param path: path to inspected directory"
+  },
+  {
+    "keyword": "Does File Exist",
+    "arguments": "path",
+    "description": "Returns True if the given file exists, False if not. :param path: path to inspected file"
+  },
+  {
+    "keyword": "Does File Not Exist",
+    "arguments": "path",
+    "description": "Returns True if the file does not exist, False if it does. :param path: path to inspected file"
+  },
+  {
+    "keyword": "Empty Directory",
+    "arguments": "path",
+    "description": "Removes all the files in the given directory. :param path: directory to remove files from"
+  },
+  {
+    "keyword": "Find Files",
+    "arguments": "pattern,include_dirs=True,include_files=True",
+    "description": "Find files recursively according to a pattern. :param pattern: search path in glob format pattern, e.g. *.xls or **/orders.txt :param include_dirs: include directories in results :param include_files: include files in results :return: list of paths that match the pattern"
+  },
+  {
+    "keyword": "Get File Creation Date",
+    "arguments": "path",
+    "description": "Returns the creation time in seconds. Note: Linux sets this whenever file metadata changes :param path: path to file to inspect"
+  },
+  {
+    "keyword": "Get File Extension",
+    "arguments": "path",
+    "description": "Returns the suffix for the file. :param path: path to file"
+  },
+  {
+    "keyword": "Get File Modified Date",
+    "arguments": "path",
+    "description": "Returns the modified time in seconds. :param path: path to file to inspect"
+  },
+  {
+    "keyword": "Get File Name",
+    "arguments": "path",
+    "description": "Returns only the filename portion of a path. :param path: path to file"
+  },
+  {
+    "keyword": "Get File Size",
+    "arguments": "path",
+    "description": "Returns the file size in bytes. :param path: path to file to inspect"
+  },
+  {
+    "keyword": "Is Directory Empty",
+    "arguments": "path=None",
+    "description": "Returns True if the given directory has no files or subdirectories. :param path: path to inspected directory"
+  },
+  {
+    "keyword": "Is Directory Not Empty",
+    "arguments": "path=None",
+    "description": "Returns True if the given directory has any files or subdirectories. :param path: path to inspected directory"
+  },
+  {
+    "keyword": "Is File Empty",
+    "arguments": "path",
+    "description": "Returns True if the given file has no content, i.e. has zero size. :param path: path to inspected file"
+  },
+  {
+    "keyword": "Is File Not Empty",
+    "arguments": "path",
+    "description": "Returns True if the given file has content, i.e. larger than zero size. :param path: path to inspected file"
+  },
+  {
+    "keyword": "Join Path",
+    "arguments": "*parts",
+    "description": "Joins multiple parts of a path together. :param parts: Components of the path, e.g. dir, subdir, filename.ext"
+  },
+  {
+    "keyword": "List Directories In Directory",
+    "arguments": "path=None",
+    "description": "Lists all the directories in the given directory, relative to it. :param path: base directory for search, defaults to current working dir"
+  },
+  {
+    "keyword": "List Files In Directory",
+    "arguments": "path=None",
+    "description": "Lists all the files in the given directory, relative to it. :param path: base directory for search, defaults to current working dir"
+  },
+  {
+    "keyword": "Log Directory Tree",
+    "arguments": "path=None",
+    "description": "Logs all the files in the directory recursively. :param path: base directory to start from, defaults to current working dir"
+  },
+  {
+    "keyword": "Move Directory",
+    "arguments": "source,destination,overwrite=False",
+    "description": "Move a directory from source path to destination path. :param source: source directory path for moving :param destination: path to move to :param overwrite: replace destination directory if it already exists"
+  },
+  {
+    "keyword": "Move File",
+    "arguments": "source,destination,overwrite=False",
+    "description": "Move a file from source path to destination path, optionally overwriting the destination. :param source: source file path for moving :param destination: path to move to :param overwrite: replace destination file if it already exists"
+  },
+  {
+    "keyword": "Move Files",
+    "arguments": "sources,destination,overwrite=False",
+    "description": "Move multiple files to the destination folder. :param sources: list of files to move :param destination: path to move destination :param overwrite: replace destination files if they already exist"
+  },
+  {
+    "keyword": "Normalize Path",
+    "arguments": "path",
+    "description": "Removes redundant separators or up-level references from path. :param path: path that will be normalized :return: path to file"
+  },
+  {
+    "keyword": "Read Binary File",
+    "arguments": "path",
+    "description": "Reads a file in binary mode and returns the content. Does not attempt to decode the content in any way. :param path: path to file to read"
+  },
+  {
+    "keyword": "Read File",
+    "arguments": "path,encoding=utf-8",
+    "description": "Reads a file as text, with given encoding, and returns the content.\" :param path: path to file to read :param encoding: character encoding of file"
+  },
+  {
+    "keyword": "Remove Directory",
+    "arguments": "path,recursive=False",
+    "description": "Removes the given directory, and optionally everything it contains. :param path: path to directory :param recursive: remove all subdirectories and files"
+  },
+  {
+    "keyword": "Remove File",
+    "arguments": "path,force=False",
+    "description": "Removes the given file. :param path: path to the file to remove :param force: ignore non-existent files"
+  },
+  {
+    "keyword": "Remove Files",
+    "arguments": "*paths,force=False",
+    "description": "Removes multiple files. :param paths: paths to files to be removed :param force: ignore non-existent files"
+  },
+  {
+    "keyword": "Run Keyword If File Exists",
+    "arguments": "path,keyword,*args",
+    "description": "If file exists at path, execute given keyword with arguments. *Example* .. code:: robotframework Run keyword if file exists orders.xlsx Process orders :param path: path to file to inspect :param keyword: Robot Framework keyword to execute :param args: arguments to keyword"
+  },
+  {
+    "keyword": "Touch File",
+    "arguments": "path",
+    "description": "Creates a file with no content, or if file already exists, updates the modification and access times. :param path: path to file which is touched"
+  },
+  {
+    "keyword": "Wait Until Created",
+    "arguments": "path,timeout=5.0",
+    "description": "Poll path until it exists, or raise exception if timeout is reached. :param path: path to poll :param timeout: time in seconds until keyword fails"
+  },
+  {
+    "keyword": "Wait Until Modified",
+    "arguments": "path,timeout=5.0",
+    "description": "Poll path until it has been modified after the keyword was called, or raise exception if timeout is reached. :param path: path to poll :param timeout: time in seconds until keyword fails"
+  },
+  {
+    "keyword": "Wait Until Removed",
+    "arguments": "path,timeout=5.0",
+    "description": "Poll path until it doesn't exist, or raise exception if timeout is reached. :param path: path to poll :param timeout: time in seconds until keyword fails"
+  }
+]

@@ -1,32 +1,101 @@
-[
-  {
-    "keyword": "Notify Email",
-    "arguments": "message: str = None,to: str = None,username: str = None,password: str = None,**kwargs: dict",
-    "description": "Notify using email service :param message: notification message :param to: target of email message :param username: email service username :param password: email service password :return: True is notification was success, False if not"
-  },
-  {
-    "keyword": "Notify Gmail",
-    "arguments": "message: str = None,to: str = None,username: str = None,password: str = None,**kwargs: dict",
-    "description": "Notify using Gmail service :param message: notification message :param to: target of email message :param username: GMail service username :param password: GMail service password :return: True is notification was success, False if not"
-  },
-  {
-    "keyword": "Notify Pushover",
-    "arguments": "message: str = None,user: str = None,token: str = None,**kwargs: dict",
-    "description": "Notify using Pushover service :param message: notification message :param user: target user for the notification :param token: service token :return: True is notification was success, False if not"
-  },
-  {
-    "keyword": "Notify Slack",
-    "arguments": "message: str = None,channel: str = None,webhook_url: str = None,**kwargs: dict",
-    "description": "Notify using Slack service :param message: notification message :param channel: target channel for the notification :param webhook_url: Slack webhook url :return: True is notification was success, False if not"
-  },
-  {
-    "keyword": "Notify Telegram",
-    "arguments": "message: str = None,chat_id: str = None,token: str = None,**kwargs: dict",
-    "description": "Notify using Telegram service :param message: notification message :param chat_id: target chat id for the notification :param token: service token :return: True is notification was success, False if not"
-  },
-  {
-    "keyword": "Notify Twilio",
-    "arguments": "message: str = None,number_from: str = None,number_to: str = None,account_sid: str = None,token: str = None,**kwargs: dict",
-    "description": "Notify using Twilio service :param message: notification message :param number_from: number where the message comes from :param number_to: number where the messages goes to :param account_sid: Twilio account SID :param token: Twilio account token :return: True is notification was success, False if not"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for using different notification services.\n\nAll keywords take keyword arguments (**kwargs) to allow giving\nadditional arguments for the notifications.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "message: str = None",
+                        "to: str = None",
+                        "username: str = None",
+                        "password: str = None",
+                        "**kwargs: dict"
+                    ]
+                },
+                "doc": "Notify using email service\n\n:param message: notification message\n:param to: target of email message\n:param username: email service username\n:param password: email service password\n:return: True is notification was success, False if not",
+                "_name": "Notify Email",
+                "_lineno": "97"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "message: str = None",
+                        "to: str = None",
+                        "username: str = None",
+                        "password: str = None",
+                        "**kwargs: dict"
+                    ]
+                },
+                "doc": "Notify using Gmail service\n\n:param message: notification message\n:param to: target of email message\n:param username: GMail service username\n:param password: GMail service password\n:return: True is notification was success, False if not",
+                "_name": "Notify Gmail",
+                "_lineno": "71"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "message: str = None",
+                        "user: str = None",
+                        "token: str = None",
+                        "**kwargs: dict"
+                    ]
+                },
+                "doc": "Notify using Pushover service\n\n:param message: notification message\n:param user: target user for the notification\n:param token: service token\n:return: True is notification was success, False if not",
+                "_name": "Notify Pushover",
+                "_lineno": "16"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "message: str = None",
+                        "channel: str = None",
+                        "webhook_url: str = None",
+                        "**kwargs: dict"
+                    ]
+                },
+                "doc": "Notify using Slack service\n\n:param message: notification message\n:param channel: target channel for the notification\n:param webhook_url: Slack webhook url\n:return: True is notification was success, False if not",
+                "_name": "Notify Slack",
+                "_lineno": "29"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "message: str = None",
+                        "chat_id: str = None",
+                        "token: str = None",
+                        "**kwargs: dict"
+                    ]
+                },
+                "doc": "Notify using Telegram service\n\n:param message: notification message\n:param chat_id: target chat id for the notification\n:param token: service token\n:return: True is notification was success, False if not",
+                "_name": "Notify Telegram",
+                "_lineno": "52"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "message: str = None",
+                        "number_from: str = None",
+                        "number_to: str = None",
+                        "account_sid: str = None",
+                        "token: str = None",
+                        "**kwargs: dict"
+                    ]
+                },
+                "doc": "Notify using Twilio service\n\n:param message: notification message\n:param number_from: number where the message comes from\n:param number_to: number where the messages goes to\n:param account_sid: Twilio account SID\n:param token: Twilio account token\n:return: True is notification was success, False if not",
+                "_name": "Notify Twilio",
+                "_lineno": "123"
+            }
+        ],
+        "_name": "Notifier",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:03:51Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Notifier.py",
+        "_lineno": "5"
+    }
+}

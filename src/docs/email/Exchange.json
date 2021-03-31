@@ -1,47 +1,135 @@
-[
-  {
-    "keyword": "Authorize",
-    "arguments": "username: str,password: str,autodiscover: bool = True,access_type: str = DELEGATE,server: str = None,primary_smtp_address: str = None",
-    "description": "Connect to Exchange account :param username: account username :param password: account password :param autodiscover: use autodiscover or set it off :param accesstype: default \"DELEGATE\", other option \"IMPERSONATION\" :param server: required for configuration options :param primary_smtp_address: by default set to username, but can be set to be different than username"
-  },
-  {
-    "keyword": "Create Folder",
-    "arguments": "folder_name: str = None,parent_folder: str = None",
-    "description": "Create email folder :param folder_name: name for the new folder :param parent_folder: name for the parent folder, by default INBOX :return: True if operation was successful, False if not"
-  },
-  {
-    "keyword": "Delete Folder",
-    "arguments": "folder_name: str = None,parent_folder: str = None",
-    "description": "Delete email folder :param folder_name: current folder name :param parent_folder: name for the parent folder, by default INBOX :return: True if operation was successful, False if not"
-  },
-  {
-    "keyword": "Empty Folder",
-    "arguments": "folder_name: str = None,parent_folder: str = None,delete_sub_folders: bool = False",
-    "description": "Empty email folder of all items :param folder_name: current folder name :param parent_folder: name for the parent folder, by default INBOX :param delete_sub_folders: delete sub folders or not, by default False :return: True if operation was successful, False if not"
-  },
-  {
-    "keyword": "List Messages",
-    "arguments": "folder_name: str = None,count: int = 100",
-    "description": "List messages in the account inbox. Order by descending received time. :param count: number of messages to list"
-  },
-  {
-    "keyword": "Move Messages",
-    "arguments": "criterion: str = ,source: str = None,target: str = None,contains: bool = False",
-    "description": "Move message(s) from source folder to target folder Criterion examples: subject:my message subject body:something in body sender:sender@domain.com :param criterion: move messages matching this criterion :param source: source folder :param target: target folder :param contains: if matching should be done using contains matching and not equals matching, default False is means equals matching :return: boolean result of operation, True if 1+ items were moved else False"
-  },
-  {
-    "keyword": "Rename Folder",
-    "arguments": "oldname: str = None,newname: str = None,parent_folder: str = None",
-    "description": "Rename email folder :param oldname: current folder name :param newname: new name for the folder :param parent_folder: name for the parent folder, by default INBOX :return: True if operation was successful, False if not"
-  },
-  {
-    "keyword": "Send Message",
-    "arguments": "recipients: str,subject: str = ,body: str = ,attachments: str = None,html: bool = False,images: str = None,cc: str = None,bcc: str = None,save: bool = False",
-    "description": "Keyword for sending message through connected Exchange account. Email addresses can be prefixed with ex: to indicate Exchange account address. Recipients is required parameter. :param recipients: list of email addresses, defaults to [] :param subject: message subject, defaults to \"\" :param body: message body, defaults to \"\" :param attachments: list of filepaths to attach, defaults to [] :param html: if message content is in HTML, default False :param images: list of filepaths for inline use, defaults to [] :param cc: list of email addresses, defaults to [] :param bcc: list of email addresses, defaults to [] :param save: is sent message saved to Sent messages folder or not, defaults to False"
-  },
-  {
-    "keyword": "Wait For Message",
-    "arguments": "criterion: str = ,timeout: float = 5.0,interval: float = 1.0,contains: bool = False",
-    "description": "Wait for email matching criterion to arrive into INBOX. :param criterion: wait for message matching criterion :param timeout: total time in seconds to wait for email, defaults to 5.0 :param interval: time in seconds for new check, defaults to 1.0 :param contains: if matching should be done using contains matching and not equals matching, default False is means equals matching :return: list of messages"
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "test case",
+      "namedargs": "yes",
+      "doc": "Library for interfacing with Microsoft Exchange Web Services (EWS).",
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "username: str",
+                  "password: str",
+                  "autodiscover: bool = True",
+                  "access_type: str = DELEGATE",
+                  "server: str = None",
+                  "primary_smtp_address: str = None"
+               ]
+            },
+            "doc": "Connect to Exchange account\n\n:param username: account username\n:param password: account password\n:param autodiscover: use autodiscover or set it off\n:param accesstype: default \"DELEGATE\", other option \"IMPERSONATION\"\n:param server: required for configuration options\n:param primary_smtp_address: by default set to username, but can be\n    set to be different than username\n    \nExample:  \n\nAuthorize    ${username}   ${password}  smtp_server=smtp.gmail.com  smtp_port=587",
+            "_name": "Authorize",
+            "_lineno": "31"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "folder_name: str = None",
+                  "parent_folder: str = None"
+               ]
+            },
+            "doc": "Create email folder\n\n:param folder_name: name for the new folder\n:param parent_folder: name for the parent folder, by default INBOX\n:return: True if operation was successful, False if not\n\nExample: \n\n    Create Folder     filtered",
+            "_name": "Create Folder",
+            "_lineno": "242"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "folder_name: str = None",
+                  "parent_folder: str = None"
+               ]
+            },
+            "doc": "Delete email folder\n\n:param folder_name: current folder name\n:param parent_folder: name for the parent folder, by default INBOX\n:return: True if operation was successful, False if not\n\nExample: \n\n    Delete Folder     filtered",
+            "_name": "Delete Folder",
+            "_lineno": "267"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "folder_name: str = None",
+                  "parent_folder: str = None",
+                  "delete_sub_folders: bool = False"
+               ]
+            },
+            "doc": "Empty email folder of all items\n\n:param folder_name: current folder name\n:param parent_folder: name for the parent folder, by default INBOX\n:param delete_sub_folders: delete sub folders or not, by default False\n:return: True if operation was successful, False if not\n\nExample \n\n    Empty Folder    filtered",
+            "_name": "Empty Folder",
+            "_lineno": "324"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "folder_name: str = None",
+                  "count: int = 100"
+               ]
+            },
+            "doc": "List messages in the account inbox. Order by descending\nreceived time.\n\n:param count: number of messages to list\n\nExample:  \n\n    @{emails}  List Messages  SUBJECT \"rpa task\"  \n\n    FOR  ${email}  IN  @{EMAILS}  \n\n    Log  ${email}[Subject]  \n\n    Log  ${email}[From]  \n\n    Log  ${email}[Date]  \n\n    Log  ${email}[Delivered-To]  \n\n    Log  ${email}[Received]  \n\n    Log  ${email}[Has-Attachments]  \n\n    END",
+            "_name": "List Messages",
+            "_lineno": "72"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "criterion: str =",
+                  "source: str = None",
+                  "target: str = None",
+                  "contains: bool = False"
+               ]
+            },
+            "doc": "Move message(s) from source folder to target folder\n\nCriterion examples:\n\n    - subject:my message subject\n    - body:something in body\n    - sender:sender@domain.com\n\n:param criterion: move messages matching this criterion\n:param source: source folder\n:param target: target folder\n:param contains: if matching should be done using `contains` matching\n     and not `equals` matching, default `False` is means `equals` matching\n:return: boolean result of operation, True if 1+ items were moved else False\n\nCriterion examples: \n\n    subject:my message subject \n\n    body:something in body \n\n    sender:sender@domain.com",
+            "_name": "Move Messages",
+            "_lineno": "351"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "oldname: str = None",
+                  "newname: str = None",
+                  "parent_folder: str = None"
+               ]
+            },
+            "doc": "Rename email folder\n\n:param oldname: current folder name\n:param newname: new name for the folder\n:param parent_folder: name for the parent folder, by default INBOX\n:return: True if operation was successful, False if not\n\nExample: \n\n    Rename Folder   subfolder   filtered",
+            "_name": "Rename Folder",
+            "_lineno": "291"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "recipients: str",
+                  "subject: str =",
+                  "body: str =",
+                  "attachments: str = None",
+                  "html: bool = False",
+                  "images: str = None",
+                  "cc: str = None",
+                  "bcc: str = None",
+                  "save: bool = False"
+               ]
+            },
+            "doc": "Keyword for sending message through connected Exchange account.\n\nEmail addresses can be prefixed with `ex:` to indicate Exchange\naccount address.\n\nRecipients is ``required`` parameter.\n\n:param recipients: list of email addresses, defaults to []\n:param subject: message subject, defaults to \"\"\n:param body: message body, defaults to \"\"\n:param attachments: list of filepaths to attach, defaults to []\n:param html: if message content is in HTML, default `False`\n:param images: list of filepaths for inline use, defaults to []\n:param cc: list of email addresses, defaults to []\n:param bcc: list of email addresses, defaults to []\n:param save: is sent message saved to Sent messages folder or not,\n    defaults to False\n    \n    Example:  \n\n        Send Message  sender@domain.com  recipient@domain.com  \n\n        ...           subject=Greetings Software Robot Developer  \n\n        ...           body=${email_body}  \n\n        ...           attachments:${CURDIR}${/}report.pdf",
+            "_name": "Send Message",
+            "_lineno": "119"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "criterion: str =",
+                  "timeout: float = 5.0",
+                  "interval: float = 1.0",
+                  "contains: bool = False"
+               ]
+            },
+            "doc": "Wait for email matching `criterion` to arrive into INBOX.\n\n:param criterion: wait for message matching criterion\n:param timeout: total time in seconds to wait for email, defaults to 5.0\n:param interval: time in seconds for new check, defaults to 1.0\n:param contains: if matching should be done using `contains` matching\n     and not `equals` matching, default `False` is means `equals` matching\n:return: list of messages\n\nExample: \n\n    @{emails}  Wait For Message  SUBJECT \"rpa task\"  timeout=300  interval=10",
+            "_name": "Wait For Message",
+            "_lineno": "421"
+         }
+      ],
+      "_name": "Exchange",
+      "_type": "LIBRARY",
+      "_format": "ROBOT",
+      "_scope": "TEST",
+      "_namedargs": "true",
+      "_generated": "2021-03-30T11:18:02Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Email\\Exchange.py",
+      "_lineno": "22"
+   }
+}

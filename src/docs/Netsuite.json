@@ -1,72 +1,150 @@
-[
-  {
-    "keyword": "Connect",
-    "arguments": "account: str = None,consumer_key: str = None,consumer_secret: str = None,token_key: str = None,token_secret: str = None",
-    "description": "Connect to Netsuite with credentials from environment variables. Parameters are not logged into Robot Framework log. :param account: parameter or environment variable NS_ACCOUNT :param consumer_key: parameter or environment variable NS_CONSUMER_KEY :param consumer_secret: parameter or environment variable NS_CONSUMER_SECRET :param token_key: parameter or environment variable NS_TOKEN_KEY :param token_secret: parameter or environment variable NS_TOKEN_SECRET"
-  },
-  {
-    "keyword": "Get Accounts",
-    "arguments": "count: int = 100,account_type: str = None",
-    "description": "Get Accounts of any type or specified type. :param count: number of Accounts to return, defaults to 100 :param account_type: if None returns all account types, example. \"_expense\", defaults to None :return: accounts"
-  },
-  {
-    "keyword": "Get Classifications",
-    "arguments": "",
-    "description": "Get all Netsuite Classifications :return: classifications"
-  },
-  {
-    "keyword": "Get Currencies",
-    "arguments": "",
-    "description": "Get all Netsuite Currencies :return: currencies"
-  },
-  {
-    "keyword": "Get Currency",
-    "arguments": "currency_id: str",
-    "description": "Get all a Netsuite Currency by its ID :param currency_id: ID of the currency to get :return: currency"
-  },
-  {
-    "keyword": "Get Departments",
-    "arguments": "",
-    "description": "Get all Netsuite Departments :return: departments"
-  },
-  {
-    "keyword": "Get Locations",
-    "arguments": "",
-    "description": "Get all Netsuite Locations :return: locations"
-  },
-  {
-    "keyword": "Get Vendor Bills",
-    "arguments": "count: int = 10",
-    "description": "Get list of vendor bills :param count: number of vendor bills to return, defaults to 10 :return: list of vendor bills"
-  },
-  {
-    "keyword": "Get Vendors",
-    "arguments": "count: int = 10",
-    "description": "Get list of vendors :param count: number of vendors to return, defaults to 10 :return: list of vendors"
-  },
-  {
-    "keyword": "Login",
-    "arguments": "account: str = None,email: str = None,password: str = None,role: str = None,appid: str = None",
-    "description": "Login to Netsuite with credentials from environment variables Parameters are not logged into Robot Framework log. :param account: parameter or environment variable NS_ACCOUNT :param email: parameter or environment variable NS_EMAIL :param password: parameter or environment variable NS_PASSWORD :param role: parameter or environment variable NS_ROLE :param appid: parameter or environment variable NS_APPID"
-  },
-  {
-    "keyword": "Netsuite Get",
-    "arguments": "record_type: str = None,internal_id: str = None,external_id: str = None",
-    "description": "Get all records of given type and internalId and/or externalId. :param record_type: type of Netsuite record to get :param internal_id: internalId of the type, default None :param external_id: external_id of the type, default None :raises ValueError: if record_type is not given :return: records as a list or None"
-  },
-  {
-    "keyword": "Netsuite Get All",
-    "arguments": "record_type: str",
-    "description": "Get all records of given type. :param record_type: type of Netsuite record to get :raises ValueError: if record_type is not given :return: records as a list or None"
-  },
-  {
-    "keyword": "Netsuite Search",
-    "arguments": "type_name: str,search_value: str,operator: str = contains,page_size: int = 5",
-    "description": "Search Netsuite for value from a type. Default operator is contains. :param type_name: search target type name :param search_value: what to search for within type :param operator: name of the operation, defaults to \"contains\" :param page_size: result items within one page, defaults to 5 :return: paginated search object"
-  },
-  {
-    "keyword": "Netsuite Search All",
-    "arguments": "type_name: str,page_size: int = 20",
-    "description": "Search Netsuite for a type results. :param type_name: search target type name :param page_size: result items within one page, defaults to 5 :return: paginated search object"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for accessing Netsuite.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "account: str = None",
+                        "consumer_key: str = None",
+                        "consumer_secret: str = None",
+                        "token_key: str = None",
+                        "token_secret: str = None"
+                    ]
+                },
+                "doc": "Connect to Netsuite with credentials from environment\nvariables.\n\nParameters are not logged into Robot Framework log.\n\n:param account: parameter or environment variable `NS_ACCOUNT`\n:param consumer_key:  parameter or environment variable `NS_CONSUMER_KEY`\n:param consumer_secret: parameter or environment variable `NS_CONSUMER_SECRET`\n:param token_key: parameter or environment variable `NS_TOKEN_KEY`\n:param token_secret: parameter or environment variable `NS_TOKEN_SECRET`",
+                "_name": "Connect",
+                "_lineno": "46"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "count: int = 100",
+                        "account_type: str = None"
+                    ]
+                },
+                "doc": "Get Accounts of any type or specified type.\n\n:param count: number of Accounts to return, defaults to 100\n:param account_type: if None returns all account types, example. \"_expense\",\n    defaults to None\n:return: accounts",
+                "_name": "Get Accounts",
+                "_lineno": "205"
+            },
+            {
+                "arguments": "",
+                "doc": "Get all Netsuite Classifications\n\n:return: classifications",
+                "_name": "Get Classifications",
+                "_lineno": "254"
+            },
+            {
+                "arguments": "",
+                "doc": "Get all Netsuite Currencies\n\n:return: currencies",
+                "_name": "Get Currencies",
+                "_lineno": "230"
+            },
+            {
+                "arguments": {
+                    "arg": "currency_id: str"
+                },
+                "doc": "Get all a Netsuite Currency by its ID\n\n:param currency_id: ID of the currency to get\n:return: currency",
+                "_name": "Get Currency",
+                "_lineno": "221"
+            },
+            {
+                "arguments": "",
+                "doc": "Get all Netsuite Departments\n\n:return: departments",
+                "_name": "Get Departments",
+                "_lineno": "246"
+            },
+            {
+                "arguments": "",
+                "doc": "Get all Netsuite Locations\n\n:return: locations",
+                "_name": "Get Locations",
+                "_lineno": "238"
+            },
+            {
+                "arguments": {
+                    "arg": "count: int = 10"
+                },
+                "doc": "Get list of vendor bills\n\n:param count: number of vendor bills to return, defaults to 10\n:return: list of vendor bills",
+                "_name": "Get Vendor Bills",
+                "_lineno": "271"
+            },
+            {
+                "arguments": {
+                    "arg": "count: int = 10"
+                },
+                "doc": "Get list of vendors\n\n:param count: number of vendors to return, defaults to 10\n:return: list of vendors",
+                "_name": "Get Vendors",
+                "_lineno": "262"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "account: str = None",
+                        "email: str = None",
+                        "password: str = None",
+                        "role: str = None",
+                        "appid: str = None"
+                    ]
+                },
+                "doc": "Login to Netsuite with credentials from environment variables\n\nParameters are not logged into Robot Framework log.\n\n:param account: parameter or environment variable `NS_ACCOUNT`\n:param email: parameter or environment variable `NS_EMAIL`\n:param password: parameter or environment variable `NS_PASSWORD`\n:param role: parameter or environment variable `NS_ROLE`\n:param appid: parameter or environment variable `NS_APPID`",
+                "_name": "Login",
+                "_lineno": "82"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "record_type: str = None",
+                        "internal_id: str = None",
+                        "external_id: str = None"
+                    ]
+                },
+                "doc": "Get all records of given type and internalId and/or externalId.\n\n:param record_type: type of Netsuite record to get\n:param internal_id: internalId of the type, default None\n:param external_id: external_id of the type, default None\n:raises ValueError: if record_type is not given\n:return: records as a list or None",
+                "_name": "Netsuite Get",
+                "_lineno": "119"
+            },
+            {
+                "arguments": {
+                    "arg": "record_type: str"
+                },
+                "doc": "Get all records of given type.\n\n:param record_type: type of Netsuite record to get\n:raises ValueError: if record_type is not given\n:return: records as a list or None",
+                "_name": "Netsuite Get All",
+                "_lineno": "146"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "type_name: str",
+                        "search_value: str",
+                        "operator: str = contains",
+                        "page_size: int = 5"
+                    ]
+                },
+                "doc": "Search Netsuite for value from a type. Default operator is\n`contains`.\n\n:param type_name: search target type name\n:param search_value: what to search for within type\n:param operator: name of the operation, defaults to \"contains\"\n:param page_size: result items within one page, defaults to 5\n:return: paginated search object",
+                "_name": "Netsuite Search",
+                "_lineno": "159"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "type_name: str",
+                        "page_size: int = 20"
+                    ]
+                },
+                "doc": "Search Netsuite for a type results.\n\n:param type_name: search target type name\n:param page_size: result items within one page, defaults to 5\n:return: paginated search object",
+                "_name": "Netsuite Search All",
+                "_lineno": "190"
+            }
+        ],
+        "_name": "Netsuite",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:03:25Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Netsuite.py",
+        "_lineno": "34"
+    }
+}

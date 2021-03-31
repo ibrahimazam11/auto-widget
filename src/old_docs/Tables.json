@@ -1,0 +1,147 @@
+[
+  {
+    "keyword": "Add Table Column",
+    "arguments": "table,name=None,values=None",
+    "description": "Append a column to a table. :param table: table to modify :param name: name of new column :param values: row values (or single scalar value for all rows)"
+  },
+  {
+    "keyword": "Add Table Row",
+    "arguments": "table,row,index=None",
+    "description": "Append rows to a table. :param table: table to modify :param row: value for new row :param index: index name for new row"
+  },
+  {
+    "keyword": "Clear Table",
+    "arguments": "table",
+    "description": "Clear table in-place, but keep columns. :param table: table to clear"
+  },
+  {
+    "keyword": "Copy Table",
+    "arguments": "table",
+    "description": "Copy table object. :param table: table to copy"
+  },
+  {
+    "keyword": "Create Table",
+    "arguments": "data=None,trim=False",
+    "description": "Create Table object from data. Data can be a combination of various iterable containers, e.g. list of lists, list of dicts, dict of lists. :param data: source data for table :param trim: remove all empty rows from the end of the worksheet, default False"
+  },
+  {
+    "keyword": "Export Table",
+    "arguments": "table,with_index=False,as_list=True",
+    "description": "Convert table object to standard Python containers. :param table: table to convert to dict :param with_index: include index in values :param as_list: export data as list instead of dict"
+  },
+  {
+    "keyword": "Filter Empty Rows",
+    "arguments": "table",
+    "description": "Remove all rows from the table which have only None values. :param table: table to filter"
+  },
+  {
+    "keyword": "Filter Table By Column",
+    "arguments": "table,column,operator,value",
+    "description": "Return all rows where the column values match the given condition. :param table: table to filter :param column: column to filter with :param operator: filtering operator, e.g. >, <, ==, contains :param value: value to compare column to (using operator)"
+  },
+  {
+    "keyword": "Get Table Cell",
+    "arguments": "table,row,column",
+    "description": "Get a cell value from table. :param table: table to read from :param row: row of cell :param column: column of cell"
+  },
+  {
+    "keyword": "Get Table Column",
+    "arguments": "table,column,as_list=False",
+    "description": "Get all column values from table. :param table: table to read :param column: column to read :param as_list: return list instead of dictionary"
+  },
+  {
+    "keyword": "Get Table Dimensions",
+    "arguments": "table",
+    "description": "Return table dimensions, as (rows, columns). :param table: table to inspect"
+  },
+  {
+    "keyword": "Get Table Row",
+    "arguments": "table,index,as_list=False",
+    "description": "Get a single row from table. :param table: table to read :param row: row to read :param as_list: return list instead of dictionary"
+  },
+  {
+    "keyword": "Get Table Slice",
+    "arguments": "table,start=None,end=None",
+    "description": "Return a new Table from a subset of given Table rows. :param table: table to read from :param start: start index (inclusive) :param start: end index (inclusive)"
+  },
+  {
+    "keyword": "Group Table By Column",
+    "arguments": "table,column",
+    "description": "Group table by column and return a list of grouped Tables. :param table: table to use for grouping :param column: column which is used as grouping criteria"
+  },
+  {
+    "keyword": "Pop Table Column",
+    "arguments": "table,column=None,as_list=False",
+    "description": "Remove column from table and return it. :param table: table to modify :param column: column to remove :param as_list: return list instead of dictionary"
+  },
+  {
+    "keyword": "Pop Table Row",
+    "arguments": "table,index=None,as_list=False",
+    "description": "Remove row from table and return it. :param table: table to modify :param index: row index, pops first row if none given :param as_list: return list instead of dictionary"
+  },
+  {
+    "keyword": "Read Table From Csv",
+    "arguments": "path,header=None,columns=None,dialect=None,delimiters=None",
+    "description": "Read a CSV file as a table. By default attempts to deduce the CSV format and headers from a sample of the input file. If it's unable to determine the format automatically, the dialect and header will have to be defined manually. Valid dialect values are excel, excel-tab, and unix, and header is boolean argument (True`/`False). Optionally a set of valid delimiters can be given as a string. The columns argument can be used to override the names of columns in the resulting table. The amount of columns must match the input data. :param path: path to CSV file :param header: CSV file includes header :param columns: names of columns in resulting table :param dialect: format of CSV file :param delimiters: string of possible delimiters"
+  },
+  {
+    "keyword": "Rename Table Columns",
+    "arguments": "table,columns,strict=False",
+    "description": "Renames columns in the Table with given values. Columns with name as None will be use previous value. :param table: table to modify :param columns: list of new column names :param strict: if True, raises ValueError if column lengths do not match"
+  },
+  {
+    "keyword": "Requires Table",
+    "arguments": "obj",
+    "description": ""
+  },
+  {
+    "keyword": "Set Column As Index",
+    "arguments": "table,column=None",
+    "description": "Set existing column as index for rows. :param table: table to modify :param column: column to convert to index"
+  },
+  {
+    "keyword": "Set Table Cell",
+    "arguments": "table,row,column,value",
+    "description": "Set a cell value in the table. :param table: table to modify to :param row: row of cell :param column: column of cell :param value: value to set"
+  },
+  {
+    "keyword": "Set Table Column",
+    "arguments": "table,column,values",
+    "description": "Assign values to entire column in the table. :param table: table to modify :param column: column to modify :param values: value(s) to set"
+  },
+  {
+    "keyword": "Set Table Row",
+    "arguments": "table,row,values",
+    "description": "Assign values to a row in the table. :param table: table to modify :param row: row to modify :param values: value(s) to set"
+  },
+  {
+    "keyword": "Sort Table By Column",
+    "arguments": "table,column,ascending=False",
+    "description": "Sort table in-place according to column. :param table: table to sort :param column: column to sort with :param ascending: table sort order"
+  },
+  {
+    "keyword": "Table Head",
+    "arguments": "table,count=5,as_list=False",
+    "description": "Return first count rows from table. :param table: table to read from :param count: number of lines to read :param as_list: return list instead of Table"
+  },
+  {
+    "keyword": "Table Tail",
+    "arguments": "table,count=5,as_list=False",
+    "description": "Return last count rows from table. :param table: table to read from :param count: number of lines to read :param as_list: return list instead of Table"
+  },
+  {
+    "keyword": "Trim Column Names",
+    "arguments": "table",
+    "description": "Remove all extraneous whitespace from column names."
+  },
+  {
+    "keyword": "Trim Empty Rows",
+    "arguments": "table",
+    "description": "Remove all rows from the end of the table which have only None values. :param table: table to filter"
+  },
+  {
+    "keyword": "Write Table To Csv",
+    "arguments": "table,path,header=True,dialect=excel",
+    "description": "Write a table as a CSV file. Valid dialect values are excel, excel-tab, and unix. :param path: path to write to :param table: table to write :param header: write columns as header to CSV file :param dialect: the format of output CSV"
+  }
+]

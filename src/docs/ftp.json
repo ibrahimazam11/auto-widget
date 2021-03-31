@@ -1,97 +1,173 @@
-[
-  {
-    "keyword": "Abort",
-    "arguments": "",
-    "description": "Abort a file transfer in progress"
-  },
-  {
-    "keyword": "Close",
-    "arguments": "",
-    "description": "Close connection to the server unilaterally"
-  },
-  {
-    "keyword": "Connect",
-    "arguments": "host: str,port: int = 21,user: str = None,password: str = None,tls: bool = False,transfer: str = passive",
-    "description": "Connect to FTP server :param host: address of the server :param port: port of the server, defaults to 21 :param user: login name, defaults to None :param password: login password, defaults to None :param tls: connect using TLS support, defaults to False :param transfer: mode of the transfer, defaults to \"passive\" :raises AuthenticationException: on authentication error with the server"
-  },
-  {
-    "keyword": "Cwd",
-    "arguments": "dirname: str",
-    "description": "Change working directory on the server :param dirname: name of the directory"
-  },
-  {
-    "keyword": "Delete",
-    "arguments": "filepath: str",
-    "description": "Delete file on the server :param filepath: path to server file"
-  },
-  {
-    "keyword": "Download",
-    "arguments": "remotefile: str,localfile: str = None",
-    "description": "Download file from FTP server :param remotefile: path to remote file on the server :param localfile: name of the downloaded file on the local filesystem, if None will have same name as remote file"
-  },
-  {
-    "keyword": "File Size",
-    "arguments": "filepath: str",
-    "description": "Return byte size of the file on the server :param filepath: path to server file"
-  },
-  {
-    "keyword": "Get Welcome Message",
-    "arguments": "",
-    "description": "Get server welcome message :return: welcome message"
-  },
-  {
-    "keyword": "List Files",
-    "arguments": "dirname: str = None",
-    "description": "List files on the server directory :param dirname: name of the directory"
-  },
-  {
-    "keyword": "Mkd",
-    "arguments": "dirname: str",
-    "description": "Create a new directory on the server :param dirname: name of the directory"
-  },
-  {
-    "keyword": "Pwd",
-    "arguments": "",
-    "description": "Get current working directory on the server"
-  },
-  {
-    "keyword": "Quit",
-    "arguments": "",
-    "description": "Send QUIT command to the server and close connection"
-  },
-  {
-    "keyword": "Rename",
-    "arguments": "fromname: str,toname: str",
-    "description": "Rename file on the server :param fromname: current name of the file :param toname: new name for the file"
-  },
-  {
-    "keyword": "Rmd",
-    "arguments": "dirname: str",
-    "description": "Remove directory on the server :param dirname: name of the directory"
-  },
-  {
-    "keyword": "Send Command",
-    "arguments": "command: str",
-    "description": "Execute command on the server List of FTP commands https://en.wikipedia.org/wiki/List_of_FTP_commands :param command: name of the command to send"
-  },
-  {
-    "keyword": "Set Ascii Mode",
-    "arguments": "",
-    "description": "Set transfer mode to ASCII"
-  },
-  {
-    "keyword": "Set Binary Mode",
-    "arguments": "",
-    "description": "Set transfer mode to BINARY"
-  },
-  {
-    "keyword": "Set Debug Level",
-    "arguments": "level: int = 0",
-    "description": "Set debug level for the library 0 - no debugging output 1 - moderate amount of debugging 2+ - higher amount of debugging :param level: integer value of debug level, defaults to 0"
-  },
-  {
-    "keyword": "Upload",
-    "arguments": "localfile: str,remotefile: str",
-    "description": "Upload file to FTP server :param localfile: path to file to upload :param remotefile: name of uploaded file in the server"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Autosphere Framework library for FTP operations",
+        "kw": [
+            {
+                "arguments": "",
+                "doc": "Abort a file transfer in progress",
+                "_name": "Abort",
+                "_lineno": "218"
+            },
+            {
+                "arguments": "",
+                "doc": "Close connection to the server unilaterally",
+                "_name": "Close",
+                "_lineno": "94"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "host: str",
+                        "port: int = 21",
+                        "user: str = None",
+                        "password: str = None",
+                        "tls: bool = False",
+                        "transfer: str = passive"
+                    ]
+                },
+                "doc": "Connect to FTP server\n\n:param host: address of the server\n:param port: port of the server, defaults to 21\n:param user: login name, defaults to None\n:param password: login password, defaults to None\n:param tls: connect using TLS support, defaults to False\n:param transfer: mode of the transfer, defaults to \"passive\"\n:raises AuthenticationException: on authentication error with the server",
+                "_name": "Connect",
+                "_lineno": "45"
+            },
+            {
+                "arguments": {
+                    "arg": "dirname: str"
+                },
+                "doc": "Change working directory on the server\n\n:param dirname: name of the directory",
+                "_name": "Cwd",
+                "_lineno": "138"
+            },
+            {
+                "arguments": {
+                    "arg": "filepath: str"
+                },
+                "doc": "Delete file on the server\n\n:param filepath: path to server file",
+                "_name": "Delete",
+                "_lineno": "180"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "remotefile: str",
+                        "localfile: str = None"
+                    ]
+                },
+                "doc": "Download file from FTP server\n\n:param remotefile: path to remote file on the server\n:param localfile: name of the downloaded file on the local filesystem,\n    if `None` will have same name as remote file",
+                "_name": "Download",
+                "_lineno": "110"
+            },
+            {
+                "arguments": {
+                    "arg": "filepath: str"
+                },
+                "doc": "Return byte size of the file on the server\n\n:param filepath: path to server file",
+                "_name": "File Size",
+                "_lineno": "209"
+            },
+            {
+                "arguments": "",
+                "doc": "Get server welcome message\n\n:return: welcome message",
+                "_name": "Get Welcome Message",
+                "_lineno": "223"
+            },
+            {
+                "arguments": {
+                    "arg": "dirname: str = None"
+                },
+                "doc": "List files on the server directory\n\n:param dirname: name of the directory",
+                "_name": "List Files",
+                "_lineno": "167"
+            },
+            {
+                "arguments": {
+                    "arg": "dirname: str"
+                },
+                "doc": "Create a new directory on the server\n\n:param dirname: name of the directory",
+                "_name": "Mkd",
+                "_lineno": "151"
+            },
+            {
+                "arguments": "",
+                "doc": "Get current working directory on the server",
+                "_name": "Pwd",
+                "_lineno": "146"
+            },
+            {
+                "arguments": "",
+                "doc": "Send QUIT command to the server and close connection",
+                "_name": "Quit",
+                "_lineno": "84"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "fromname: str",
+                        "toname: str"
+                    ]
+                },
+                "doc": "Rename file on the server\n\n:param fromname: current name of the file\n:param toname: new name for the file",
+                "_name": "Rename",
+                "_lineno": "188"
+            },
+            {
+                "arguments": {
+                    "arg": "dirname: str"
+                },
+                "doc": "Remove directory on the server\n\n:param dirname: name of the directory",
+                "_name": "Rmd",
+                "_lineno": "159"
+            },
+            {
+                "arguments": {
+                    "arg": "command: str"
+                },
+                "doc": "Execute command on the server\n\nList of FTP commands\n\nhttps://en.wikipedia.org/wiki/List_of_FTP_commands\n\n:param command: name of the command to send",
+                "_name": "Send Command",
+                "_lineno": "197"
+            },
+            {
+                "arguments": "",
+                "doc": "Set transfer mode to ASCII",
+                "_name": "Set Ascii Mode",
+                "_lineno": "245"
+            },
+            {
+                "arguments": "",
+                "doc": "Set transfer mode to BINARY",
+                "_name": "Set Binary Mode",
+                "_lineno": "249"
+            },
+            {
+                "arguments": {
+                    "arg": "level: int = 0"
+                },
+                "doc": "Set debug level for the library\n\n0 - no debugging output\n1 - moderate amount of debugging\n2+ - higher amount of debugging\n\n:param level: integer value of debug level, defaults to 0",
+                "_name": "Set Debug Level",
+                "_lineno": "231"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "localfile: str",
+                        "remotefile: str"
+                    ]
+                },
+                "doc": "Upload file to FTP server\n\n:param localfile: path to file to upload\n:param remotefile: name of uploaded file in the server",
+                "_name": "Upload",
+                "_lineno": "101"
+            }
+        ],
+        "_name": "FTP",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:02:19Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\FTP.py",
+        "_lineno": "38"
+    }
+}

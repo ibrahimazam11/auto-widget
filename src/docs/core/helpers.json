@@ -1,27 +1,73 @@
-[
-  {
-    "keyword": "Clean Filename",
-    "arguments": "filename: str,replace: str =",
-    "description": "Clean filename to valid format which can be used file operations. :param filename: name to be cleaned :param replace: characters to replace with underscore, defaults to \" \" :return: valid filename"
-  },
-  {
-    "keyword": "Delay",
-    "arguments": "sleeptime: float = 0.0",
-    "description": "Delay execution for given amount of seconds. :param sleeptime: seconds as integer, defaults to 0"
-  },
-  {
-    "keyword": "Import By Name",
-    "arguments": "name: str,caller: str = None",
-    "description": "Import module (or attribute) by name. :param name: Import path, e.g. RPA.WorkItems.RobocloudAdapter"
-  },
-  {
-    "keyword": "Required Env",
-    "arguments": "name: str,default: typing.Any = <object object at 0x00BD6E78>",
-    "description": "Load required environment variable. :param name: Name of environment variable :param default: Value to use if variable is undefined. If not given and variable is undefined, raises KeyError."
-  },
-  {
-    "keyword": "Required Param",
-    "arguments": "param_name: typing.Any = None,method_name: str = None",
-    "description": "Check that required parameter is not None"
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "Documentation for library ``helpers``.",
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "filename: str",
+                  "replace: str ="
+               ]
+            },
+            "doc": "Clean filename to valid format which can be used file operations.\n\n:param filename: name to be cleaned\n:param replace: characters to replace with underscore, defaults to \" \"\n:return: valid filename",
+            "_name": "Clean Filename",
+            "_lineno": "25"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "sleeptime: float = 0.0"
+               ]
+            },
+            "doc": "Delay execution for given amount of seconds.\n\n:param sleeptime: seconds as integer, defaults to 0",
+            "_name": "Delay",
+            "_lineno": "13"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "name: str",
+                  "caller: str = None"
+               ]
+            },
+            "doc": "Import module (or attribute) by name.\n\n:param name: Import path, e.g. Autosphere.WorkItems.RobocloudAdapter",
+            "_name": "Import By Name",
+            "_lineno": "65"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "name: str",
+                  "default: typing.Any = <object object at 0x01536E50>"
+               ]
+            },
+            "doc": "Load required environment variable.\n\n:param name: Name of environment variable\n:param default: Value to use if variable is undefined.\n                If not given and variable is undefined, raises KeyError.",
+            "_name": "Required Env",
+            "_lineno": "44"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "param_name: typing.Any = None",
+                  "method_name: str = None"
+               ]
+            },
+            "doc": "Check that required parameter is not None",
+            "_name": "Required Param",
+            "_lineno": "57"
+         }
+      ],
+      "_name": "helpers",
+      "_type": "LIBRARY",
+      "_format": "ROBOT",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-30T11:11:15Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\core\\helpers.py",
+      "_lineno": "1"
+   }
+}

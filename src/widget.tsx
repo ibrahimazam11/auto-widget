@@ -6,20 +6,23 @@ import "bootstrap";
 
 import React, { useState, useRef, useEffect } from 'react';
 
-import archive from './docs/archive.json';
-import browser from './docs/browser.json';
-import database from './docs/database.json';
-import filesystem from './docs/filesystem.json';
-import ftp from './docs/ftp.json';
-import http from './docs/http.json';
-import images from './docs/images.json';
+import archive from './docs/Archive.json';
+import browser from './docs/Browser.json';
+import crypto from './docs/Crypto.json';
+import database from './docs/Database.json';
+import dialog from './docs/Dialog.json';
+import filesystem from './docs/FileSystem.json';
+import ftp from './docs/FTP.json';
+import http from './docs/HTTP.json';
+import images from './docs/Images.json';
+import json from './docs/JSON.json';
 import Netsuite from './docs/Netsuite.json';
 import Notifier from './docs/Notifier.json';
 import PDF from './docs/PDF.json';
 import RobotLogListener from './docs/RobotLogListener.json';
-import SalesForce from './docs/SalesForce.json';
-import sap from './docs/sap.json';
-import slack from './docs/slack.json';
+import SalesForce from './docs/Salesforce.json';
+import sap from './docs/SAP.json';
+import slack from './docs/Slack.json';
 import Tables from './docs/Tables.json';
 import Tasks from './docs/Tasks.json';
 import Twitter from './docs/Twitter.json';
@@ -28,27 +31,29 @@ import aws from './docs/cloud/aws.json';
 import azure from './docs/cloud/azure.json';
 import google from './docs/cloud/google.json';
 
-import decorator from './docs/core/decorator.json';
+import decorators from './docs/core/decorators.json';
+import geometry from './docs/core/geometry.json';
 import helpers from './docs/core/helpers.json';
 import locators from './docs/core/locators.json';
 import notebook from './docs/core/notebook.json';
+import robocorp from './docs/core/robocorp.json';
 import types from './docs/core/types.json';
 import webdriver from './docs/core/webdriver.json';
 
-import clipboard from './docs/desktop/clipboard.json';
-import operatingsystem from './docs/desktop/operatingsystem.json';
-import windows from './docs/desktop/windows.json';
+import clipboard from './docs/Desktop/Clipboard.json';
+import operatingsystem from './docs/Desktop/operatingSystem.json';
+import windows from './docs/Desktop/windows.json';
 
-import exchange from './docs/email/Exchange.json';
-import imapsmtp from './docs/email/imapsmtp.json';
+import exchange from './docs/Email/Exchange.json';
+import imapsmtp from './docs/Email/ImapSmtp.json';
 
 import excelapp from './docs/excel/application.json';
 import files from './docs/excel/files.json';
 
 import outlookapp from './docs/outlook/application.json';
 
-import items from './docs/robocloud/items.json';
-import secrets from './docs/robocloud/secrets.json';
+import items from './docs/Robocloud/Items.json';
+import secrets from './docs/Robocloud/Secrets.json';
 
 import wordapp from './docs/word/application.json';
 
@@ -78,208 +83,233 @@ const Libraries = (): JSX.Element => {
 
   function clickHandler(data: any) {
     console.log(data);
-    setDescription(data.description);
+    setDescription(data.doc);
     
-    let args = data.arguments.split(',')
+    // let args = data.arguments.split(',')
     
-    const paramArr = args.map((arg: any) => <tr>{arg}</tr>)
+    const paramArr = data.arguments.arg.map((arg: any) => <tr>{arg}</tr>)
     
     setParams(paramArr);
 
     //alert(data.keyword);
     $(".copiedtext").css('display','block');
-    $(".copiedtext").html("Copied: <br />" + data.keyword);
+    $(".copiedtext").html("Copied: <br />" + data._name);
     setTimeout(function () {
       $(".copiedtext").css('display','none');
       $(".copiedtext").html('');
 
     }, 5000);
-    navigator.clipboard.writeText(data.keyword);
+    navigator.clipboard.writeText(data._name);
   }
 
   let array: any = [];
-  const archiveData = archive.map((dataObj: any, i: any) => (
-    <p className="hiddentext p-archive" key={i} style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const archiveData = archive.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p className="hiddentext p-archive" key={i} style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'archive', name: 'Archive', data: archiveData })
 
-  const browserData = browser.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-browser" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const browserData = browser.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-browser" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'browser', name: 'Browser', data: browserData })
 
-  const databaseData = database.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-database" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const cryptoData = crypto.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-crypto" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
+  ))
+  array.push({ id: 'crypto', name: 'Crypto', data: cryptoData })
+
+  const databaseData = database.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-database" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'database', name: 'Database', data: databaseData })
 
-  const filesystemData = filesystem.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-filesystem" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const dialogData = dialog.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-dialog" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
+  ))
+  array.push({ id: 'dialog', name: 'Dialog', data: dialogData })
+
+  const filesystemData = filesystem.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-filesystem" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'filesystem', name: 'File System', data: filesystemData })
 
-  const ftpData = ftp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-ftp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const ftpData = ftp.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-ftp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'ftp', name: 'FTP', data: ftpData })
 
-  const httpData = http.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-http" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const httpData = http.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-http" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'http', name: 'HTTP', data: httpData })
 
-  const imagesData = images.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-images" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const imagesData = images.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-images" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'images', name: 'Images', data: imagesData })
 
-  const NetsuiteData = Netsuite.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-netsuite" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const jsonData = json.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-json" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
+  ))
+  array.push({ id: 'json', name: 'JSON', data: jsonData })
+
+  const NetsuiteData = Netsuite.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-netsuite" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'netsuite', name: 'Net Suite', data: NetsuiteData })
 
-  const NotifierData = Notifier.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-notifier" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const NotifierData = Notifier.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-notifier" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'notifier', name: 'Notifier', data: NotifierData })
 
-  const PDFData = PDF.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-pdf" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const PDFData = PDF.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-pdf" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'pdf', name: 'PDF', data: PDFData })
 
-  const robotData = RobotLogListener.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-robot" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const robotData = RobotLogListener.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-robot" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'robot', name: 'Robot Log Listener', data: robotData })
 
-  const salesforceData = SalesForce.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-salesforce" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const salesforceData = SalesForce.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-salesforce" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'salesforce', name: 'Sales Force', data: salesforceData })
 
-  const sapData = sap.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-sap" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const sapData = sap.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-sap" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'sap', name: 'SAP', data: sapData })
 
-  const slackData = slack.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-slack" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const slackData = slack.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-slack" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'slack', name: 'Slack', data: slackData })
 
-  const tablesData = Tables.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-tables" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const tablesData = Tables.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-tables" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'tables', name: 'Tables', data: tablesData })
 
-  const tasksData = Tasks.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-tasks" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const tasksData = Tasks.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-tasks" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'tasks', name: 'Tasks', data: tasksData })
 
-  const twitterData = Twitter.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-twitter" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const twitterData = Twitter.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-twitter" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'twitter', name: 'Twitter', data: twitterData })
 
-  const awsData = aws.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-aws" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const awsData = aws.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-aws" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'aws', name: 'AWS', data: awsData })
 
-  const azureData = azure.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-azure" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const azureData = azure.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-azure" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'azure', name: 'Azure', data: azureData })
 
-  const googleData = google.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-google" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const googleData = google.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-google" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'google', name: 'Google', data: googleData })
 
-  const decoratorsData = decorator.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-decorator" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const decoratorsData = decorators.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-decorator" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'decorator', name: 'Decorator', data: decoratorsData })
 
-  const helpersData = helpers.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-helpers" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const geometryData = geometry.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-geometry" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
+  ))
+  array.push({ id: 'geometry', name: 'Geometry', data: geometryData })
+
+  const helpersData = helpers.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-helpers" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'helpers', name: 'Helpers', data: helpersData })
 
-  const locatorsData = locators.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-locators" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const locatorsData = locators.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-locators" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'locators', name: 'Locators', data: locatorsData })
 
-  const notebookData = notebook.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-notebook" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const notebookData = notebook.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-notebook" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'notebook', name: 'Notebook', data: notebookData })
 
-  const typesData = types.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-types" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const robocorpData = robocorp.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-robocorp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
+  ))
+  array.push({ id: 'robocorp', name: 'Robocorp', data: robocorpData })
+
+  const typesData = types.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-types" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'types', name: 'Types', data: typesData })
 
-  const webdriverData = webdriver.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-webdriver" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const webdriverData = webdriver.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-webdriver" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'webdriver', name: 'Webdriver', data: webdriverData })
 
-  const clipboardData = clipboard.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-clipboard" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const clipboardData = clipboard.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-clipboard" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'clipboard', name: 'Clipboard', data: clipboardData })
 
-  const operatingsystemData = operatingsystem.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-operatingsystem" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const operatingsystemData = operatingsystem.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-operatingsystem" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'operatingsystem', name: 'Operating System', data: operatingsystemData })
 
-  const windowsData = windows.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-windows" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const windowsData = windows.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-windows" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'windows', name: 'windows', data: windowsData })
 
-  const exchangeData = exchange.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-exchange" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const exchangeData = exchange.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-exchange" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'exchange', name: 'Exchange', data: exchangeData })
 
-  const imapsmtpData = imapsmtp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-imapsmtp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const imapsmtpData = imapsmtp.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-imapsmtp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'imapsmtp', name: 'IMAP SMTP', data: imapsmtpData })
 
-  const excelappData = excelapp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-excelapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const excelappData = excelapp.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-excelapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'excelapp', name: 'Excel Application', data: excelappData })
 
-  const filesData = files.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-files" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const filesData = files.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-files" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'files', name: 'Files', data: filesData })
 
-  const outlookappData = outlookapp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-outlookapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const outlookappData = outlookapp.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-outlookapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'outlookapp', name: 'Outlook Application', data: outlookappData })
 
-  const itemsData = items.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-items" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const itemsData = items.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-items" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'items', name: 'Items', data: itemsData })
 
-  const secretsData = secrets.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-secrets" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const secretsData = secrets.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-secrets" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'secrets', name: 'Secrets', data: secretsData })
 
-  const wordappData = wordapp.map((dataObj: any, i: any) => (
-    <p key={i} className="hiddentext p-wordapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj.keyword}</a></p>
+  const wordappData = wordapp.keywordspec.kw.map((dataObj: any, i: any) => (
+    <p key={i} className="hiddentext p-wordapp" style={{ textAlign: 'left' }}><a onClick={() => clickHandler(dataObj)}>{dataObj._name}</a></p>
   ))
   array.push({ id: 'wordapp', name: 'Word Application', data: wordappData })
 

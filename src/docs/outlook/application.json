@@ -1,27 +1,72 @@
-[
-  {
-    "keyword": "Close Document",
-    "arguments": "save_changes: bool = False",
-    "description": "Close the active document (if open)."
-  },
-  {
-    "keyword": "Open Application",
-    "arguments": "visible: bool = False,display_alerts: bool = False",
-    "description": "Open the Outlook application. :param visible: show window after opening :param display_alerts: show alert popups"
-  },
-  {
-    "keyword": "Quit Application",
-    "arguments": "save_changes: bool = False",
-    "description": "Quit the application."
-  },
-  {
-    "keyword": "Send Message",
-    "arguments": "recipients: typing.Any,subject: str,body: str,html_body: bool = False,attachments: typing.Any = None",
-    "description": "Send message with Outlook :param recipients: list of addresses :param subject: email subject :param body: email body :param html_body: True if body contains HTML, defaults to False :param attachments: list of filepaths to include in the email, defaults to [] :return: True if there were no errors"
-  },
-  {
-    "keyword": "Wait For Message",
-    "arguments": "criterion: str = None,timeout: float = 5.0,interval: float = 1.0",
-    "description": "Wait for email matching criterion to arrive into mailbox. Possible wait criterias are: SUBJECT, SENDER and BODY Examples: wait_for_message('SUBJECT:rpa task calling', timeout=300, interval=10) :param criterion: message filter to wait for, defaults to \"\" :param timeout: total time in seconds to wait for email, defaults to 5.0 :param interval: time in seconds for new check, defaults to 1.0 :return: list of messages or False"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for manipulating Outlook application.\n\nFor more information: https://docs.microsoft.com/en-us/previous-versions/office/developer/office-2007/bb219950(v=office.12) # noqa: E501",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": "save_changes: bool = False"
+                },
+                "doc": "Close the active document (if open).",
+                "_name": "Close Document",
+                "_lineno": "47"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "visible: bool = False",
+                        "display_alerts: bool = False"
+                    ]
+                },
+                "doc": "Open the Outlook application.\n\n:param visible: show window after opening\n:param display_alerts: show alert popups",
+                "_name": "Open Application",
+                "_lineno": "30"
+            },
+            {
+                "arguments": {
+                    "arg": "save_changes: bool = False"
+                },
+                "doc": "Quit the application.",
+                "_name": "Quit Application",
+                "_lineno": "52"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "recipients: typing.Any",
+                        "subject: str",
+                        "body: str",
+                        "html_body: bool = False",
+                        "attachments: typing.Any = None"
+                    ]
+                },
+                "doc": "Send message with Outlook\n\n:param recipients: list of addresses\n:param subject: email subject\n:param body: email body\n:param html_body: True if body contains HTML, defaults to False\n:param attachments: list of filepaths to include in the email, defaults to []\n:return: `True` if there were no errors",
+                "_name": "Send Message",
+                "_lineno": "59"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "criterion: str = None",
+                        "timeout: float = 5.0",
+                        "interval: float = 1.0"
+                    ]
+                },
+                "doc": "Wait for email matching `criterion` to arrive into mailbox.\n\nPossible wait criterias are: SUBJECT, SENDER and BODY\n\nExamples:\n    - wait_for_message('SUBJECT:Autosphere task calling', timeout=300, interval=10)\n\n:param criterion: message filter to wait for, defaults to \"\"\n:param timeout: total time in seconds to wait for email, defaults to 5.0\n:param interval: time in seconds for new check, defaults to 1.0\n:return: list of messages or False",
+                "_name": "Wait For Message",
+                "_lineno": "157"
+            }
+        ],
+        "_name": "Application",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T12:04:28Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Outlook\\Application.py",
+        "_lineno": "14"
+    }
+}

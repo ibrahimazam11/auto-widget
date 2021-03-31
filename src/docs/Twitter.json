@@ -1,52 +1,115 @@
-[
-  {
-    "keyword": "Authorize",
-    "arguments": "consumer_key: str = None,consumer_secret: str = None,access_token: str = None,access_token_secret: str = None",
-    "description": "Authorize to Twitter API :param consumer_key: app consumer key :param consumer_secret: app consumer secret :param access_token: user access token :param access_token_secret: user access token secret"
-  },
-  {
-    "keyword": "Follow",
-    "arguments": "user: str = None",
-    "description": "Follow Twitter user :param user: screen name of the user :return: True if user was followed, False if not"
-  },
-  {
-    "keyword": "Get Me",
-    "arguments": "",
-    "description": "Get Twitter profile of authenticated user :return: user profile as dictionary or None"
-  },
-  {
-    "keyword": "Get User Profile",
-    "arguments": "username: str = None",
-    "description": "Get user's Twitter profile :param username: whose profile to get :return: profile as dictionary"
-  },
-  {
-    "keyword": "Get User Tweets",
-    "arguments": "username: str = None,count: int = 100",
-    "description": "Get user tweets :param username: whose tweets to get :param count: maximum number of tweets, defaults to 100 :return: list of user tweets"
-  },
-  {
-    "keyword": "Like",
-    "arguments": "tweet: Tweet = None",
-    "description": "Like a tweet :param tweet: as a class Tweet :return: True if Tweet was liked, False if not"
-  },
-  {
-    "keyword": "Text Search Tweets",
-    "arguments": "query: str = None,count: int = 100,geocode: str = None,lang: str = None,locale: str = None,result_type: str = mixed,until: str = None,since_id: str = None,max_id: str = None",
-    "description": "Search tweets defined by search query Results types: mixed : include both popular and real time results in the response recent : return only the most recent results in the response popular : return only the most popular results in the response :param query: search query string of 500 characters maximum, including operators :param count: maximum number of tweets, defaults to 100 :param geocode: tweets by users located within a given radius of the given latitude/longitude :param lang: language code of tweets :param locale: language of the query you are sending :param result_type: type of search results you would prefer to receive, default \"mixed\" :param until: tweets created before the given date :param since_id: Returns only statuses with an ID greater than :param max_id: only statuses with an ID less than :return: list of matching tweets"
-  },
-  {
-    "keyword": "Tweet",
-    "arguments": "content: str = None",
-    "description": "Make a tweet with content :param content: text for the status update"
-  },
-  {
-    "keyword": "Unfollow",
-    "arguments": "user: str = None",
-    "description": "Unfollow Twitter user :param user: screen name of the user :return: True if user was followed, False if not"
-  },
-  {
-    "keyword": "Unlike",
-    "arguments": "tweet: Tweet = None",
-    "description": "Unlike a tweet :param tweet: as a class Tweet :return: True if Tweet was unliked, False if not"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Library for managing Twitter.\n\nLibrary usage requires Twitter developer credentials, which can\nbe requested from https://developer.twitter.com/",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "consumer_key: str = None",
+                        "consumer_secret: str = None",
+                        "access_token: str = None",
+                        "access_token_secret: str = None"
+                    ]
+                },
+                "doc": "Authorize to Twitter API\n\n:param consumer_key: app consumer key\n:param consumer_secret: app consumer secret\n:param access_token: user access token\n:param access_token_secret: user access token secret",
+                "_name": "Authorize",
+                "_lineno": "67"
+            },
+            {
+                "arguments": {
+                    "arg": "user: str = None"
+                },
+                "doc": "Follow Twitter user\n\n:param user: screen name of the user\n:return:  `True` if user was followed, `False` if not",
+                "_name": "Follow",
+                "_lineno": "269"
+            },
+            {
+                "arguments": "",
+                "doc": "Get Twitter profile of authenticated user\n\n:return: user profile as dictionary or `None`",
+                "_name": "Get Me",
+                "_lineno": "100"
+            },
+            {
+                "arguments": {
+                    "arg": "username: str = None"
+                },
+                "doc": "Get user's Twitter profile\n\n:param username: whose profile to get\n:return: profile as dictionary",
+                "_name": "Get User Profile",
+                "_lineno": "210"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "username: str = None",
+                        "count: int = 100"
+                    ]
+                },
+                "doc": "Get user tweets\n\n:param username: whose tweets to get\n:param count: maximum number of tweets, defaults to 100\n:return: list of user tweets",
+                "_name": "Get User Tweets",
+                "_lineno": "109"
+            },
+            {
+                "arguments": {
+                    "arg": "tweet: Tweet = None"
+                },
+                "doc": "Like a tweet\n\n:param tweet: as a class `Tweet`\n:return: `True` if Tweet was liked, `False` if not",
+                "_name": "Like",
+                "_lineno": "233"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "query: str = None",
+                        "count: int = 100",
+                        "geocode: str = None",
+                        "lang: str = None",
+                        "locale: str = None",
+                        "result_type: str = mixed",
+                        "until: str = None",
+                        "since_id: str = None",
+                        "max_id: str = None"
+                    ]
+                },
+                "doc": "Search tweets defined by search query\n\nResults types:\n    - mixed : include both popular and real time results in the response\n    - recent : return only the most recent results in the response\n    - popular : return only the most popular results in the response\n\n:param query: search query string of 500 characters maximum,\n    including operators\n:param count: maximum number of tweets, defaults to 100\n:param geocode: tweets by users located within a given\n    radius of the given latitude/longitude\n:param lang: language code of tweets\n:param locale: language of the query you are sending\n:param result_type: type of search results you would prefer to receive,\n    default \"mixed\"\n:param until: tweets created before the given date\n:param since_id: Returns only statuses with an ID greater than\n:param max_id: only statuses with an ID less than\n:return: list of matching tweets",
+                "_name": "Text Search Tweets",
+                "_lineno": "142"
+            },
+            {
+                "arguments": {
+                    "arg": "content: str = None"
+                },
+                "doc": "Make a tweet with content\n\n:param content: text for the status update",
+                "_name": "Tweet",
+                "_lineno": "225"
+            },
+            {
+                "arguments": {
+                    "arg": "user: str = None"
+                },
+                "doc": "Unfollow Twitter user\n\n:param user: screen name of the user\n:return:  `True` if user was followed, `False` if not",
+                "_name": "Unfollow",
+                "_lineno": "283"
+            },
+            {
+                "arguments": {
+                    "arg": "tweet: Tweet = None"
+                },
+                "doc": "Unlike a tweet\n\n:param tweet: as a class `Tweet`\n:return: `True` if Tweet was unliked, `False` if not",
+                "_name": "Unlike",
+                "_lineno": "251"
+            }
+        ],
+        "_name": "Twitter",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:07:08Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Twitter.py",
+        "_lineno": "41"
+    }
+}

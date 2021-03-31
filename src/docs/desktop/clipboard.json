@@ -1,17 +1,37 @@
-[
-  {
-    "keyword": "Clear Clipboard",
-    "arguments": "",
-    "description": "Clear clipboard contents"
-  },
-  {
-    "keyword": "Copy To Clipboard",
-    "arguments": "text",
-    "description": "Copy text to clipboard :param text: to copy"
-  },
-  {
-    "keyword": "Paste From Clipboard",
-    "arguments": "",
-    "description": "Paste text from clipboard :return: text"
-  }
-]
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "test case",
+      "namedargs": "yes",
+      "doc": "Autosphere Framework library for cross platform clipboard management.\n\nWill use `win32` package on Windows and `clipboard` package on Linux and Mac.",
+      "kw": [
+         {
+            "doc": "Clear clipboard contents\n\nExample:\n    | Clear Clipboard |",
+            "_name": "Clear Clipboard",
+            "_lineno": "57"
+         },
+         {
+            "arguments": {
+               "arg": "text"
+            },
+            "doc": "Copy text to clipboard\n\n:param text: to copy\n\nExample:\n    | Copy To Clipboard | text=Hello |",
+            "_name": "Copy To Clipboard",
+            "_lineno": "20"
+         },
+         {
+            "doc": "Paste text from clipboard\n\n:return: text\n\nExample:\n    | ${text} | Paste From Clipboard |",
+            "_name": "Paste From Clipboard",
+            "_lineno": "37"
+         }
+      ],
+      "_name": "Clipboard",
+      "_type": "LIBRARY",
+      "_format": "ROBOT",
+      "_scope": "TEST",
+      "_namedargs": "true",
+      "_generated": "2021-03-30T11:15:49Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Desktop\\Clipboard.py",
+      "_lineno": "11"
+   }
+}

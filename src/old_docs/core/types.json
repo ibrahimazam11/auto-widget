@@ -1,0 +1,17 @@
+[
+  {
+    "keyword": "Is Dict Like",
+    "Arguments": "obj",
+    "Documentation": "Check if obj behaves like a dictionary."
+  },
+  {
+    "keyword": "Is List Like",
+    "Arguments": "obj",
+    "Documentation": "Check if obj behaves like a list."
+  },
+  {
+    "keyword": "Is Namedtuple",
+    "Arguments": "obj",
+    "Documentation": "Check if obj is a namedtuple."
+  }
+]

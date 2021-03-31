@@ -1,82 +1,170 @@
-[
-  {
-    "keyword": "Append Rows To Worksheet",
-    "arguments": "content,name=None,header=False,start=None",
-    "description": "Append values to the end of the worksheet. :param content: Rows of values to append :param name: Name of worksheet to append to :param header: Set rows according to existing header row :param start: Start of data, NOTE: Only required when headers is True"
-  },
-  {
-    "keyword": "Close Workbook",
-    "arguments": "",
-    "description": "Close the active workbook."
-  },
-  {
-    "keyword": "Create Workbook",
-    "arguments": "path=None,fmt=xlsx",
-    "description": "Create and open a new Excel workbook. :param path: Default save path for workbook :param fmt: Format of workbook, i.e. xlsx or xls"
-  },
-  {
-    "keyword": "Create Worksheet",
-    "arguments": "name,content=None,exist_ok=False",
-    "description": "Create a new worksheet in the current workbook. :param name: Name of new worksheet :param content: Optional content for worksheet :param exist_ok: If False, raise an error if name is already in use"
-  },
-  {
-    "keyword": "Find Empty Row",
-    "arguments": "name=None",
-    "description": "Find the first empty row after existing content. :param name: Name of worksheet"
-  },
-  {
-    "keyword": "Get Active Worksheet",
-    "arguments": "",
-    "description": "Get the name of the worksheet which is currently active."
-  },
-  {
-    "keyword": "List Worksheets",
-    "arguments": "",
-    "description": "List all names of worksheets in the given workbook."
-  },
-  {
-    "keyword": "Open Workbook",
-    "arguments": "path",
-    "description": "Open an existing Excel workbook. :param path: path to Excel file"
-  },
-  {
-    "keyword": "Read Worksheet",
-    "arguments": "name=None,header=False,start=None",
-    "description": "Read the content of a worksheet into a list of dictionaries. Each key in the dictionary will be either values from the header row, or Excel-style column letters. :param name: Name of worksheet to read :param header: If True, use the first row of the worksheet as headers for the rest of the rows."
-  },
-  {
-    "keyword": "Read Worksheet As Table",
-    "arguments": "name=None,header=False,trim=True,start=None",
-    "description": "Read the content of a worksheet into a Table container. Allows sorting/filtering/manipulating using the RPA.Tables library. :param name: Name of worksheet to read :param header: If True, use the first row of the worksheet as headers for the rest of the rows. :param trim: Remove all empty rows from the end of the worksheet :param start: Row index to start reading data from (1-indexed)"
-  },
-  {
-    "keyword": "Remove Worksheet",
-    "arguments": "name=None",
-    "description": "Remove a worksheet from the active workbook. :param name: Name of worksheet to remove"
-  },
-  {
-    "keyword": "Rename Worksheet",
-    "arguments": "src_name,dst_name",
-    "description": "Rename an existing worksheet in the active workbook. :param src_name: Current name of worksheet :param dst_name: Future name of worksheet"
-  },
-  {
-    "keyword": "Save Workbook",
-    "arguments": "path=None",
-    "description": "Save the active workbook. :param path: Path to save to. If not given, uses path given when opened or created."
-  },
-  {
-    "keyword": "Set Active Worksheet",
-    "arguments": "value",
-    "description": "Set the active worksheet. :param value: Index or name of worksheet"
-  },
-  {
-    "keyword": "Set Worksheet Value",
-    "arguments": "row,column,value,name=None",
-    "description": "Set a cell value in the given worksheet. :param row: Index of row to write, e.g. 3 :param column: Name or index of column, e.g. C or 7 :param value: New value of cell :param name: Name of worksheet"
-  },
-  {
-    "keyword": "Worksheet Exists",
-    "arguments": "name",
-    "description": "Return True if worksheet with given name is in workbook."
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Robot Framework library for manipulating Excel files.\n\nNote: To run macros or load password protected worksheets,\nplease use the Excel application library.",
+        "kw": [
+            {
+                "arguments": {
+                    "arg": [
+                        "content",
+                        "name=None",
+                        "header=False",
+                        "start=None"
+                    ]
+                },
+                "doc": "Append values to the end of the worksheet.\n\n:param content: Rows of values to append\n:param name:    Name of worksheet to append to\n:param header:  Set rows according to existing header row\n:param start:   Start of data, NOTE: Only required when headers is True\n\nExample:  \n\nCreating new Excel \n\n    Create Workbook  my_new_excel.xlsx \n\n    FOR    ${index}    IN RANGE    20 \n\n        &{row}=       Create Dictionary \n\n        ...           Row No   ${index} \n\n        ...           Amount   ${index * 25} \n\n        Append Rows to Worksheet  ${row}  header=${TRUE} \n\n    END \n\n    Save Workbook",
+                "_name": "Append Rows To Worksheet",
+                "_lineno": "286"
+            },
+            {
+                "arguments": "",
+                "doc": "Close the active workbook.\n\nExample:  \n\n    Close Workbook     SalesData2.xlsx",
+                "_name": "Close Workbook",
+                "_lineno": "137"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "path=None",
+                        "fmt=xlsx"
+                    ]
+                },
+                "doc": "Create and open a new Excel workbook.\n\n:param path: Default save path for workbook\n:param fmt:  Format of workbook, i.e. xlsx or xls\n\nExample:  \n\n    Create Workbook   SalesData2.xlsx",
+                "_name": "Create Workbook",
+                "_lineno": "95"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "name",
+                        "content=None",
+                        "exist_ok=False"
+                    ]
+                },
+                "doc": "Create a new worksheet in the current workbook.\n\n:param name:     Name of new worksheet\n:param content:  Optional content for worksheet\n:param exist_ok: If `False`, raise an error if name is already in use\n\nExample:  \n\n    Create Worksheet   sheet2",
+                "_name": "Create Worksheet",
+                "_lineno": "227"
+            },
+            {
+                "arguments": {
+                    "arg": "name=None"
+                },
+                "doc": "Find the first empty row after existing content.\n\n:param name:    Name of worksheet\n\nExample:  \n\n    Find Empty Row   sheet2",
+                "_name": "Find Empty Row",
+                "_lineno": "345"
+            },
+            {
+                "arguments": "",
+                "doc": "Get the name of the worksheet which is currently active.\n\nExample:  \n\n    ${worksheet_name}   Get Active Worksheet",
+                "_name": "Get Active Worksheet",
+                "_lineno": "203"
+            },
+            {
+                "arguments": "",
+                "doc": "List all names of worksheets in the given workbook.\n\nExample:  \n\n    ${list}   List Worksheets",
+                "_name": "List Worksheets",
+                "_lineno": "181"
+            },
+            {
+                "arguments": {
+                    "arg": "path"
+                },
+                "doc": "Open an existing Excel workbook.\n\n:param path: path to Excel file\n\nExample:  \n\n    Open Workbook           SalesData.xlsx",
+                "_name": "Open Workbook",
+                "_lineno": "120"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "name=None",
+                        "header=False",
+                        "start=None"
+                    ]
+                },
+                "doc": "Read the content of a worksheet into a list of dictionaries.\n\nEach key in the dictionary will be either values from the header row,\nor Excel-style column letters.\n\n:param name:   Name of worksheet to read\n:param header: If `True`, use the first row of the worksheet\n               as headers for the rest of the rows.\n               \nExample:  \n\n    ${list_of_values} Read Worksheet   sheet1 \n    Log  ${list_of_values}",
+                "_name": "Read Worksheet",
+                "_lineno": "247"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "name=None",
+                        "header=False",
+                        "trim=True",
+                        "start=None"
+                    ]
+                },
+                "doc": "Read the content of a worksheet into a Table container. Allows\nsorting/filtering/manipulating using the `Autosphere.Tables` library.\n\n:param name:   Name of worksheet to read\n:param header: If `True`, use the first row of the worksheet\n               as headers for the rest of the rows.\n:param trim:   Remove all empty rows from the end of the worksheet\n:param start:  Row index to start reading data from (1-indexed)\n\nExample:   \n\n    ${a}  Read Worksheet As Table      data77  \n    Log  ${a}",
+                "_name": "Read Worksheet As Table",
+                "_lineno": "266"
+            },
+            {
+                "arguments": {
+                    "arg": "name=None"
+                },
+                "doc": "Remove a worksheet from the active workbook.\n\n:param name: Name of worksheet to remove\n\nExample:  \n\n    Remove Worksheet     sheet1",
+                "_name": "Remove Worksheet",
+                "_lineno": "318"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "src_name",
+                        "dst_name"
+                    ]
+                },
+                "doc": "Rename an existing worksheet in the active workbook.\n\n:param src_name: Current name of worksheet\n:param dst_name: Future name of worksheet\n\nExample: \n\n    Rename Worksheet     sheet1   sheet2",
+                "_name": "Rename Worksheet",
+                "_lineno": "331"
+            },
+            {
+                "arguments": {
+                    "arg": "path=None"
+                },
+                "doc": "Save the active workbook.\n\n:param path: Path to save to. If not given, uses path given\n             when opened or created.\n             \nExample: \n\n    Save Workbook",
+                "_name": "Save Workbook",
+                "_lineno": "150"
+            },
+            {
+                "arguments": {
+                    "arg": "value"
+                },
+                "doc": "Set the active worksheet.\n\n:param value: Index or name of worksheet\n\nExample: \n\n    Set Active Worksheet   sheet1",
+                "_name": "Set Active Worksheet",
+                "_lineno": "214"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "row",
+                        "column",
+                        "value",
+                        "name=None"
+                    ]
+                },
+                "doc": "Set a cell value in the given worksheet.\n\n:param row:     Index of row to write, e.g. 3\n:param column:  Name or index of column, e.g. C or 7\n:param value:   New value of cell\n:param name:    Name of worksheet\n\nExample: \n\n    Set Worksheet Value \n\n    …row=1 \n\n    …column=1 \n\n    …value=New york",
+                "_name": "Set Worksheet Value",
+                "_lineno": "358"
+            },
+            {
+                "arguments": {
+                    "arg": "name"
+                },
+                "doc": "Return True if worksheet with given name is in workbook.\n\nExample: \n\n    Worksheet Exists   sheet1",
+                "_name": "Worksheet Exists",
+                "_lineno": "192"
+            }
+        ],
+        "_name": "Files",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T12:03:30Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Excel\\Files.py",
+        "_lineno": "59"
+    }
+}

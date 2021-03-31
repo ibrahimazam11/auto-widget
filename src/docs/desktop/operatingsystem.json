@@ -1,47 +1,89 @@
-[
-  {
-    "keyword": "Boot Time In Seconds From Epoch",
-    "arguments": "",
-    "description": "Get machine boot time :return: boot time in seconds from Epoch Example: .. code-block:: robotframework ${epoch} Boot Time In Seconds From Epoch"
-  },
-  {
-    "keyword": "Get Boot Time",
-    "arguments": "as_datetime: bool = False,datetime_format: str = %Y-%m-%d %H:%M:%S",
-    "description": "Get computer boot time in seconds from Epoch or in datetime string. :param as_datetime: if True returns datetime string, otherwise seconds, defaults to False :param datetime_format: datetime string format, defaults to \"%Y-%m-%d %H:%M:%S\" :return: seconds from Epoch or datetime string Example: .. code-block:: robotframework ${boottime} Get Boot Time ${boottime} Get Boot Time as_datetime=True ${boottime} Get Boot Time as_datetime=True datetime_format=%d.%m.%Y"
-  },
-  {
-    "keyword": "Get Machine Name",
-    "arguments": "",
-    "description": "Get machine name :return: machine name as string Example: .. code-block:: robotframework ${machine} Get Machine Name"
-  },
-  {
-    "keyword": "Get Memory Stats",
-    "arguments": "humanized: bool = True",
-    "description": "Get computer memory stats and return those in bytes or in humanized memory format. :param humanized: if False returns memory information in bytes, defaults to True :return: memory information in dictionary format Example: .. code-block:: robotframework &{mem} Get Memory Stats &{mem} Get Memory Stats humanized=False"
-  },
-  {
-    "keyword": "Get Username",
-    "arguments": "",
-    "description": "Get username of logged in user :return: username as string Example: .. code-block:: robotframework ${user} Get Username"
-  },
-  {
-    "keyword": "Kill Process",
-    "arguments": "process_name: str",
-    "description": "Kill process by name :param process_name: name of the process :return: True if succeeds False if not Example: .. code-block:: robotframework ${process} Process Exists calc strict=False ${status} Kill Process ${process.name()}"
-  },
-  {
-    "keyword": "Kill Process By Pid",
-    "arguments": "pid: int",
-    "description": "Kill process by pid :param pid: process identifier Example: .. code-block:: robotframework ${process} Process Exists calc strict=False ${status} Kill Process ${process.pid}"
-  },
-  {
-    "keyword": "Process Exists",
-    "arguments": "process_name: str,strict: bool = True",
-    "description": "Check if process exists by its name :param process_name: search for this process :param strict: defines how match is made, default True which means that process name needs to be exact match and False does inclusive matching :return: process instance or False Example: .. code-block:: robotframework ${process} Process Exists calc ${process} Process Exists calc strict=False"
-  },
-  {
-    "keyword": "Put System To Sleep",
-    "arguments": "",
-    "description": "Puts system to sleep mode Example: .. code-block:: robotframework Put System To Sleep"
-  }
-]
+{
+    "keywordspec": {
+        "version": "",
+        "scope": "test case",
+        "namedargs": "yes",
+        "doc": "Autosphere Framework library containing cross platform keywords for managing\ncomputer properties and actions.",
+        "kw": [
+            {
+                "arguments": "",
+                "doc": "Get machine boot time\n\n:return: boot time in seconds from Epoch\n\nExample:\n\n.. code-block:: robotframework\n\n    ${epoch}  Boot Time In Seconds From Epoch",
+                "_name": "Boot Time In Seconds From Epoch",
+                "_lineno": "55"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "as_datetime: bool = False",
+                        "datetime_format: str = %Y-%m-%d %H:%M:%S"
+                    ]
+                },
+                "doc": "Get computer boot time in seconds from Epoch or in datetime string.\n\n:param as_datetime: if True returns datetime string, otherwise seconds,\n    defaults to False\n:param datetime_format: datetime string format, defaults to \"%Y-%m-%d %H:%M:%S\"\n:return: seconds from Epoch or datetime string\n\nExample:\n\n.. code-block:: robotframework\n\n    ${boottime}  Get Boot Time\n    ${boottime}  Get Boot Time   as_datetime=True\n    ${boottime}  Get Boot Time   as_datetime=True  datetime_format=%d.%m.%Y",
+                "_name": "Get Boot Time",
+                "_lineno": "30"
+            },
+            {
+                "arguments": "",
+                "doc": "Get machine name\n\n:return: machine name as string\n\nExample:\n\n.. code-block:: robotframework\n\n    ${machine}  Get Machine Name",
+                "_name": "Get Machine Name",
+                "_lineno": "69"
+            },
+            {
+                "arguments": {
+                    "arg": "humanized: bool = True"
+                },
+                "doc": "Get computer memory stats and return those in bytes\nor in humanized memory format.\n\n:param humanized: if False returns memory information in bytes, defaults to True\n:return: memory information in dictionary format\n\nExample:\n\n.. code-block:: robotframework\n\n    &{mem}     Get Memory Stats\n    &{mem}     Get Memory Stats   humanized=False",
+                "_name": "Get Memory Stats",
+                "_lineno": "177"
+            },
+            {
+                "arguments": "",
+                "doc": "Get username of logged in user\n\n:return: username as string\n\nExample:\n\n.. code-block:: robotframework\n\n    ${user}  Get Username",
+                "_name": "Get Username",
+                "_lineno": "83"
+            },
+            {
+                "arguments": {
+                    "arg": "process_name: str"
+                },
+                "doc": "Kill process by name\n\n:param process_name: name of the process\n:return: True if succeeds False if not\n\nExample:\n\n.. code-block:: robotframework\n\n    ${process}  Process Exists  calc  strict=False\n    ${status}   Kill Process    ${process.name()}",
+                "_name": "Kill Process",
+                "_lineno": "140"
+            },
+            {
+                "arguments": {
+                    "arg": "pid: int"
+                },
+                "doc": "Kill process by pid\n\n:param pid: process identifier\n\nExample:\n\n.. code-block:: robotframework\n\n    ${process}  Process Exists  calc  strict=False\n    ${status}   Kill Process    ${process.pid}",
+                "_name": "Kill Process By Pid",
+                "_lineno": "161"
+            },
+            {
+                "arguments": {
+                    "arg": [
+                        "process_name: str",
+                        "strict: bool = True"
+                    ]
+                },
+                "doc": "Check if process exists by its name\n\n:param process_name: search for this process\n:param strict: defines how match is made, default `True`\n which means that process name needs to be exact match\n and `False` does inclusive matching\n:return: process instance or False\n\nExample:\n\n.. code-block:: robotframework\n\n    ${process}  Process Exists  calc\n    ${process}  Process Exists  calc  strict=False",
+                "_name": "Process Exists",
+                "_lineno": "114"
+            },
+            {
+                "arguments": "",
+                "doc": "Puts system to sleep mode\n\nExample:\n\n.. code-block:: robotframework\n\n    Put System To Sleep",
+                "_name": "Put System To Sleep",
+                "_lineno": "98"
+            }
+        ],
+        "_name": "OperatingSystem",
+        "_type": "LIBRARY",
+        "_format": "ROBOT",
+        "_scope": "TEST",
+        "_namedargs": "true",
+        "_generated": "2021-03-19T11:33:32Z",
+        "_specversion": "2",
+        "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\Desktop\\OperatingSystem.py",
+        "_lineno": "21"
+    }
+}

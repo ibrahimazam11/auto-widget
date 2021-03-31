@@ -1,0 +1,42 @@
+{
+   "keywordspec": {
+      "version": "",
+      "scope": "global",
+      "namedargs": "yes",
+      "doc": "Documentation for library ``decorators``.",
+      "kw": [
+         {
+            "arguments": {
+               "arg": [
+                  "*systems"
+               ]
+            },
+            "doc": "Decorator to restrict method for specified operating system\n\n:param systems: operating systems in string format\n    e.g. \"Linux,Darwin\", default 'Windows'",
+            "_name": "Operating System Required",
+            "_lineno": "5"
+         },
+         {
+            "arguments": {
+               "arg": [
+                  "wrapped",
+                  "assigned=('__module__', '__name__', '__qualname__', '__doc__', '__annotations__')",
+                  "updated=('__dict__',)"
+               ]
+            },
+            "doc": "Decorator factory to apply update_wrapper() to a wrapper function\n\nReturns a decorator that invokes update_wrapper() with the decorated\nfunction as the wrapper argument and the arguments to wraps() as the\nremaining arguments. Default arguments are as for update_wrapper().\nThis is a convenience function to simplify applying partial() to\nupdate_wrapper().",
+            "_name": "Wraps",
+            "_source": "C:\\Program Files\\Autosphere\\Process Tray\\App\\Python\\lib\\functools.py",
+            "_lineno": "63"
+         }
+      ],
+      "_name": "decorators",
+      "_type": "LIBRARY",
+      "_format": "ROBOT",
+      "_scope": "GLOBAL",
+      "_namedargs": "true",
+      "_generated": "2021-03-30T11:10:28Z",
+      "_specversion": "2",
+      "_source": "C:\\Program Files\\Autosphere\\Process Studio\\App\\Python\\Lib\\site-packages\\Autosphere\\core\\decorators.py",
+      "_lineno": "1"
+   }
+}
